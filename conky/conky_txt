@@ -72,6 +72,7 @@ ${font}${color0}    MOD+Shift+l  ${color}	-	master_grow
 ${font}${color0}    MOD+Shift+h  ${color}	-	master_shrink
 ${font}${color0}    MOD+Shift+q  ${color}	-	wind_kill
 ${color1}${hr}${color}
+${font}${color0}    MOD+r        ${color}	-	github-desktop
 ${font}${color0}    MOD+t        ${color}	-	atom
 ${font}${color0}    MOD+x        ${color}	-	ts3client
 ${font}${color0}    MOD+c        ${color}	-	xastir
@@ -95,7 +96,6 @@ ${font}${color0}    Ctrl+Alt+k   ${color}	-	wireshark
 ${font}${color0}    Ctrl+Alt+b   ${color}	-	pcmanfm-qt
 ${font}${color0}    Ctrl+Alt+o   ${color}	-	picom-toggle.sh
 ${font}${color0}    Ctrl+Alt+m   ${color}	-	mpv
-${font}${color0}    Ctrl+Alt+g   ${color}	-	mpv-kcht
 ${font}${color0}    Ctrl+Alt+f   ${color}	-	killall mpv -9
 ${font}${color0}    Ctrl+Alt+i   ${color}	-	nitrogen
 ${font}${color0}    Ctrl+Alt+v   ${color}	-	code-oss
