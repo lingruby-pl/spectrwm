@@ -1,0 +1,61 @@
+--[[
+========================================================================
+Conky-Linux
+author: Brahim Salem-Tunisia
+telephone: 00216 97 95 72 72
+========================================================================
+Conky Arch GNU/Linux rolling
+mod: LinGruby
+--========================================================================
+]]
+
+conky.config = {
+
+	background = true,
+	update_interval = 1,
+	total_run_times = 0,
+
+	double_buffer = true,
+	no_buffers = true,
+	text_buffer_size = 2048,
+
+	gap_x = 380,
+	gap_y = 16,
+	minimum_width = 606, minimum_height = 106,
+	maximum_width = 606,
+	own_window = true,
+	own_window_class = 'Conky',
+	own_window_type = 'override',
+	own_window_transparent = true,
+	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+	own_window_argb_value = 0,
+	own_window_argb_visual = true,
+	--own_window_colour = '#00000000',
+	border_inner_margin = 0,
+	border_outer_margin = 0,
+	alignment = 'top_right',
+
+	use_xft = true,
+	xftalpha = 1,
+	override_utf8_locale = true,
+
+	draw_borders = false,
+	draw_outline = false,
+	draw_shades = false,
+
+	default_color = '#888888',
+	color1 = '#505050',
+
+
+};
+
+conky.text = [[
+${color1}${hr}
+${color}${alignc}${font Hack:size=15:weight=bold}${time %a %d %b %Y   %H%M%S}
+
+${color}${alignc}${font Hack:size=11:weight=bold}Czas pracy:  $uptime
+${color1}${hr}
+${alignc}${color}${font Hack:size=9:weight=bold}${texeci 1200 curl  -s 'https://pl.wttr.in/Łódź?0' | sed -n '2,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
+
+${color1}${hr}
+]];
