@@ -82,7 +82,6 @@ ${font}${color0}    MOD+g        ${color}	-	gotop
 ${font}${color0}    MOD+s        ${color}	-	weechat
 ${font}${color0}    MOD+f        ${color}	-	fullscreen
 ${font}${color0}    MOD+n        ${color}	-	ifconfig.sh
-${font}${color0}    MOD+n        ${color}	-	pavucontrol
 ${font}${color0}    MOD+Shift+x  ${color}	-	discord
 ${font}${color0}    MOD+Shift+c  ${color}	-	kodi
 ${font}${color0}    MOD+Shift+d  ${color}	-	dunst
@@ -102,6 +101,7 @@ ${font}${color0}    Ctrl+Alt+v   ${color}	-	code-oss
 ${color1}${hr}${color}
 ${font}${color0}    MOD+y        ${color}	-	reload polybar
 ${font}${color0}    MOD+q        ${color}	-	reload spectrwm
+${font}${color0}    MOD+Alt+r    ${color}	-	restart spectrwm
 ${font}${color0}    MOD+Right    ${color}	-	ws_next
 ${font}${color0}    MOD+Left     ${color}	-	ws_prev
 ${font}${color0}    MOD+Shift+r  ${color}	-	restart
