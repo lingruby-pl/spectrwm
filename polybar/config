@@ -93,7 +93,7 @@ monitor-strict = false
 tray-position = ${env:TRAY_POSITION:right}
 ;dpi = 100
 width = 100%
-height = 13
+height = 14
 ;offset-x = 1%
 ;offset-y = 1%
 radius-top = 0.0
@@ -111,7 +111,7 @@ override-redirect = true
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 1
+border-size = 2
 ;border-left-size = 0
 ;border-right-size = 25
 ;border-top-size = 0
@@ -125,10 +125,10 @@ module-margin-left = 1
 module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Hack:size=9:weight=bold;1"
-font-1 = "noto-fonts-emoji:pixelsize=9:weight=bold;2"
+font-0 = "Hack:size=9:weight=bold;2"
+font-1 = "Noto Color Emoji:scale=13"
 
-modules-left = checkupdates auracle cpu2 memory2 weather wired-network networkspeeddown networkspeedup vpn-wireguard-wg pub-ip
+modules-left = checkupdates auracle cpu2 memory2 wired-network networkspeeddown networkspeedup vpn-wireguard-wg pub-ip weather
 modules-center =
 modules-right =
 
@@ -157,7 +157,7 @@ monitor = DP1
 monitor-strict = false
 ;dpi = 100
 width = 100%
-height = 13
+height = 14
 ;offset-x = 1%
 ;offset-y = 1%
 radius-top = 0.0
@@ -175,7 +175,7 @@ override-redirect = true
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 1
+border-size = 2
 ;border-left-size = 0
 ;border-right-size = 25
 ;border-top-size = 0
@@ -189,10 +189,10 @@ module-margin-left = 1
 module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Hack:size=9:weight=bold;1"
-font-1 = "noto-fonts-emoji:pixelsize=9:weight=bold;2"
+font-0 = "Hack:size=9:weight=bold;2"
+font-1 = "Noto Color Emoji:scale=13"
 
-modules-left = checkupdates auracle cpu2 memory2 weather wired-network networkspeeddown networkspeedup vpn-wireguard-wg pub-ip
+modules-left = checkupdates auracle cpu2 memory2 wired-network networkspeeddown networkspeedup vpn-wireguard-wg pub-ip weather
 modules-center =
 modules-right =
 
@@ -769,7 +769,7 @@ interval = 3.0
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 ;format-underline = ${colors.underline}
-label = %output% |
+label = %output%
 ;format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 
@@ -889,7 +889,8 @@ format-muted-background = ${colors.background}
 [module/weather]
 type = custom/script
 interval = 1200
-exec = ~/.config/spectrwm/polybar/scripts/weather.sh
+exec = weather Łódź 2
+click-left = xterm -title 'Pogoda' -geometry 125x45 +sb -hold -e weather Łódź 1 &
 
 #################################################################################
 

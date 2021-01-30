@@ -11,7 +11,7 @@ killall -q polybar
 
     if type "xrandr" > /dev/null; then
     polybar --reload mainbar-eDP1 -c ~/.config/spectrwm/polybar/config &
-    polybar --reload mainbar-DP1 -c ~/.config/spectrwm/polybar/config &
+    # polybar --reload mainbar-DP1 -c ~/.config/spectrwm/polybar/config &
     fi
 
 echo "Start Polybar by LinGruby-Mod..."
