@@ -888,8 +888,8 @@ format-muted-background = ${colors.background}
 
 [module/weather]
 type = custom/script
-interval = 1200
-exec = weather Łódź 2
+interval = 600
+exec = weather Łódź 4
 click-left = xterm -title 'Pogoda' -geometry 125x45 +sb -hold -e weather Łódź 1 &
 
 #################################################################################
