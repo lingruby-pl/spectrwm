@@ -1,0 +1,229 @@
+!! [options]
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: true
+Xft.hintstyle: hintfull
+Xft.lcdfilter: lcdfilter
+
+XTerm*renderFont: true
+XTerm*faceName: xft:Hack
+XTerm*faceSize: 9.5
+XTerm*utf8: 2
+XTerm*locale: true
+
+
+!! [colors]
+*background:  #121212
+*foreground:  #c5c8c6
+
+! black
+*color0:  #292d3e
+*color8:  #434758
+
+! red
+*color1:  #a54242
+*color9:  #ff8b92
+
+! green
+*color2:  #c3e88d
+*color10:  #ddffa7
+
+! yellow
+*color3:  #c59d00
+*color11:  #ffe585
+
+! blue
+*color4:  #1378ab
+*color12:  #9cc4ff
+
+! magenta
+*color5:  #c792ea
+*color13:  #e1acff
+
+! cyan
+*color6:  #89ddff
+*color14:  #a3f7ff
+
+! white
+*color7:  #d0d0d0
+*color15:  #ffffff
+
+
+
+!! Transparency (0-1):
+st.alpha: 0.8
+
+!! Set a default font and font size as below:
+st.font: Hack-9.5;
+
+! st.termname: st-256color
+! st.borderpx: 2
+
+!! Set the background, foreground and cursor colors as below:
+*.background: #121212
+*.foreground: #aaaaaa
+*.cursorColor: #aaaaaa
+
+/* !! gruvbox: */
+/* *.color0: #1d2021 */
+/* *.color1: #cc241d */
+/* *.color2: #98971a */
+/* *.color3: #d79921 */
+/* *.color4: #458588 */
+/* *.color5: #b16286 */
+/* *.color6: #689d6a */
+/* *.color7: #a89984 */
+/* *.color8: #928374 */
+/* *.color9: #fb4934 */
+/* *.color10: #b8bb26 */
+/* *.color11: #fabd2f */
+/* *.color12: #83a598 */
+/* *.color13: #d3869b */
+/* *.color14: #8ec07c */
+/* *.color15: #ebdbb2 */
+
+/* !! gruvbox light: */
+/* *.color0: #fbf1c7 */
+/* *.color1: #cc241d */
+/* *.color2: #98971a */
+/* *.color3: #d79921 */
+/* *.color4: #458588 */
+/* *.color5: #b16286 */
+/* *.color6: #689d6a */
+/* *.color7: #7c6f64 */
+/* *.color8: #928374 */
+/* *.color9: #9d0006 */
+/* *.color10: #79740e */
+/* *.color11: #b57614 */
+/* *.color12: #076678 */
+/* *.color13: #8f3f71 */
+/* *.color14: #427b58 */
+/* *.color15: #3c3836 */
+
+/* !! brogrammer: */
+/* *.foreground:  #d6dbe5 */
+/* *.background:  #131313 */
+/* *.color0:      #1f1f1f */
+/* *.color8:      #d6dbe5 */
+/* *.color1:      #f81118 */
+/* *.color9:      #de352e */
+/* *.color2:      #2dc55e */
+/* *.color10:     #1dd361 */
+/* *.color3:      #ecba0f */
+/* *.color11:     #f3bd09 */
+/* *.color4:      #2a84d2 */
+/* *.color12:     #1081d6 */
+/* *.color5:      #4e5ab7 */
+/* *.color13:     #5350b9 */
+/* *.color6:      #1081d6 */
+/* *.color14:     #0f7ddb */
+/* *.color7:      #d6dbe5 */
+/* *.color15:     #ffffff */
+/* *.colorBD:     #d6dbe5 */
+
+/* ! base16 */
+/* *.color0:       #181818 */
+/* *.color1:       #ab4642 */
+/* *.color2:       #a1b56c */
+/* *.color3:       #f7ca88 */
+/* *.color4:       #7cafc2 */
+/* *.color5:       #ba8baf */
+/* *.color6:       #86c1b9 */
+/* *.color7:       #d8d8d8 */
+/* *.color8:       #585858 */
+/* *.color9:       #ab4642 */
+/* *.color10:      #a1b56c */
+/* *.color11:      #f7ca88 */
+/* *.color12:      #7cafc2 */
+/* *.color13:      #ba8baf */
+/* *.color14:      #86c1b9 */
+/* *.color15:      #f8f8f8 */
+
+/* !! solarized */
+/* *.color0:	#073642 */
+/* *.color1:	#dc322f */
+/* *.color2:	#859900 */
+/* *.color3:	#b58900 */
+/* *.color4:	#268bd2 */
+/* *.color5:	#d33682 */
+/* *.color6:	#2aa198 */
+/* *.color7:	#eee8d5 */
+/* *.color9:	#cb4b16 */
+/* *.color8:	#fdf6e3 */
+/* *.color10:	#586e75 */
+/* *.color11:	#657b83 */
+/* *.color12:	#839496 */
+/* *.color13:	#6c71c4 */
+/* *.color14:	#93a1a1 */
+/* *.color15:	#fdf6e3 */
+
+/* !! xterm */
+/* *.color0:   #000000 */
+/* *.color1:   #cd0000 */
+/* *.color2:   #00cd00 */
+/* *.color3:   #cdcd00 */
+/* *.color4:   #0000cd */
+/* *.color5:   #cd00cd */
+/* *.color6:   #00cdcd */
+/* *.color7:   #e5e5e5 */
+/* *.color8:   #4d4d4d */
+/* *.color9:   #ff0000 */
+/* *.color10:  #00ff00 */
+/* *.color11:  #ffff00 */
+/* *.color12:  #0000ff */
+/* *.color13:  #ff00ff */
+/* *.color14:  #00ffff */
+/* *.color15:  #aabac8 */
+
+
+!! Rxvt-unicode
+URxvt.termName: rxvt-unicode-256color
+URxvt*imLocale: pl_PL.UTF-8
+URxvt.font:                xft:Hack:size=9.5
+URxvt.boldFont:            xft:Hack:size=9.5:bold
+URxvt.italicFont:          xft:Hack:size=9.5:italic
+URxvt.boldItalicFont:      xft:Hack:size=9.5:bold:italic
+URxvt.letterSpace:         -1
+URxvt.saveLines:           1000000
+URxvt*color0:              #292d3e
+URxvt*color1:              #a54242
+URxvt*color2:              #c3e88d
+URxvt*color3:              #c59d00
+URxvt*color4:              #317CA5
+URxvt*color5:              #c792ea
+URxvt*color6:              #89ddff
+URxvt*color7:              #d0d0d0
+URxvt*color8:              #434758
+URxvt*color9:              #ff8b92
+URxvt*color10:             #ddffa7
+URxvt*color11:             #ffe585
+URxvt*color12:             #9cc4ff
+URxvt*color13:             #e1acff
+URxvt*color14:             #a3f7ff
+URxvt*color15:             #ffffff
+URxvt*background:          #121212
+URxvt*foreground:          #aaaaaa
+URxvt*cursorColor:         #aaaaaa
+URxvt.internalBorder:      0
+URxvt.externalBorder:      0
+URxvt.scrollBar:           false
+URxvt*fading:              30
+URxvt.perl-ext-common:     default,matcher,clipboard
+URxvt.url-launcher:        vivaldi-snapshot
+URxvt.matcher.button:      1
+URxvt.colorUL:             #317CA5
+URxvt*scrollBar:           false
+URxvt*scrollBar_right:     false
+URxvt*transparent:         false
+URxvt*depth:               32
+URxvt.background:          [80]#121212
+*antialias:  true
+*autohint:   true
+URxvt.clipboard.autocopy: true
+URxvt.keysym.C-c: perl:clipboard:copy
+URxvt.keysym.C-v: perl:clipboard:paste
+Rxvt.iso14755                 : false
+URxvt.iso14755_52             : false
