@@ -51,11 +51,10 @@ conky.config = {
 
 conky.text = [[
 ${color1}${hr}
-${color}${alignc}${font Hack:size=15:weight=bold}${time %a %d %b %Y   %H%M%S}
+${color}${alignc}${font Hack:size=16:weight=bold}${time %a %d %b %Y   %H%M%S}
 
-${color}${alignc}${font Hack:size=11:weight=bold}Czas pracy:  $uptime
+${color}${alignc}${font Hack:size=12:weight=bold}Czas pracy:  $uptime
 ${color1}${hr}
-${alignc}${color}${font Hack:size=9:weight=bold}${texeci 600 weather Łódź 3}
-
+${alignc}${color}${font Hack:size=10:weight=bold}${texeci 600 weather Łódź 3}
 ${color1}${hr}
 ]];
