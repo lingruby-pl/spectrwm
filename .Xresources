@@ -12,6 +12,8 @@ Xft.lcdfilter: lcdfilter
 Xcursor*theme:             LinGruby-drop
 Xcursor*size:              0
 URxvt*termName:            rxvt-unicode-256color
+URxvt*buffered:            false
+URxvt*intensityStyles:     false
 URxvt*imLocale:            pl_PL.UTF-8
 URxvt*font:                xft:Hack:size=9.5, \
                            xft:JoyPixels:size=10, \
@@ -24,42 +26,42 @@ URxvt*letterSpace:         -1
 URxvt*lineSpace:           -1
 URxvt*saveLines:           1000000
 ! special
-URxvt*foreground:   #c5c8c6
-URxvt*background:   [80]#121212
-URxvt*cursorColor:  #c5c8c6
-urxvt*colorBD:      #1378ab
+URxvt*foreground:          #aaaaaa
+URxvt*background:          [80]#121212
+URxvt*cursorColor:         #aaaaaa
+urxvt*colorBD:             #1378ab
 
 ! black
-URxvt*color0:       #282a2e
-URxvt*color8:       #373b41
+URxvt*color0:              #181818
+URxvt*color8:              #585858
 
 ! red
-URxvt*color1:       #a54242
-URxvt*color9:       #cc6666
+URxvt*color1:              #ab4642
+URxvt*color9:              #ab4642
 
 ! green
-URxvt*color2:       #8c9440
-URxvt*color10:      #b5bd68
+URxvt*color2:              #a1b56c
+URxvt*color10:             #a1b56c
 
 ! yellow
-URxvt*color3:       #de935f
-URxvt*color11:      #f0c674
+URxvt*color3:              #f7ca88
+URxvt*color11:             #f7ca88
 
 ! blue
-URxvt*color4:       #5f819d
-URxvt*color12:      #81a2be
+URxvt*color4:              #7cafc2
+URxvt*color12:             #7cafc2
 
 ! magenta
-URxvt*color5:       #85678f
-URxvt*color13:      #b294bb
+URxvt*color5:              #ba8baf
+URxvt*color13:             #ba8baf
 
 ! cyan
-URxvt*color6:       #5e8d87
-URxvt*color14:      #8abeb7
+URxvt*color6:              #86c1b9
+URxvt*color14:             #86c1b9
 
 ! white
-URxvt*color7:       #707880
-URxvt*color15:      #c5c8c6
+URxvt*color7:              #d8d8d8
+URxvt*color15:             #f8f8f8
 
 URxvt*cursorUnderline:     true
 URxvt*cursorBlink:         true
@@ -67,7 +69,7 @@ URxvt*internalBorder:      0
 URxvt*externalBorder:      0
 URxvt*scrollBar:           false
 URxvt*loginShell:          true
-URxvt*fading:              30
+URxvt*fading:              0
 URxvt*perl-ext-common:     default,matcher,clipboard
 URxvt*url-launcher:        vivaldi-snapshot
 URxvt*matcher.button:      1
@@ -92,13 +94,13 @@ XTerm*faceName: xft:Hack
 XTerm*faceSize: 9.5
 XTerm*utf8: 2
 XTerm*locale: true
-URxvt.loginShell: true
+XTerm*loginShell: true
 
 !! [colors]
 ! special
-*foreground:   #c5c8c6
+*foreground:   #aaaaaa
 *background:   #121212
-*cursorColor:  #c5c8c6
+*cursorColor:  #aaaaaa
 
 ! black
 *color0:       #282a2e
@@ -130,7 +132,7 @@ URxvt.loginShell: true
 
 ! white
 *color7:       #707880
-*color15:      #c5c8c6
+*color15:      #d0d0d0
 
 
 !! Transparency (0-1):

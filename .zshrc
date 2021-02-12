@@ -238,7 +238,7 @@ else
 	PUSER3="%F{yellow}─┤%D{%a %d %b %Y} ─ %D{%H%M%S}├─"
 fi
 
-PROMPT='%B$PUSER1%B$PUSER3%B─┤~├─
+PROMPT='%B$PUSER1%B$PUSER3%B─┤%~├─
 %B$PUSER2 '
 
 

@@ -19,29 +19,32 @@ conky.config = {
 	no_buffers = true,
 	text_buffer_size = 2048,
 
-	gap_x = 380,
-	gap_y = 16,
-	minimum_width = 606, minimum_height = 106,
-	maximum_width = 606,
+	gap_x = 349,
+	gap_y = 24,
+	minimum_width = 668, minimum_height = 116,
+	maximum_width = 668,
 	own_window = true,
 	own_window_class = 'Conky',
 	own_window_type = 'override',
 	own_window_transparent = true,
 	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
-	own_window_argb_value = 0,
+	own_window_argb_value = 90,
 	own_window_argb_visual = true,
-	--own_window_colour = '#00000000',
+	--own_window_colour = '#1f1f1f',
 	border_inner_margin = 0,
 	border_outer_margin = 0,
-	alignment = 'top_right',
+	alignment = 'top_left',
 
-	use_xft = true,
-	xftalpha = 1,
-	override_utf8_locale = true,
-
-	draw_borders = false,
-	draw_outline = false,
 	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = false,
+
+	override_utf8_locale = true,
+	use_xft = true,
+	xftalpha = 0.1,
+	uppercase = false,
+	out_to_console = yes,
 
 	default_color = '#888888',
 	color1 = '#505050',
@@ -50,11 +53,11 @@ conky.config = {
 };
 
 conky.text = [[
-${color1}${hr}
+
 ${color}${alignc}${font Hack:size=16:weight=bold}${time %a %d %b %Y   %H%M%S}
 
 ${color}${alignc}${font Hack:size=12:weight=bold}Czas pracy:  $uptime
-${color1}${hr}
+
 ${alignc}${color}${font Hack:size=10:weight=bold}${texeci 600 weather Łódź 3}
-${color1}${hr}
+
 ]];
