@@ -78,16 +78,17 @@ ${color4}${alignc} $sysname $kernel $machine
 
 ${font Hack:size=8:weight=bold}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
 ${color4}Zainstalowane pakiety:               ${color1}${execi 20 pacman -Q | wc -l}
-${color4}Ostatnia aktualizacja:               ${color1}${execi 20 grep "starting full system upgrade" /var/log/pacman.log | tail -n1 | cut --bytes=2-17}
+${color4}Ostatnia aktualizacja:               ${color1}${execi 20 grep "starting full system upgrade" /var/log/pacman.log | tail -n1| cut --bytes=2-17}
 
 ${color4}Procesor i Pamięć: ${color6}${hr}
-${color1}  Użycie procesora  ${color2}${alignc} ${cpubar 4,88} ${alignr} ${color1}$cpu% @ ${freq_g cpu}GHz
+${color1}  Użycie procesora  ${color2}${alignc} ${cpubar 4,88} ${alignr} ${color1}$cpu% z ${freq_g cpu} GHz
 ${color1}Core1:  ${color2}${cpubar cpu0 4,55}  ${color1}${cpu cpu0}% ${alignr}${color1}${cpu cpu2}%  ${color2}${cpubar cpu2 4,55}${color1}  :Core3
 ${color1}Core2:  ${color2}${cpubar cpu1 4,55}  ${color1}${cpu cpu1}% ${alignr}${color1}${cpu cpu3}%  ${color2}${cpubar cpu3 4,55}${color1}  :Core4
 
-${color4}Pamięć RAM ${alignr}${color1}$mem / $memmax ($memperc%)
+${color4}Pamięć RAM: ${color1}${mem} z ${memmax} ($memperc%)${alignr}${color1}Wolna: ${memfree}
+${color1}Bufor: ${buffers} ${alignr}${color1}Pamięć podręczna: ${cached}
 ${color2}${membar 4}
-${color4}Pamięć SWAP ${alignr}${color1}$swap / $swapmax ($swapperc%)
+${color4}Pamięć SWAP:  ${color1}${swap} z ${swapmax} ($swapperc%)
 ${color2}${swapbar 4}
 ${color4}Wykorzystanie Procesora i Pamięci ${alignr} CPU%     MEM%
 ${color1}${top name 1}${alignr}${top cpu 1}   ${top mem 1}
@@ -97,7 +98,6 @@ ${color7}${top name 4}${alignr}${top cpu 4}   ${top mem 4}
 
 ${color4}Temperatura: ${color6}${hr}
 ${color1}${alignc}${color4} CPU: ${color1}${hwmon 0 temp 1}°C${color4} Dysk SSD: ${color1}${hddtemp /dev/sda}°C${color4} Dysk HDD: ${color1}${hddtemp /dev/sdb}°C
-
 ${color4}Bateria: ${color6}${hr}
 ${color1}${alignr} ${if_match ${battery_percent BAT1}<15}${color ff0000}${battery_percent BAT1}% ${battery_time BAT1}${else}${color1} ${battery_percent BAT1}%  ${battery_time BAT1}${endif}
 ${color2}${battery_bar 4,333 BAT1}
