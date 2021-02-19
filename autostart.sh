@@ -22,18 +22,19 @@ export TIME_STYLE='+%a %d %b %Y %H%M%S'
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 # sh /home/lingruby/.config/spectrwm/conky/conky_start.sh &
 # run numlockx on &
-run lightscreen &
-run volumeicon &
-run nm-applet &
-run octopi-notifier &
-run redshift-qt &
+# run volumeicon &
+# run nm-applet &
+# run octopi-notifier &
+# run redshift-qt &
+# run megasync &
 wine start "C:\\Program Files (x86)\\Zegarynka\\Zegarynka.exe" &
-run megasync &
+run lightscreen &
 lxsu sh /usr/local/bin/ifconfig.sh &
 run psi &
 run qtox &
 run owncloud &
-keepassxc &
+run keepassxc &
+run mailspring &
 # run blueman-applet &
 
 echo "AutoStart SpectrWM by LinGruby-Mod..."

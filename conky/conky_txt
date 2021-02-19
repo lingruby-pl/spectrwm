@@ -101,7 +101,7 @@ ${color0}    Ctrl+Alt+i   ${color}	-	nitrogen
 ${color0}    Ctrl+Alt+v   ${color}	-	code-oss
 
 ${color0}    MOD+y        ${color}	-	reload polybar
-${color0}    MOD+q        ${color}	-	reload spectrwm
+${color0}    MOD+w        ${color}	-	reload spectrwm
 ${color0}    MOD+Alt+r    ${color}	-	restart spectrwm
 ${color0}    MOD+Right    ${color}	-	ws_next
 ${color0}    MOD+Left     ${color}	-	ws_prev

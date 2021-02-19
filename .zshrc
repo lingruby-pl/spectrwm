@@ -10,7 +10,7 @@ export LC_CTYPE="pl_PL.UTF-8"
 #=====================================#
 
 if [[ ! -z $COLORTERM ]] && [[ "$COLORTERM" == "truecolor" ]]; then
-    export TERM="rxvt-unicode-256color"
+    export TERM="xterm-256color"
 fi
 
 #=====================================#
@@ -229,17 +229,17 @@ git_prompt() {
 }
 
 if [[ $(id -u) = 0 ]]; then
-	PUSER1="%F{red}┌─┤%B%n%f %F{red}%Bat %B%m├─"
-	PUSER2="%F{red}└─┤%h├──┤%?├─%b%f %#"
-	PUSER3="%F{red}─┤%D{%a %d %b %Y} ─ %D{%H%M%S}├─"
+	PUSER1="%F{blue}┌─┤%F{red}%n at %m%f%F{blue}├─"
+	PUSER2="%F{blue}└─┤%F{red}%h%F{blue}├──┤%F{yellow}%?%f%F{blue}├─╼ »%b%f %#"
+	PUSER3="%F{blue}─┤%F{red}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
 else
-	PUSER1="%F{yellow}┌─┤%B%n%f %F{yellow}%Bat %B%m├─"
-	PUSER2="%F{yellow}└─┤%h├──┤%?├─%b%f %#"
-	PUSER3="%F{yellow}─┤%D{%a %d %b %Y} ─ %D{%H%M%S}├─"
+	PUSER1="%F{blue}┌─┤%F{yellow}%n at %m%f%F{blue}├─"
+	PUSER2="%F{blue}└─┤%F{yellow}%h%F{blue}├──┤%F{red}%?%f%F{blue}├─╼ »%b%f %#"
+	PUSER3="%F{blue}─┤%F{yellow}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
 fi
 
-PROMPT='%B$PUSER1%B$PUSER3%B─┤%~├─
-%B$PUSER2 '
+PROMPT='$PUSER1$PUSER3─┤%~├─╼
+$PUSER2 '
 
 
 #=====================================#
@@ -309,7 +309,7 @@ man() {
 }
 ########################################## }}}
 
-export TERM=rxvt-unicode-256color
+export TERM=termite
 export TIME_STYLE='+%a %d %b %Y %H%M%S'
 
 # report about cpu-/system-/user-time of command if running longer than

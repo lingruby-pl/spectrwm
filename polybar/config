@@ -111,7 +111,7 @@ override-redirect = true
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 2
+border-size = 0
 ;border-left-size = 0
 ;border-right-size = 25
 ;border-top-size = 0
