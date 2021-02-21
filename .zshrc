@@ -230,15 +230,15 @@ git_prompt() {
 
 if [[ $(id -u) = 0 ]]; then
 	PUSER1="%F{blue}┌─┤%F{red}%n at %m%f%F{blue}├─"
-	PUSER2="%F{blue}└─┤%F{red}%h%F{blue}├──┤%F{yellow}%?%f%F{blue}├─╼ »%b%f %#"
-	PUSER3="%F{blue}─┤%F{red}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
+	PUSER2="%F{blue}└─┤%F{red}%h%F{blue}├─┤%F{yellow}%?%f%F{blue}├─☛%b%f %#"
+	PUSER3="%F{blue}┤%F{red}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
 else
 	PUSER1="%F{blue}┌─┤%F{yellow}%n at %m%f%F{blue}├─"
-	PUSER2="%F{blue}└─┤%F{yellow}%h%F{blue}├──┤%F{red}%?%f%F{blue}├─╼ »%b%f %#"
-	PUSER3="%F{blue}─┤%F{yellow}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
+	PUSER2="%F{blue}└─┤%F{yellow}%h%F{blue}├─┤%F{red}%?%f%F{blue}├─☛%b%f %#"
+	PUSER3="%F{blue}┤%F{yellow}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
 fi
 
-PROMPT='$PUSER1$PUSER3─┤%~├─╼
+PROMPT='$PUSER1$PUSER3┤%~├─
 $PUSER2 '
 
 
