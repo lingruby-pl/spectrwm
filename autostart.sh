@@ -27,13 +27,13 @@ export TIME_STYLE='+%a %d %b %Y %H%M%S'
 # run octopi-notifier &
 # run redshift-qt &
 # run megasync &
+# run keepassxc &
 wine start "C:\\Program Files (x86)\\Zegarynka\\Zegarynka.exe" &
 run lightscreen &
 lxsu sh /usr/local/bin/ifconfig.sh &
 run psi &
 run qtox &
 run owncloud &
-run keepassxc &
 run mailspring &
 # run blueman-applet &
 

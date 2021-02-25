@@ -3,14 +3,14 @@
 #######################################
 
 # protect special characters
-export LC_CTYPE="pl_PL.UTF-8"
+export LANG="pl_PL.UTF-8"
 
 #=====================================#
 # Default colors                      #
 #=====================================#
 
 if [[ ! -z $COLORTERM ]] && [[ "$COLORTERM" == "truecolor" ]]; then
-    export TERM="xterm-256color"
+    export TERM="st-256color"
 fi
 
 #=====================================#
@@ -28,31 +28,32 @@ setopt nobeep
 # cd when only a path is given
 setopt autocd
 
-########## syntax highlighting ########### {{{
+########## syntax highlighting ###########
 if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
   source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-########################################## }}}
+##########################################
 
-######## commands autosuggestion ######### {{{
+######## commands autosuggestion #########
 if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
 	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
-########################################## }}}
+##########################################
 
-######## fast-syntax-highlighting ######## {{{
+######## fast-syntax-highlighting ########
 if [[ -f /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]]; then
 	source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 fi
-########################################## }}}
+##########################################
 
 #=====================================#
 # History settings                    #
 #=====================================#
 
-export HISTFILE=~/.zsh_history
-export HISTSIZE=1000000
-export SAVEHIST=1000000
+HISTFILE=~/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+HISTTIMEFORMAT="%F %T "
 setopt append_history			# default
 setopt BANG_HIST				# Treat the '!' character specially during expansion.
 setopt extended_history			# Write the history file in the ":start:elapsed;command" format.
@@ -69,7 +70,8 @@ setopt HIST_SAVE_NO_DUPS		# Don't write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS		# Remove superfluous blanks before recording entry.
 setopt HIST_VERIFY				# Don't execute immediately upon history expansion.
 
-# History search {{{
+# History search
+
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -84,8 +86,6 @@ fi
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# }}}
-
 #=====================================#
 # Load zsh modules                    #
 #=====================================#
@@ -93,8 +93,37 @@ bindkey '^[[B' history-substring-search-down
 # Basic auto/tab complete:
 autoload -Uz compinit
 compinit
+
 # Completion for kitty
 kitty + complete setup zsh | source /dev/stdin
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_osc7
+fi
+
+if [[ $TERM == xterm-termite ]]; then
+  . /etc/profile.d/vte.sh
+  __vte_prompt_command
+fi
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+    function zle-line-init () {
+        echoti smkx
+    }
+    function zle-line-finish () {
+        echoti rmkx
+    }
+    zle -N zle-line-init
+    zle -N zle-line-finish
+fi
 
 
 # End of lines added by compinstall
@@ -121,60 +150,6 @@ zstyle ':completion:*:sudo:*' command-path /usr/local/sbin \
                                            /bin
 
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
-
-# Use vim keys in tab complete menu:
-bindkey -v '^?' backward-delete-char
-
-# Change cursor shape for different vi modes.
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'underline' ]]; then
-    echo -ne '\e[3 q'
-
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'underline' ]]; then
-    echo -ne '\e[3 q'
-  fi
-}
-zle -N zle-keymap-select
-
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[3 q"
-}
-zle -N zle-line-init
-
-# Use beam shape cursor on startup.
-echo -ne '\e[3 q'
-# Use beam shape cursor for each new prompt.
-preexec() { echo -ne '\e[3 q' ;}
-
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
-
-bindkey -s '^o' 'lfcd\n'  # zsh
-
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-
 #=====================================#
 # Load config                         #
 #=====================================#
@@ -183,20 +158,6 @@ if [[ -e $HOME/.zshrc.config ]]; then
     source $HOME/.zshrc.config
 elif [[ -e /etc/zsh/.zshrc.config ]]; then
     source /etc/zsh/.zshrc.config
-fi
-
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-        source /etc/profile.d/vte.sh
-fi
-
-if [[ $TERM == xterm-termite ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_osc7
-fi
-
-if [[ $TERM == xterm-termite ]]; then
-  . /etc/profile.d/vte.sh
-  __vte_prompt_command
 fi
 
 #=====================================#
@@ -214,8 +175,6 @@ fi
 #=====================================#
 
 # prompt settings
-#promptinit
-#prompt walters
 setopt prompt_subst
 
 git_prompt() {
@@ -230,11 +189,11 @@ git_prompt() {
 
 if [[ $(id -u) = 0 ]]; then
 	PUSER1="%F{blue}┌─┤%F{red}%n at %m%f%F{blue}├─"
-	PUSER2="%F{blue}└─┤%F{red}%h%F{blue}├─┤%F{yellow}%?%f%F{blue}├─☛%b%f %#"
+	PUSER2="%F{blue}└─┤%F{red}%h%F{blue}├─┤%F{yellow}%?%f%F{blue}├─>%b%f %#"
 	PUSER3="%F{blue}┤%F{red}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
 else
 	PUSER1="%F{blue}┌─┤%F{yellow}%n at %m%f%F{blue}├─"
-	PUSER2="%F{blue}└─┤%F{yellow}%h%F{blue}├─┤%F{red}%?%f%F{blue}├─☛%b%f %#"
+	PUSER2="%F{blue}└─┤%F{yellow}%h%F{blue}├─┤%F{red}%?%f%F{blue}├─>%b%f %#"
 	PUSER3="%F{blue}┤%F{yellow}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
 fi
 
@@ -295,7 +254,7 @@ POWERLEVEL10K_VCS_MAX_SYNC_LATENCY_SECONDS='0.05'
 POWERLEVEL10K_VI_INSERT_MODE_STRING='INSERT'
 POWERLEVEL10K_VI_COMMAND_MODE_STRING='NORMAL'﻿
 
-########### coloured manuals ############# {{{
+########### coloured manuals #############
 man() {
   env \
     LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -307,9 +266,9 @@ man() {
     LESS_TERMCAP_us=$(printf "\e[1;32m") \
     man "$@"
 }
-########################################## }}}
+##########################################
 
-export TERM=termite
+export TERM=st
 export TIME_STYLE='+%a %d %b %Y %H%M%S'
 
 # report about cpu-/system-/user-time of command if running longer than

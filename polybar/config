@@ -111,12 +111,12 @@ override-redirect = true
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 0
+border-size = 1
 ;border-left-size = 0
 ;border-right-size = 25
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = #000000
+border-color = #1793d1
 
 padding-left = 0
 padding-right = 0
@@ -126,7 +126,7 @@ module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "Hack:size=9:weight=bold;2"
-font-1 = "Noto Color Emoji:scale=13"
+font-1 = "JoyPixels:scale=13:antialias=true:autohint=true"
 
 modules-left = checkupdates auracle cpu2 memory2 wired-network networkspeeddown networkspeedup vpn-wireguard-wg pub-ip weather
 modules-center =
@@ -175,12 +175,12 @@ override-redirect = true
 ; See the Messaging wiki page for more details.
 enable-ipc = true
 
-border-size = 2
+border-size = 1
 ;border-left-size = 0
 ;border-right-size = 25
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = #000000
+border-color = #1793d1
 
 padding-left = 0
 padding-right = 0
@@ -190,7 +190,7 @@ module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
 font-0 = "Hack:size=9:weight=bold;2"
-font-1 = "Noto Color Emoji:scale=13"
+font-1 = "JoyPixels:scale=13:antialias=true:autohint=true"
 
 modules-left = checkupdates auracle cpu2 memory2 wired-network networkspeeddown networkspeedup vpn-wireguard-wg pub-ip weather
 modules-center =
@@ -888,6 +888,8 @@ format-muted-background = ${colors.background}
 
 [module/weather]
 type = custom/script
+format =<label> |
+label = %output:2%
 interval = 600
 exec = weather Łódź 4
 click-left = xterm -title 'Pogoda' -geometry 125x45 +sb -hold -e weather Łódź 1 &

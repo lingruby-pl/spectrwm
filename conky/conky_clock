@@ -58,6 +58,6 @@ ${color}${alignc}${font Hack:size=16:weight=bold}${time %a %d %b %Y   %H%M%S}
 
 ${color}${alignc}${font Hack:size=12:weight=bold}Czas pracy:  $uptime
 
-${alignc}${color}${font Hack:size=10:weight=bold}${texeci 600 weather Łódź 3}
+${color}${alignc}${font Hack:size=10:weight=bold}${texeci 600 weather Łódź 1 | sed -n '2,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
 
 ]];
