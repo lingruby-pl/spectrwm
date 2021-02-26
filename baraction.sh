@@ -14,6 +14,6 @@ weather() {
       SLEEP_SEC=2
       #loops forever outputting a line every SLEEP_SEC secs
       while :; do     
-    echo "|$(weather) "
+    echo "$(weather) "
 		sleep $SLEEP_SEC
 		done

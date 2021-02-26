@@ -100,7 +100,7 @@ radius-top = 0.0
 radius-bottom = 0.0
 fixed-center = true
 bottom = false
-separator = |
+separator = ❱
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -116,7 +116,7 @@ border-size = 1
 ;border-right-size = 25
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = #1793d1
+border-color = #000000
 
 padding-left = 0
 padding-right = 0
@@ -164,7 +164,7 @@ radius-top = 0.0
 radius-bottom = 0.0
 fixed-center = true
 bottom = false
-separator = |
+separator = ❱
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -180,7 +180,7 @@ border-size = 1
 ;border-right-size = 25
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = #1793d1
+border-color = #000000
 
 padding-left = 0
 padding-right = 0
@@ -213,7 +213,7 @@ exec = cat /tmp/pak-checkupdates | wc -l
 ;exec-if = ls /tmp/checkupdates
 interval = 5
 
-format =| PAK <label>
+format =❘ ❘ PAK <label>
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 ;format-padding = 4
@@ -888,7 +888,7 @@ format-muted-background = ${colors.background}
 
 [module/weather]
 type = custom/script
-format =<label> |
+format =<label> ❱
 label = %output:2%
 interval = 600
 exec = weather Łódź 4

@@ -28,12 +28,12 @@ URxvt*saveLines:           2000
 
 ! special
 URxvt*foreground:          #a0a0a0
-URxvt*background:          [80]#121212
+URxvt*background:          [80]#111111
 URxvt*cursorColor:         #a0a0a0
 urxvt*colorBD:             #1378ab
 
 ! black
-URxvt*color0:              #121212
+URxvt*color0:              #111111
 URxvt*color8:              #585858
 
 ! red
@@ -100,11 +100,11 @@ XTerm*loginShell: true
 !! [colors]
 ! special
 *foreground:   #a0a0a0
-*background:   #121212
+*background:   #111111
 *cursorColor:  #a0a0a0
 
 ! black
-*color0:              #121212
+*color0:              #111111
 *color8:              #585858
 
 ! red
@@ -149,13 +149,13 @@ st.font: Hack-9;
 
 ! special
 *.foreground:          #a0a0a0
-*.background:          #121212
+*.background:          #111111
 *.cursorColor:         #a0a0a0
 
 !! st-night:
 
 ! black
-*.color0:              #121212
+*.color0:              #111111
 *.color8:              #585858
 
 ! red
