@@ -30,7 +30,7 @@ case "$2" in
     ;;
 *)
     if [ "$(connection_status)" = "1" ]; then
-        echo "Vpn  Up"
+        echo "VPN UP"
         #echo "#1 $name"
         # alternatively use below commands to print VPN's IP/subnet
         # vpn_ip=$(ip a show $name primary | grep "inet" | awk -v OFS="\n" '{ print $2 }')
@@ -38,7 +38,7 @@ case "$2" in
     elif [ "$(connection_status)" = "3" ]; then
         echo "#3 Config not found!"
     else
-        echo "Vpn  Down"
+        echo "VPN DOWN"
         #echo "#2 down"
         # alternatively use a symbol:
         # color="#f90000"

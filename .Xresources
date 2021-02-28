@@ -15,13 +15,13 @@ URxvt*termName:            rxvt-unicode-256color
 URxvt*buffered:            false
 URxvt*intensityStyles:     false
 URxvt*imLocale:            pl_PL.UTF-8
-URxvt*font:                xft:Hack:size=9.5, \
-                           xft:JoyPixels:size=10, \
-                           xft:Noto Color Emoji:size=10, \
-                           xft:Symbola:size=10:minspace=False
-URxvt*boldFont:            xft:Hack:size=9.5:bold
-URxvt*italicFont:          xft:Hack:size=9.5:italic
-URxvt*boldItalicFont:      xft:Hack:size=9.5:bold:italic
+URxvt*geometry:            125x45
+URxvt*font:                xft:Hack:regular:size=9.5:antialias=true:hinting=true, \
+                           xft:Noto Emoji:pixelsize=6:minspace=False:antialias=false, \
+                           xft:Symbola:pixelsize=6:minspace=False:antialias=False
+URxvt*boldFont:            xft:Hack:bold:size=9.5:antialias=true:hinting=true
+URxvt*italicFont:          xft:Hack:italic:size=9.5:antialias=true:hinting=true
+URxvt*boldItalicFont:      xft:Hack:bold:italic:size=9.5:antialias=true:hinting=true
 URxvt*letterSpace:         -1
 URxvt*lineSpace:           -1
 URxvt*saveLines:           2000
@@ -49,8 +49,8 @@ URxvt*color3:              #E0AF68
 URxvt*color11:             #E0AF68
 
 ! blue
-URxvt*color4:              #1793d1
-URxvt*color12:             #1793d1
+URxvt*color4:              #4682B4
+URxvt*color12:             #4682B4
 
 ! magenta
 URxvt*color5:              #9a7ecc
@@ -74,7 +74,7 @@ URxvt*fading:              0
 URxvt*perl-ext-common:     default,matcher,clipboard
 URxvt*url-launcher:        vivaldi-snapshot
 URxvt*matcher.button:      1
-URxvt*colorUL:             #0087bd
+URxvt*colorUL:             #98be65
 URxvt.scrollBar:           false
 URxvt*scrollBar_right:     false
 URxvt*transparent:         false
@@ -82,8 +82,8 @@ URxvt*depth:               32
 *antialias:                true
 *autohint:                 true
 URxvt*clipboard.autocopy:  true
-URxvt*keysym.C-c:          perl:clipboard:copy
-URxvt*keysym.C-v:          perl:clipboard:paste
+URxvt*keysym.S-C-C:          perl:clipboard:copy
+URxvt*keysym.S-C-V:          perl:clipboard:paste
 Rxvt*iso14755:             false
 URxvt*iso14755_52:         false
 URxvt*skipBuiltinGlyphs:   true
@@ -120,8 +120,8 @@ XTerm*loginShell: true
 *color11:             #E0AF68
 
 ! blue
-*color4:              #1793d1
-*color12:             #1793d1
+*color4:              #4682B4
+*color12:             #4682B4
 
 ! magenta
 *color5:              #9a7ecc
@@ -140,7 +140,7 @@ XTerm*loginShell: true
 st.alpha: 0.80
 
 !! Set a default font and font size as below:
-st.font: Hack-9;
+st.font: Hack:regular:size=9:antialias=true:hinting=true;
 
 ! st.termname: st-256color
 ! st.borderpx: 2
@@ -171,8 +171,8 @@ st.font: Hack-9;
 *.color11:             #E0AF68
 
 ! blue
-*.color4:              #1793d1
-*.color12:             #1793d1
+*.color4:              #4682B4
+*.color12:             #4682B4
 
 ! magenta
 *.color5:              #9a7ecc

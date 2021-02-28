@@ -10,7 +10,7 @@ export LANG="pl_PL.UTF-8"
 #=====================================#
 
 if [[ ! -z $COLORTERM ]] && [[ "$COLORTERM" == "truecolor" ]]; then
-    export TERM="st-256color"
+    export TERM="rxvt-unicode-256color"
 fi
 
 #=====================================#
@@ -115,12 +115,9 @@ fi
 # active. Only then are the values from $terminfo valid.
 
 if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
-    function zle-line-init () {
-        echoti smkx
-    }
-    function zle-line-finish () {
-        echoti rmkx
-    }
+    function zle-line-init () { echoti smkx }
+    function zle-line-finish () { echoti rmkx }
+
     zle -N zle-line-init
     zle -N zle-line-finish
 fi
@@ -176,6 +173,7 @@ fi
 
 # prompt settings
 setopt prompt_subst
+autoload -U colors && colors	# Load colors
 
 git_prompt() {
 	BRANCH=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/*\(.*\)/\1/')
@@ -188,16 +186,16 @@ git_prompt() {
 }
 
 if [[ $(id -u) = 0 ]]; then
-	PUSER1="%F{blue}┌─┤%F{red}%n at %m%f%F{blue}├─"
-	PUSER2="%F{blue}└─┤%F{red}%h%F{blue}├─┤%F{yellow}%?%f%F{blue}├─>%b%f %#"
-	PUSER3="%F{blue}┤%F{red}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
+	PUSER1="%F{blue}┌[%F{red}%n at %m%f%F{blue}]-"
+	PUSER2="%F{blue}└[%F{red}%h%F{blue}]-[%F{yellow}%?%f%F{blue}]->%b%f %#"
+	PUSER3="%F{blue}[%F{red}%D{%a %d %b %Y} - %D{%H%M%S}%f%F{blue}]-[%F{red}%~%F{blue}]-"
 else
-	PUSER1="%F{blue}┌─┤%F{yellow}%n at %m%f%F{blue}├─"
-	PUSER2="%F{blue}└─┤%F{yellow}%h%F{blue}├─┤%F{red}%?%f%F{blue}├─>%b%f %#"
-	PUSER3="%F{blue}┤%F{yellow}%D{%a %d %b %Y} ─ %D{%H%M%S}%f%F{blue}├─"
+	PUSER1="%F{blue}┌[%F{yellow}%n at %m%f%F{blue}]-"
+	PUSER2="%F{blue}└[%F{yellow}%h%F{blue}]-[%F{red}%?%f%F{blue}]->%b%f %#"
+	PUSER3="%F{blue}[%F{yellow}%D{%a %d %b %Y} - %D{%H%M%S}%f%F{blue}]-[%F{yellow}%~%F{blue}]-"
 fi
 
-PROMPT='$PUSER1$PUSER3┤%~├─
+PROMPT='$PUSER1$PUSER3
 $PUSER2 '
 
 
@@ -236,6 +234,7 @@ alias al='alsi -l'
 alias cm='cmatrix'
 alias pogoda='curl -H "Accept-Language: pl" wttr.in/Łódź'
 alias gitu='git add . && git commit && git push'
+alias yt='ytfzf -t'
 
 #=====================================#
 # Sources                             #
@@ -268,8 +267,10 @@ man() {
 }
 ##########################################
 
-export TERM=st
+export TERM=rxvt-unicode-256color
 export TIME_STYLE='+%a %d %b %Y %H%M%S'
+
+export YTFZF_LOOP=1 YTFZF_HIST=1 YTFZF_PREF="bestvideo[height<=?1080]+bestaudio/best"
 
 # report about cpu-/system-/user-time of command if running longer than
 # 5 seconds
