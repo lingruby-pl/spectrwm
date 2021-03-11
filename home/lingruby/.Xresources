@@ -1,12 +1,30 @@
 !! [options]
+! ------------------------------------------------------------------------------
+! Xft Font Configuration
+! ------------------------------------------------------------------------------
 
-Xft.dpi: 96
-Xft.antialias: true
-Xft.hinting: true
-Xft.rgba: rgb
-Xft.autohint: true
+!! Xft.dpi: 96
+Xft.autohint: 0
 Xft.hintstyle: hintfull
 Xft.lcdfilter: lcdfilter
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.rgba: rgb
+
+! ------------------------------------------------------------------------------
+! URxvt Fonts
+! ------------------------------------------------------------------------------
+
+URxvt*font:                xft:Hack:regular:size=9.5:antialias=true:hinting=true, \
+                           xft:Noto Emoji:pixelsize=6:minspace=False:antialias=false, \
+                           xft:Symbola:pixelsize=6:minspace=False:antialias=False
+URxvt*boldFont:            xft:Hack:bold:size=9.5:antialias=true:hinting=true
+URxvt*italicFont:          xft:Hack:italic:size=9.5:antialias=true:hinting=true
+URxvt*boldItalicFont:      xft:Hack:bold:italic:size=9.5:antialias=true:hinting=true
+
+! ------------------------------------------------------------------------------
+! URxvt configs
+! ------------------------------------------------------------------------------
 
 !! Rxvt-unicode
 Xcursor*theme:             LinGruby-drop
@@ -16,29 +34,51 @@ URxvt*buffered:            false
 URxvt*intensityStyles:     false
 URxvt*imLocale:            pl_PL.UTF-8
 URxvt*geometry:            125x45
-URxvt*font:                xft:Hack:regular:size=9.5:antialias=true:hinting=true, \
-                           xft:Noto Emoji:pixelsize=6:minspace=False:antialias=false, \
-                           xft:Symbola:pixelsize=6:minspace=False:antialias=False
-URxvt*boldFont:            xft:Hack:bold:size=9.5:antialias=true:hinting=true
-URxvt*italicFont:          xft:Hack:italic:size=9.5:antialias=true:hinting=true
-URxvt*boldItalicFont:      xft:Hack:bold:italic:size=9.5:antialias=true:hinting=true
 URxvt*letterSpace:         -1
 URxvt*lineSpace:           -1
-URxvt*saveLines:           2000
+URxvt*saveLines:           15000
+URxvt*cursorUnderline:     true
+URxvt*cursorBlink:         true
+URxvt*internalBorder:      2
+URxvt*externalBorder:      2
+URxvt*scrollBar:           false
+URxvt*loginShell:          true
+URxvt*fading:              0
+URxvt*perl-ext-common:     default,matcher,clipboard
+URxvt*url-launcher:        vivaldi-snapshot
+URxvt*matcher.button:      1
+URxvt*colorUL:             #5F819D
+URxvt.underlineURLs:       true
+URxvt.scrollBar:           false
+URxvt*scrollBar_right:     false
+URxvt*transparent:         false
+URxvt*depth:               32
+*antialias:                true
+*autohint:                 true
+URxvt*clipboard.autocopy:  true
+URxvt*keysym.S-C-C:        perl:clipboard:copy
+URxvt*keysym.S-C-V:        perl:clipboard:paste
+Rxvt*iso14755:             false
+URxvt*iso14755_52:         false
+URxvt*skipBuiltinGlyphs:   true
+
+! ------------------------------------------------------------------------------
+! URxvt Colors
+! ------------------------------------------------------------------------------
 
 ! special
 URxvt*foreground:          #a0a0a0
 URxvt*background:          [80]#111111
 URxvt*cursorColor:         #a0a0a0
-urxvt*colorBD:             #1378ab
+urxvt*colorBD:             #447999
 
 ! black
 URxvt*color0:              #111111
 URxvt*color8:              #585858
 
 ! red
-URxvt*color1:              #ab4642
-URxvt*color9:              #ab4642
+URxvt*color1:              #BF616A
+URxvt*color9:              #BF616A
 
 ! green
 URxvt*color2:              #9ECE6A
@@ -49,45 +89,31 @@ URxvt*color3:              #E0AF68
 URxvt*color11:             #E0AF68
 
 ! blue
-URxvt*color4:              #4682B4
-URxvt*color12:             #4682B4
+URxvt*color4:              #447999
+URxvt*color12:             #447999
 
 ! magenta
 URxvt*color5:              #9a7ecc
 URxvt*color13:             #9a7ecc
 
 ! cyan
-URxvt*color6:              #86c1b9
-URxvt*color14:             #86c1b9
+URxvt*color6:              #88C0D0
+URxvt*color14:             #88C0D0
 
 ! white
 URxvt*color7:              #a0a0a0
 URxvt*color15:             #d8d8d8
 
-URxvt*cursorUnderline:     true
-URxvt*cursorBlink:         true
-URxvt*internalBorder:      0
-URxvt*externalBorder:      0
-URxvt*scrollBar:           false
-URxvt*loginShell:          true
-URxvt*fading:              0
-URxvt*perl-ext-common:     default,matcher,clipboard
-URxvt*url-launcher:        vivaldi-snapshot
-URxvt*matcher.button:      1
-URxvt*colorUL:             #98be65
-URxvt.scrollBar:           false
-URxvt*scrollBar_right:     false
-URxvt*transparent:         false
-URxvt*depth:               32
-*antialias:                true
-*autohint:                 true
-URxvt*clipboard.autocopy:  true
-URxvt*keysym.S-C-C:          perl:clipboard:copy
-URxvt*keysym.S-C-V:          perl:clipboard:paste
-Rxvt*iso14755:             false
-URxvt*iso14755_52:         false
-URxvt*skipBuiltinGlyphs:   true
+! ------------------------------------------------------------------------------
+! Rofi configs
+! ------------------------------------------------------------------------------
 
+! Rofi
+rofi.font: Hack 9.5
+
+! ------------------------------------------------------------------------------
+! XTerm:UXterm configs
+! ------------------------------------------------------------------------------
 
 !! XTerm:UXterm
 XTerm*renderFont: true
@@ -97,7 +123,10 @@ XTerm*utf8: 2
 XTerm*locale: true
 XTerm*loginShell: true
 
-!! [colors]
+! ------------------------------------------------------------------------------
+! Colors XTerm:UXterm
+! ------------------------------------------------------------------------------
+
 ! special
 *foreground:   #a0a0a0
 *background:   #111111
@@ -108,8 +137,8 @@ XTerm*loginShell: true
 *color8:              #585858
 
 ! red
-*color1:              #ab4642
-*color9:              #ab4642
+*color1:              #BF616A
+*color9:              #BF616A
 
 ! green
 *color2:              #9ECE6A
@@ -120,21 +149,24 @@ XTerm*loginShell: true
 *color11:             #E0AF68
 
 ! blue
-*color4:              #4682B4
-*color12:             #4682B4
+*color4:              #447999
+*color12:             #447999
 
 ! magenta
 *color5:              #9a7ecc
 *color13:             #9a7ecc
 
 ! cyan
-*color6:              #86c1b9
-*color14:             #86c1b9
+*color6:              #88C0D0
+*color14:             #88C0D0
 
 ! white
 *color7:              #a0a0a0
 *color15:             #d8d8d8
 
+! ------------------------------------------------------------------------------
+! st configs
+! ------------------------------------------------------------------------------
 
 !! Transparency (0-1):
 st.alpha: 0.80
@@ -146,6 +178,10 @@ st.font: Hack:regular:size=9:antialias=true:hinting=true;
 ! st.borderpx: 2
 
 !! Set the background, foreground and cursor colors as below:
+
+! ------------------------------------------------------------------------------
+! st Colors
+! ------------------------------------------------------------------------------
 
 ! special
 *.foreground:          #a0a0a0
@@ -159,8 +195,8 @@ st.font: Hack:regular:size=9:antialias=true:hinting=true;
 *.color8:              #585858
 
 ! red
-*.color1:              #ab4642
-*.color9:              #ab4642
+*.color1:              #BF616A
+*.color9:              #BF616A
 
 ! green
 *.color2:              #9ECE6A
@@ -171,23 +207,24 @@ st.font: Hack:regular:size=9:antialias=true:hinting=true;
 *.color11:             #E0AF68
 
 ! blue
-*.color4:              #4682B4
-*.color12:             #4682B4
+*.color4:              #447999
+*.color12:             #447999
 
 ! magenta
 *.color5:              #9a7ecc
 *.color13:             #9a7ecc
 
 ! cyan
-*.color6:              #86c1b9
-*.color14:             #86c1b9
+*.color6:              #88C0D0
+*.color14:             #88C0D0
 
 ! white
 *.color7:              #a0a0a0
 *.color15:             #d8d8d8
 
-
-
+! ------------------------------------------------------------------------------
+! Custom Colors
+! ------------------------------------------------------------------------------
 
 /* !! gruvbox: */
 /* *.color0: #1d2021 */
