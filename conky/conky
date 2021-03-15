@@ -12,6 +12,8 @@ mod: LinGruby
 conky.config = {
 
 	background = true,
+	background_color= '000000',
+	use_spacer = 'none',
 	update_interval = 1,
 	total_run_times = 0,
 
@@ -21,42 +23,34 @@ conky.config = {
 
 	double_buffer = true,
 	no_buffers = true,
-	text_buffer_size = 2560,
+	text_buffer_size = 8192,
 
-	gap_x = 15,
-	gap_y = 25,
-	minimum_width = 333, minimum_height = 333,
-	maximum_width = 333,
+	gap_x = 20,
+	gap_y = 35,
+	minimum_width = 303, minimum_height = 5,
+	maximum_width = 303,
 	own_window = true,
-	own_window_class = 'Conky',
 	own_window_type = 'override',
 	own_window_transparent = true,
-	own_window_hints = 'undecorated,sticky,skip_taskbar,skip_pager,below',
-	own_window_argb_value = 200,
-	own_window_argb_visual = true,
-	own_window_colour = '#000000',
-	border_width = 0,
-	border_inner_margin = 0,
+	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
+	own_window_colour = black,
+	own_window_class= 'Conky',
+	draw_borders = true,
+	stippled_borders = 3,
+	border_inner_margin = 5,
 	border_outer_margin = 0,
-	border_margin = 0,
+	border_width = 2,
 	alignment = 'top_right',
-
-	draw_shades = false,
-	draw_outline = false,
-	draw_borders = false,
-	draw_graph_borders = false,
-	extra_newline = false,
 
 	override_utf8_locale = true,
 	use_xft = true,
-	font = 'Hack:size=8:weight=bold',
-	--xftalpha = 0,1,
+	font = 'Hack Nerd Font Mono:size=8:weight=bold',
+	xftalpha = 1,
 	uppercase = false,
-	use_spacer = 'none',
-	out_to_console = false,
-	out_to_ncurses = false,
-	out_to_stderr = false,
 	out_to_x = true,
+	draw_borders = false,
+	draw_outline = false,
+	draw_shades = false,
 
 
 	default_color = '#888888',
@@ -75,20 +69,20 @@ conky.config = {
 };
 
 conky.text = [[
-${image /home/lingruby/.config/spectrwm/conky/128.png -p 0,17 -s 70x70}${image /home/lingruby/.config/spectrwm/conky/128.png -p 264,17 -s 70x70}
-${font Hack:size=8:weight=bold}${color4}${alignc} Arch Linux - SpectrWM
+${image /home/lingruby/.config/spectrwm/conky/128.png -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/128.png -p 243,5 -s 60x60}
+${font Hack Nerd Font Mono:size=8:weight=bold}${color4}${alignc} Arch Linux - SpectrWM
 
 ${color4}${alignc} GNU/Linux rolling
 ${color4}${alignc} Lekka dystrybucja Linuksa.
 
 ${color4}${alignc} $sysname $kernel $machine
 
-${font Hack:size=8:weight=bold}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
+${font Hack Nerd Font Mono:size=8:weight=bold}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
 ${color4}Zainstalowane pakiety:               ${color1}${execi 20 pacman -Q | wc -l}
 ${color4}Ostatnia aktualizacja:               ${color1}${execi 20 grep "starting full system upgrade" /var/log/pacman.log | tail -n1| cut --bytes=2-17}
 
 ${color4}Procesor i Pamięć: ${color6}${hr}
-${color1}  Użycie procesora  ${color2}${alignc} ${cpubar 4,88} ${alignr} ${color1}$cpu% z ${freq_g cpu} GHz
+${color1}  Użycie procesora  ${color2}${alignc} ${cpubar 4,66} ${alignr} ${color1}$cpu% z ${freq_g cpu} GHz
 ${color1}Core1:  ${color2}${cpubar cpu0 4,55}  ${color1}${cpu cpu0}% ${alignr}${color1}${cpu cpu2}%  ${color2}${cpubar cpu2 4,55}${color1}  :Core3
 ${color1}Core2:  ${color2}${cpubar cpu1 4,55}  ${color1}${cpu cpu1}% ${alignr}${color1}${cpu cpu3}%  ${color2}${cpubar cpu3 4,55}${color1}  :Core4
 
@@ -107,7 +101,7 @@ ${color4}Temperatura: ${color6}${hr}
 ${color1}${alignc}${color4} CPU: ${color1}${hwmon 0 temp 1}°C${color4} Dysk SSD: ${color1}${hddtemp /dev/sda}°C${color4} Dysk HDD: ${color1}${hddtemp /dev/sdb}°C
 ${color4}Bateria: ${color6}${hr}
 ${color1}${alignr} ${if_match ${battery_percent BAT1}<15}${color ff0000}${battery_percent BAT1}% ${battery_time BAT1}${else}${color1} ${battery_percent BAT1}%  ${battery_time BAT1}${endif}
-${color2}${battery_bar 4,333 BAT1}
+${color2}${battery_bar 4,303 BAT1}
 
 ${color4}Dysk: ${color6}${hr}
 ${color4}Linux: ${color1} (${fs_type})    ${alignc}${color1}${fs_size /} > ${color1}${fs_used /}${color2} ${alignr}${fs_bar 3,66} ${color4}(${fs_used_perc /}%)

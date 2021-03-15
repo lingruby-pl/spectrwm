@@ -1,6 +1,7 @@
-#######################################
+########################################
 #Mod by LinGruby .zshrc               #
 #######################################
+
 
 # Colors in less
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -83,7 +84,7 @@ setopt autocd
 # enable interactivecomments
 setopt interactivecomments
 # Disable flowcontrol
-stty -ixon
+#stty -ixon
 
 # Autoload
 autoload -Uz colors && colors
@@ -95,9 +96,14 @@ compinit
 HISTSIZE=1000000
 SAVEHIST=9000000
 HISTFILE=~/.zsh_history
+
+###### zsh-history-substring-search #######
 if [[ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
 	source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 fi
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+##########################################
 
 # zstyles
 zstyle ':completion:*' menu select
@@ -398,12 +404,12 @@ git_prompt() {
 }
 
 if [[ $(id -u) = 0 ]]; then
-	PUSER1="%F{blue}┌─┤%B%F{red}%n at %m%b%F{blue}├─"
-	PUSER2="%F{blue}└─┤%B%F{red}%h%b%F{blue}├─┤%B%F{yellow}%?%b%F{blue}├─▶%b%f %#"
+	PUSER1="%F{blue}┌─┤%B%F{red}%n%b%F{blue}├─"
+	PUSER2="%F{blue}└─┤%B%F{red}%h%b%F{blue}├─┤%B%F{yellow}%?%b%F{blue}├─❱❱❱%b%f %# "
 	PUSER3="%F{blue}┤%B%F{red}%D{%a %d %b %Y} %F{blue}─%F{red} %D{%H%M%S}%b%F{blue}├─┤%B%F{red}%~%b%F{blue}├─"
 else
-	PUSER1="%F{blue}┌─┤%B%F{yellow}%n at %m%b%F{blue}├─"
-	PUSER2="%F{blue}└─┤%B%F{yellow}%h%b%F{blue}├─┤%B%F{red}%?%b%F{blue}├─▶%b%f %#"
+	PUSER1="%F{blue}┌─┤%B%F{yellow}%n%b%F{blue}├─"
+	PUSER2="%F{blue}└─┤%B%F{yellow}%h%b%F{blue}├─┤%B%F{red}%?%b%F{blue}├─❱❱❱%b%f %# "
 	PUSER3="%F{blue}┤%B%F{yellow}%D{%a %d %b %Y} %F{blue}─%F{yellow} %D{%H%M%S}%b%F{blue}├─┤%B%F{yellow}%~%b%F{blue}├─"
 fi
 
@@ -447,23 +453,14 @@ alias cm='cmatrix'
 alias pogoda='curl -H "Accept-Language: pl" wttr.in/Łódź'
 alias gitu='git add . && git commit && git push'
 alias yt='ytfzf -t'
+alias cls='printf "\033c && \033c"'
 
 #=====================================#
 # Sources                             #
 #=====================================#
 
-#source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
-POWERLEVEL10K_COLOR_SCHEME='dark'
-POWERLEVEL10K_CONTEXT_DEFAULT_BACKGROUND='0'
-POWERLEVEL10K_CONTEXT_DEFAULT_FOREGROUND='10'
-POWERLEVEL10K_STATUS_OK_BACKGROUND='8'
-POWERLEVEL10K_VCS_CLEAN_BACKGROUND='11'
-POWERLEVEL10K_VCS_UNTRACKED_BACKGROUND='8'
-POWERLEVEL10K_VCS_MODIFIED_BACKGROUND='10'
-POWERLEVEL10K_VCS_MAX_SYNC_LATENCY_SECONDS='0.05'
-POWERLEVEL10K_VI_INSERT_MODE_STRING='INSERT'
-POWERLEVEL10K_VI_COMMAND_MODE_STRING='NORMAL'﻿
 
 ########### coloured manuals #############
 man() {
@@ -533,4 +530,9 @@ export TIME_STYLE='+%a %d %b %Y %H%M%S'
 TIMEFMT="'$fg[green]%J$reset_color' time: $fg[blue]%*Es$reset_color, cpu: $fg[blue]%P$reset_color"
 REPORTTIME=5
 
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 cd
+
