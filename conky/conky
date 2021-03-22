@@ -12,8 +12,6 @@ mod: LinGruby
 conky.config = {
 
 	background = true,
-	background_color= '000000',
-	use_spacer = 'none',
 	update_interval = 1,
 	total_run_times = 0,
 
@@ -23,47 +21,46 @@ conky.config = {
 
 	double_buffer = true,
 	no_buffers = true,
-	text_buffer_size = 8192,
+	text_buffer_size = 2048,
 
 	gap_x = 20,
-	gap_y = 35,
+	gap_y = 34,
 	minimum_width = 303, minimum_height = 5,
 	maximum_width = 303,
 	own_window = true,
-	own_window_type = 'override',
+	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel
 	own_window_transparent = true,
-	own_window_hints = 'undecorated,below,skip_taskbar,skip_pager,sticky',
-	own_window_colour = black,
-	own_window_class= 'Conky',
-	draw_borders = true,
-	stippled_borders = 3,
+	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+	own_window_argb_value = 0,
+	own_window_argb_visual = true,
+	--own_window_colour = '#00000000',
 	border_inner_margin = 5,
-	border_outer_margin = 0,
-	border_width = 2,
+	border_outer_margin = 5,
 	alignment = 'top_right',
+
+	draw_shades = false,
+	draw_outline = false,
+	draw_borders = false,
+	draw_graph_borders = true,
 
 	override_utf8_locale = true,
 	use_xft = true,
 	font = 'Hack Nerd Font Mono:size=8:weight=bold',
 	xftalpha = 1,
 	uppercase = false,
-	out_to_x = true,
-	draw_borders = false,
-	draw_outline = false,
-	draw_shades = false,
 
 
-	default_color = '#888888',
-	color0 = '#888888',
-	color1 = '#888888',
+	default_color = '#9E9E9E',
+	color0 = '#9E9E9E',
+	color1 = '#9E9E9E',
 	color2 = '#434745',
 	color3 = '#a54242',
-	color4 = '#888888',
-	color5 = '#A9A9A9',
+	color4 = '#9E9E9E',
+	color5 = '#9E9E9E',
 	color6 = '#505050',
 	color7 = '#777777',
 	color8 = '#555555',
-	color9 = '#999999',
+	color9 = '#9E9E9E',
 
 
 };

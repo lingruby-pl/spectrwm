@@ -36,7 +36,7 @@ compositing-underline = over
 compositing-border = over
 
 ; Define fallback values used by all module formats
-format-foreground = #a0a0a0
+format-foreground = #9E9E9E
 format-background = #000000
 format-underline =
 format-overline =
@@ -50,7 +50,7 @@ pseudo-transparency = false
 [colors]
 ; Nord theme ============
 background = #000000
-foreground = #a0a0a0
+foreground = #9E9E9E
 alert = #CC0000
 volume-min = #a3be8c
 volume-med = #ebcb8b
@@ -93,7 +93,7 @@ monitor-strict = false
 tray-position = ${env:TRAY_POSITION:right}
 ;dpi = 100
 width = 100%
-height = 16
+height = 14
 ;offset-x = 1%
 ;offset-y = 1%
 radius-top = 0.0
@@ -899,7 +899,8 @@ format =<label> ❱
 label = %output:2%
 interval = 600
 exec = weather Łódź 4
-click-left = xterm -title 'Pogoda' -geometry 125x45 +sb -hold -e weather Łódź 1 &
+click-left = xterm -title 'Pogoda' -geometry 125x42 +sb -hold -e weather Łódź 1 &
+format-foreground = ${colors.foreground}
 
 #################################################################################
 
@@ -979,6 +980,7 @@ type = custom/script
 exec = ~/.config/spectrwm/polybar/scripts/vpn-wireguard-wg.sh wg0
 interval = 5
 click-left = ~/.config/spectrwm/polybar/scripts/vpn-wireguard-wg.sh wg0 --toggle &
+format-foreground = ${colors.foreground}
 
 ################################################################################
 

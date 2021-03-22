@@ -111,14 +111,14 @@ float alpha = 0.85;
 
 /* Terminal colors (16 used in escape sequence) */
 /* default: #060304 / hard contrast: #1d2021 / soft contrast: #32302f */
-/*
+/*#729fcf
  * 			"#010101", 	"#CC6666",	"#83A471",	"#B99353",	"#447999",	"#B98EB2",	"#7C9CAE",	"#a0a0a0",
  * 			"#3C3836",	"#CC6666",	"#83A471",	"#B99353",	"#447999",	"#B98EB2",	"#7C9CAE",	"#d8d8d8",
  */
 static const char *colorname[] = {
 	/* 8 normal colors */
     	"#010101",      // black
-    	"#bd2c40",      // red
+    	"#fd2c40",      // red
     	"#9ECE6A",      // green
     	"#E0AF68",      // yellow
     	"#447999",      // blue
@@ -139,7 +139,7 @@ static const char *colorname[] = {
 			[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-			"#a0a0a0", /* 256 -> foreground */
+			"#888888", /* 256 -> foreground */
 			"#010101", /* 257 -> background */
 			"#0f7ddb", /* 258 -> cursor */
 };
@@ -160,7 +160,7 @@ unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 4;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers

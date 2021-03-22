@@ -33,8 +33,8 @@ wine start "C:\\Program Files (x86)\\Zegarynka\\Zegarynka.exe" &
 lxsu sh /usr/local/bin/ifconfig.sh &
 run psi &
 run qtox &
-run owncloud &
-# run mailspring &
+# run owncloud &
+run mailspring -b %U &
 # run blueman-applet &
 
 echo "AutoStart SpectrWM by LinGruby-Mod..."
