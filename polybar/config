@@ -209,8 +209,11 @@ locale = pl_PL.UTF-8
 
 [module/rofi]
 type = custom/text
-click-left = rofi -show run
+click-left = rofi -show run -location 2 -yoffset 34
+click-right = rofi -show window -location 2 -yoffset 34
 content =❘ ❘ ROFI
+content-foreground  = ${colors.foreground}
+content-background = ${colors.background}
 
 ################################################################################
 
