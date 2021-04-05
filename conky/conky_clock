@@ -21,8 +21,8 @@ conky.config = {
 
 	gap_x = 1,
 	gap_y = 34,
-	minimum_width = 333, minimum_height = 5,
-	maximum_width = 333,
+	minimum_width = 363, minimum_height = 5,
+	maximum_width = 363,
 	own_window = true,
 	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel
 	own_window_transparent = true,
