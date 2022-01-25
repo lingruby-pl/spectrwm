@@ -28,13 +28,13 @@ export TIME_STYLE='+%a %d %b %Y %H%M%S'
 # run redshift-qt &
 # run megasync &
 # run keepassxc &
-wine start "C:\\Program Files (x86)\\Zegarynka\\Zegarynka.exe" &
+wine "C:\\Program Files (x86)\\Zegarynka\\Zegarynka.exe" &
 # run lightscreen &
 lxsu sh /usr/local/bin/ifconfig.sh &
-run psi &
+# run psi &
 run qtox &
 # run owncloud &
-run mailspring -b %U &
+# run mailspring -b %U &
 # run blueman-applet &
 
 echo "AutoStart SpectrWM by LinGruby-Mod..."
