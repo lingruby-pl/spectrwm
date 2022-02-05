@@ -779,7 +779,7 @@ interval = 3.0
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 ;format-underline = ${colors.underline}
-label = n176: %output%
+label = n178: %output%
 ;format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 
