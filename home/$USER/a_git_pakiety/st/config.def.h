@@ -118,13 +118,13 @@ float alpha = 0.85;
 static const char *colorname[] = {
 	/* 8 normal colors */
     	"#010101",      // black
-    	"#fd2c40",      // red
+    	"#770000",      // red
     	"#9ECE6A",      // green
     	"#E0AF68",      // yellow
     	"#447999",      // blue
     	"#9a7ecc",      // magenta
     	"#88C0D0",      // cyan
-    	"#aaaaaa",      // white
+    	"#b0bfc4",      // white
 
 	/* 8 bright colors */
     	"#303030",      // black
@@ -139,9 +139,9 @@ static const char *colorname[] = {
 			[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-			"#888888", /* 256 -> foreground */
-			"#010101", /* 257 -> background */
-			"#0f7ddb", /* 258 -> cursor */
+			"#a1a1a1", /* 256 -> foreground */
+			"#000000", /* 257 -> background */
+			"#005577", /* 258 -> cursor */
 };
 
 /*
@@ -160,14 +160,14 @@ unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
  */
 
 static unsigned int cols = 125;
-static unsigned int rows = 45;
+static unsigned int rows = 42;
 
 /*
  * Default colour and shape of the mouse cursor
@@ -202,14 +202,13 @@ static MouseShortcut mshortcuts[] = {
 	{ XK_ANY_MOD,           Button5, ttysend,        {.s = "\005"}         },
 };
 
+/* Internal keyboard shortcuts. */
+#define MODKEY Mod1Mask
+#define TERMMOD (MODKEY|ShiftMask)
 
 static char *openurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -o", "externalpipe", NULL };
 static char *copyurlcmd[] = { "/bin/sh", "-c", "st-urlhandler -c", "externalpipe", NULL };
 static char *copyoutput[] = { "/bin/sh", "-c", "st-copyout", "externalpipe", NULL };
-
-/* Internal keyboard shortcuts. */
-#define MODKEY Mod1Mask
-#define TERMMOD (MODKEY|ShiftMask)
 
 static Shortcut shortcuts[] = {
 	/* mask                 keysym          function        argument */
