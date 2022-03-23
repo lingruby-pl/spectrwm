@@ -438,7 +438,7 @@ format = <label>
 ;   %percentage% (default) - total cpu load
 ;   %percentage-cores% - load percentage for each core
 ;   %percentage-core[1-9]% - load percentage for specific core
-label = CPU %percentage:3%%
+label = CPU  %percentage:3%%
 
 ################################################################################
 
@@ -658,7 +658,7 @@ interval = 1
 ;   %mb_total%
 label = %percentage_used:3%%
 
-format = MEM <label>
+format = MEM  <label>
 ;format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 ;format-underline = ${colors.underline}
@@ -727,7 +727,7 @@ label-connected = %upspeed:9%
 ;udspeed-minwidth = 5
 format-connected = <label-connected>
 ;format-connected-prefix = ""
-format-connected-prefix = "UP"
+format-connected-prefix = "UP "
 format-connected-prefix-foreground = ${colors.foreground}
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
@@ -746,7 +746,7 @@ label-connected = %downspeed:9%
 ;udspeed-minwidth = 5
 format-connected = <label-connected>
 ;format-connected-prefix = ""
-format-connected-prefix = "DOWN"
+format-connected-prefix = "DOWN "
 format-connected-prefix-foreground = ${colors.foreground}
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
@@ -898,7 +898,7 @@ format-muted-background = ${colors.background}
 
 [module/weather]
 type = custom/script
-format =<label> ❱
+format =<label>❱
 label = %output:2%
 interval = 600
 exec = weather Łódź 4
