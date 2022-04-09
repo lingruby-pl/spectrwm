@@ -1,6 +1,5 @@
-st - simple terminal
+# LinGruby build of st - the simple (suckless) terminal
 --------------------
-kocotian <kocotian@kocotian.pl> build
 st is a simple terminal emulator for X which sucks less.
 
 
@@ -28,7 +27,3 @@ the st terminfo entry with the following command:
     tic -sx st.info
 
 See the man page for additional details.
-
-Credits
--------
-Based on Aurélien APTEL <aurelien dot aptel at gmail dot com> bt source code.

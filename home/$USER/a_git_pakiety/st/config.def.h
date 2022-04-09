@@ -117,31 +117,31 @@ float alpha = 0.85;
  */
 static const char *colorname[] = {
 	/* 8 normal colors */
-    	"#010101",      // black
-    	"#770000",      // red
-    	"#9ECE6A",      // green
-    	"#E0AF68",      // yellow
-    	"#447999",      // blue
-    	"#9a7ecc",      // magenta
-    	"#88C0D0",      // cyan
-    	"#b0bfc4",      // white
+    	"#282A2E",      // black
+    	"#A54242",      // red
+    	"#8C9440",      // green
+    	"#FC9505",      // yellow
+    	"#5F819D",      // blue
+    	"#85678F",      // magenta
+    	"#5E8D87",      // cyan
+    	"#C5C8C6",      // white
 
 	/* 8 bright colors */
-    	"#303030",      // black
+    	"#373B41",      // black
     	"#CC6666",      // red
-    	"#b8bb26",      // green
-    	"#d79921",      // yellow
-    	"#458588",      // blue
-    	"#b16286",      // magenta
-    	"#88D0C9",      // cyan
+    	"#B5BD68",      // green
+    	"#F0C674",      // yellow
+    	"#81A2BE",      // blue
+    	"#B294BB",      // magenta
+    	"#8ABEB7",      // cyan
     	"#ffffff",      // white
 
 			[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-			"#a1a1a1", /* 256 -> foreground */
-			"#000000", /* 257 -> background */
-			"#005577", /* 258 -> cursor */
+			"#FC9505", /* 256 -> foreground */
+			"#110B05", /* 257 -> background */
+			"#FC9505", /* 258 -> cursor */
 };
 
 /*
@@ -158,9 +158,9 @@ unsigned int defaultrcs = 257;
  * 2: Block ("█")
  * 4: Underline ("_")
  * 6: Bar ("|")
- * 7: Snowman ("☃")
+ * 7: Snowman ("*")
  */
-static unsigned int cursorshape = 6;
+static unsigned int cursorshape = 4;
 
 /*
  * Default columns and rows numbers

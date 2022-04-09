@@ -8,15 +8,15 @@
 
 
 # Colors!
-set black       = '%{\033[30m%}'
-set red         = '%{\033[31m%}'
-set green       = '%{\033[32m%}'
-set yellow      = '%{\033[33m%}'
-set blue        = '%{\033[34m%}'
-set megenta     = '%{\033[35m%}'
-set cyan        = '%{\033[36m%}'
-set white       = '%{\033[37m%}'
-set nocolor     = '%{\033[0m%}'
+set black       = '%{#282A2E}'
+set red         = '%{#A54242}'
+set green       = '%{#8C9440}'
+set yellow      = '%{#FC9505}'
+set blue        = '%{#5F819D}'
+set megenta     = '%{#85678F}'
+set cyan        = '%{#5E8D87}'
+set white       = '%{#C5C8C6}'
+set nocolor     = '%{#ffffff}'
 
 # man help colors and man colors replace by batman from bat-extras
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -304,6 +304,7 @@ alias al='alsi -l'
 alias cm='cmatrix'
 alias pogoda='curl -H "Accept-Language: pl" wttr.in/Łódź'
 alias gitu='git add . && git commit && git push'
+alias gitlist='git rev-list --count HEAD'
 alias yt='ytfzf -t'
 alias cls='printf "\033c && \033c"'
 alias ls='exa --time-style default'

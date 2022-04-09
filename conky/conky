@@ -50,17 +50,17 @@ conky.config = {
 	uppercase = false,
 
 
-	default_color = '#D0D2DA',
-	color0 = '#D0D2DA',
-	color1 = '#D0D2DA',
-	color2 = '#D0D2DA',
-	color3 = '#D0D2DA',
-	color4 = '#D0D2DA',
-	color5 = '#D0D2DA',
-	color6 = '#a1a1a1',
-	color7 = '#a1a1a1',
-	color8 = '#D0D2DA',
-	color9 = '#D0D2DA',
+	default_color = '#FC9505',
+	color0 = '#FC9505',
+	color1 = '#FC9505',
+	color2 = '#FC9505',
+	color3 = '#FC9505',
+	color4 = '#FC9505',
+	color5 = '#FC9505',
+	color6 = '#C56306',
+	color7 = '#C56306',
+	color8 = '#FC9505',
+	color9 = '#FC9505',
 
 
 };

@@ -42,9 +42,9 @@ conky.config = {
 	draw_outline = false,
 	draw_shades = false,
 
-	default_color = '#D0D2DA',
-	color0 = '#D0D2DA',
-	color1 = '#D0D2DA',
+	default_color = '#FC9505',
+	color0 = '#FC9505',
+	color1 = '#FC9505',
 	font = 'Hack Nerd Font Mono:bold:size=8',
 
 };
