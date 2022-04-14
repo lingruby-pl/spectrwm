@@ -49,7 +49,7 @@ conky.config = {
 };
 
 conky.text = [[
-${color}${alignc}${font JetBrains Mono ExtraBold ExtBd Nerd Font Complete Mono:size=18:weight=bold}${time %a %d %b %Y - %H%M%S}
-${color}${alignc}${font JetBrains Mono ExtraBold ExtBd Nerd Font Complete Mono:size=14:weight=bold}Czas pracy:  $uptime
+${color}${alignc}${font JetBrains Mono ExtraBold:size=18:weight=bold}${time %a %d %b %Y - %H%M%S}
+${color}${alignc}${font JetBrains Mono ExtraBold:size=14:weight=bold}Czas pracy:  $uptime
 ${color}${alignc}${font Hack Nerd Font Mono:size=10:weight=bold}${texeci 600 weather Łódź 1 | sed -n '2,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
 ]];
