@@ -1,0 +1,56 @@
+#!/bin/bash
+
+[[ ! "$@" ]] && miasto=Łódź || miasto="${1}"
+[[ ! "$2" ]] && typ="1" || typ="${2}"
+
+case "${typ}" in
+	1) curl -s "https://pl.wttr.in/${miasto}" #domyslny wykres
+		echo -e ;;
+	4) curl -s "https://pl.wttr.in/${miasto}?format=%c" ;; #polybar
+	2) curl -s "https://pl.wttr.in/${miasto}?format=%c+%t+%P" ;; #polybar krótki
+	3) curl -s "https://pl.wttr.in/${miasto}?format=j1" > /tmp/pogoda #lista szczegolowa
+
+		#temperatura aktualna
+		temp_odczuwalna="$( jq '.current_condition[0] .FeelsLikeC' /tmp/pogoda | sed 's/"//g' )°C"
+		temp="$( jq '.current_condition[0] .temp_C' /tmp/pogoda | sed 's/"//g' )°C"
+		zachmurzenie="$( jq '.current_condition[0] .cloudcover' /tmp/pogoda | sed 's/"//g' )%"
+		wilgotnosc="$( jq '.current_condition[0] .humidity' /tmp/pogoda | sed 's/"//g' )%"
+		opis="$( jq '.current_condition[0] .lang_pl[0] .value' /tmp/pogoda | sed 's/"//g' )"
+		cisnienie="$( jq '.current_condition[0] .pressure' /tmp/pogoda | sed 's/"//g' ) hPa"
+		indexUV="$( jq '.current_condition[0] .uvIndex' /tmp/pogoda | sed 's/"//g' )"
+		widocznosc="$( jq '.current_condition[0] .visibility' /tmp/pogoda | sed 's/"//g' ) km"
+		wiatr_kier="$( jq '.current_condition[0] .winddir16Point' /tmp/pogoda | sed 's/"//g' )"
+		wiatr_sila="$( jq '.current_condition[0] .windspeedKmph' /tmp/pogoda | sed 's/"//g' ) km/h"
+
+		#informacje o lokalizacji
+		dl_geogr="$( jq '.nearest_area[0] .latitude' /tmp/pogoda | sed 's/"//g' )°"
+		szer_geogr="$( jq '.nearest_area[0] .longitude' /tmp/pogoda | sed 's/"//g' )°"
+
+		wschod_slonca="$( jq '.weather[0] .astronomy[0] .sunrise' /tmp/pogoda | sed 's/"//g' )"
+		zachod_slonca="$( jq '.weather[0] .astronomy[0] .sunset' /tmp/pogoda | sed 's/"//g' )"
+		wschod_ksiezyca="$( jq '.weather[0] .astronomy[0] .moonrise' /tmp/pogoda | sed 's/"//g' )"
+		zachod_ksiezyca="$( jq '.weather[0] .astronomy[0] .moonset' /tmp/pogoda | sed 's/"//g' )"
+
+
+
+cat <<EOF | column -s '|' -t
+$miasto | $dl_geogr $szer_geogr
+   $opis
+   --------------|--------------
+   Temp: $temp |odczuwalna: $temp_odczuwalna
+   Zachmurzenie: |$zachmurzenie
+   Wilgotność: |$wilgotnosc
+   Ciśnienie: |$cisnienie
+   Indeks UV: $indexUV |Widoczność: $widocznosc
+   Wiatr: |$wiatr_sila $wiatr_kier
+   --------------|--------------
+   Słońce
+   Wschód: $(date -d "$wschod_slonca" "+%H:%M" ) |Zachód: $( date -d "$zachod_slonca" "+%H:%M" )
+   Księżyc
+   Wschód: $(date -d "$wschod_ksiezyca" "+%H:%M" ) |Zachód: $( date -d "$zachod_ksiezyca" "+%H:%M" )
+EOF
+
+		\rm -rf /tmp/pogoda &>/dev/null
+		# echo -e "\nKoniec" && read
+		;;
+esac

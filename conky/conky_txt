@@ -42,24 +42,24 @@ conky.config = {
 	draw_outline = false,
 	draw_shades = false,
 
-	default_color = '#FC9505',
-	color0 = '#FC9505',
-	color1 = '#FC9505',
-	font = 'Hack Nerd Font Mono:bold:size=8',
+	default_color = '#c29f6f',
+	color0 = '#c29f6f',
+	color1 = '#c29f6f',
+	font = 'Hack Nerd Font Mono:size=8:weight=Bold',
 
 };
 
 conky.text = [[
 ${image /home/lingruby/.config/spectrwm/conky/128.png -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/128.png -p 273,5 -s 60x60}
-${font Hack Nerd Font Mono:bold:size=8}${color0}${alignc} Arch Linux - SpectrWM
+${font Hack Nerd Font Mono:size=8:weight=Bold}${color0}${alignc} Arch Linux - SpectrWM
 ${color0}${alignc} GNU/Linux rolling
 ${color0}${alignc} Lekka dystrybucja Linuksa.
 
 ${color1}${alignc} $sysname $kernel $machine
 
-${font Hack Nerd Font Mono:bold:size=8:antialias=true:hinting=true}${color0}${alignc}K L A W I S Z E   S K R Ó T Ó W${color}${font}
+${font Hack Nerd Font Mono:size=8:weight=Bold:antialias=true:hinting=true}${color0}${alignc}K L A W I S Z E   S K R Ó T Ó W${color}${font}
 
-${font Hack Nerd Font Mono:size=8:weight=bold}${color0}    MOD+Alt+s    ${color}	-	term root
+${font Hack Nerd Font Mono:size=8:weight=Bold}${color0}    MOD+Alt+s    ${color}	-	term root
 ${color0}    MOD+Shift+z  ${color}	-	term user
 ${color0}    MOD+z        ${color}	-	vivaldi-snapshot
 ${color0}    MOD+d        ${color}	-	rofi

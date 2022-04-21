@@ -36,8 +36,8 @@ compositing-underline = over
 compositing-border = over
 
 ; Define fallback values used by all module formats
-format-foreground = #FC9505
-format-background = #000000
+format-foreground = #C29F6F
+format-background = #111111
 format-underline =
 format-overline =
 format-spacing =
@@ -49,8 +49,8 @@ pseudo-transparency = false
 
 [colors]
 ; Nord theme ============
-background = #130B05
-foreground = #FC9505
+background = #111111
+foreground = #C29F6F
 alert = #EA142E
 volume-min = #a3be8c
 volume-med = #ebcb8b
@@ -116,7 +116,7 @@ border-size = 1
 ;border-right-size = 25
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = #FC9505
+border-color = #C29F6F
 
 padding-left = 0
 padding-right = 0
@@ -180,7 +180,7 @@ border-size = 0
 ;border-right-size = 25
 ;border-top-size = 0
 ;border-bottom-size = 25
-border-color = #000000
+border-color = #C29F6F
 
 padding-left = 0
 padding-right = 0

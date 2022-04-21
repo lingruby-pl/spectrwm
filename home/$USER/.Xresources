@@ -15,12 +15,12 @@ Xft.rgba: rgb
 ! URxvt Fonts
 ! ------------------------------------------------------------------------------
 
-URxvt*font:                xft:Hack:regular:size=9.5:antialias=true:hinting=true, \
+URxvt*font:                xft:JetBrains Mono:bold:size=9.5:antialias=true:hinting=true, \
                            xft:Noto Emoji:pixelsize=6:minspace=False:antialias=false, \
                            xft:Symbola:pixelsize=6:minspace=False:antialias=False
-URxvt*boldFont:            xft:Hack:bold:size=9.5:antialias=true:hinting=true
-URxvt*italicFont:          xft:Hack:italic:size=9.5:antialias=true:hinting=true
-URxvt*boldItalicFont:      xft:Hack:bold:italic:size=9.5:antialias=true:hinting=true
+URxvt*boldFont:            xft:JetBrains Mono:bold:size=9.5:antialias=true:hinting=true
+URxvt*italicFont:          xft:JetBrains Mono:italic:size=9.5:antialias=true:hinting=true
+URxvt*boldItalicFont:      xft:JetBrains Mono:bold:italic:size=9.5:antialias=true:hinting=true
 
 ! ------------------------------------------------------------------------------
 ! URxvt configs
@@ -67,49 +67,49 @@ URxvt*skipBuiltinGlyphs:   true
 ! ------------------------------------------------------------------------------
 
 ! special
-URxvt*foreground:          #a0a0a0
-URxvt*background:          [80]#111111
-URxvt*cursorColor:         #a0a0a0
-urxvt*colorBD:             #447999
+URxvt*foreground:          #c29f6f
+URxvt*background:          [80]#080808
+URxvt*cursorColor:         #49a5bc
+URxvt*colorBD:             #447999
 
 ! black
-URxvt*color0:              #111111
-URxvt*color8:              #585858
+URxvt*color0:       #292929
+URxvt*color8:       #494949
 
 ! red
-URxvt*color1:              #BF616A
-URxvt*color9:              #BF616A
+URxvt*color1:       #854340
+URxvt*color9:       #854340
 
 ! green
-URxvt*color2:              #9ECE6A
-URxvt*color10:             #9ECE6A
+URxvt*color2:       #97a293
+URxvt*color10:      #97a293
 
 ! yellow
-URxvt*color3:              #E0AF68
-URxvt*color11:             #E0AF68
+URxvt*color3:       #c29f6f
+URxvt*color11:      #c29f6f
 
 ! blue
-URxvt*color4:              #447999
-URxvt*color12:             #447999
+URxvt*color4:       #5e606c
+URxvt*color12:      #5e606c
 
 ! magenta
-URxvt*color5:              #9a7ecc
-URxvt*color13:             #9a7ecc
+URxvt*color5:       #7a6054
+URxvt*color13:      #7a6054
 
 ! cyan
-URxvt*color6:              #88C0D0
-URxvt*color14:             #88C0D0
+URxvt*color6:       #78746c
+URxvt*color14:      #78746c
 
 ! white
-URxvt*color7:              #a0a0a0
-URxvt*color15:             #d8d8d8
+URxvt*color7:       #bababa
+URxvt*color15:      #bababa
 
 ! ------------------------------------------------------------------------------
 ! Rofi configs
 ! ------------------------------------------------------------------------------
 
 ! Rofi
-rofi.font: Hack 9.5
+rofi.font: JetBrains Mono 9.5
 
 ! ------------------------------------------------------------------------------
 ! XTerm:UXterm configs
@@ -117,7 +117,7 @@ rofi.font: Hack 9.5
 
 !! XTerm:UXterm
 XTerm*renderFont: true
-XTerm*faceName: xft:Hack
+XTerm*faceName: xft:JetBrains Mono
 XTerm*faceSize: 9.5
 XTerm*utf8: 2
 XTerm*locale: true
@@ -128,51 +128,51 @@ XTerm*loginShell: true
 ! ------------------------------------------------------------------------------
 
 ! special
-*foreground:   #a0a0a0
-*background:   #111111
-*cursorColor:  #a0a0a0
+XTerm*background:   #080808
+XTerm*foreground:   #c29f6f
+XTerm*cursorColor:  #49a5bc
 
 ! black
-*color0:              #111111
-*color8:              #585858
+XTerm*color0:       #292929
+XTerm*color8:       #494949
 
 ! red
-*color1:              #BF616A
-*color9:              #BF616A
+XTerm*color1:       #854340
+XTerm*color9:       #854340
 
 ! green
-*color2:              #9ECE6A
-*color10:             #9ECE6A
+XTerm*color2:       #97a293
+XTerm*color10:      #97a293
 
 ! yellow
-*color3:              #E0AF68
-*color11:             #E0AF68
+XTerm*color3:       #c29f6f
+XTerm*color11:      #c29f6f
 
 ! blue
-*color4:              #447999
-*color12:             #447999
+XTerm*color4:       #5e606c
+XTerm*color12:      #5e606c
 
 ! magenta
-*color5:              #9a7ecc
-*color13:             #9a7ecc
+XTerm*color5:       #7a6054
+XTerm*color13:      #7a6054
 
 ! cyan
-*color6:              #88C0D0
-*color14:             #88C0D0
+XTerm*color6:       #78746c
+XTerm*color14:      #78746c
 
 ! white
-*color7:              #a0a0a0
-*color15:             #d8d8d8
+XTerm*color7:       #bababa
+XTerm*color15:      #bababa
 
 ! ------------------------------------------------------------------------------
 ! st configs
 ! ------------------------------------------------------------------------------
 
 !! Transparency (0-1):
-st.alpha: 0.80
+st.alpha: 0.85
 
 !! Set a default font and font size as below:
-st.font: Hack:regular:size=9:antialias=true:hinting=true;
+st.font: JetBrains Mono:extrabold:pixelsize=11.5:antialias=true:hinting=true
 
 ! st.termname: st-256color
 ! st.borderpx: 2
@@ -184,43 +184,43 @@ st.font: Hack:regular:size=9:antialias=true:hinting=true;
 ! ------------------------------------------------------------------------------
 
 ! special
-*.foreground:          #a0a0a0
-*.background:          #111111
-*.cursorColor:         #a0a0a0
+st*background:   #080808
+st*foreground:   #c29f6f
+st*cursorColor:  #49a5bc
 
 !! st-night:
 
 ! black
-*.color0:              #111111
-*.color8:              #585858
+st*color0:       #292929
+st*color8:       #494949
 
 ! red
-*.color1:              #BF616A
-*.color9:              #BF616A
+st*color1:       #854340
+st*color9:       #854340
 
 ! green
-*.color2:              #9ECE6A
-*.color10:             #9ECE6A
+st*color2:       #97a293
+st*color10:      #97a293
 
 ! yellow
-*.color3:              #E0AF68
-*.color11:             #E0AF68
+st*color3:       #c29f6f
+st*color11:      #c29f6f
 
 ! blue
-*.color4:              #447999
-*.color12:             #447999
+st*color4:       #5e606c
+st*color12:      #5e606c
 
 ! magenta
-*.color5:              #9a7ecc
-*.color13:             #9a7ecc
+st*color5:       #7a6054
+st*color13:      #7a6054
 
 ! cyan
-*.color6:              #88C0D0
-*.color14:             #88C0D0
+st*color6:       #78746c
+st*color14:      #78746c
 
 ! white
-*.color7:              #a0a0a0
-*.color15:             #d8d8d8
+st*color7:       #bababa
+st*color15:      #bababa
 
 ! ------------------------------------------------------------------------------
 ! Custom Colors

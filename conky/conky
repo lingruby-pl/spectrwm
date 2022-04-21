@@ -45,35 +45,35 @@ conky.config = {
 
 	override_utf8_locale = true,
 	use_xft = true,
-	font = 'Hack Nerd Font Mono:size=8:weight=bold',
+	font = 'Hack Nerd Font Mono:size=8:weight=Bold',
 	xftalpha = 1,
 	uppercase = false,
 
 
-	default_color = '#FC9505',
-	color0 = '#FC9505',
-	color1 = '#FC9505',
-	color2 = '#FC9505',
-	color3 = '#FC9505',
-	color4 = '#FC9505',
-	color5 = '#FC9505',
-	color6 = '#C56306',
-	color7 = '#C56306',
-	color8 = '#FC9505',
-	color9 = '#FC9505',
+	default_color = '#c29f6f',
+	color0 = '#c29f6f',
+	color1 = '#c29f6f',
+	color2 = '#c29f6f',
+	color3 = '#c29f6f',
+	color4 = '#c29f6f',
+	color5 = '#c29f6f',
+	color6 = '#7a6054',
+	color7 = '#7a6054',
+	color8 = '#c29f6f',
+	color9 = '#c29f6f',
 
 
 };
 
 conky.text = [[
 ${image /home/lingruby/.config/spectrwm/conky/128.png -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/128.png -p 273,5 -s 60x60}
-${font Hack Nerd Font Mono:size=8:weight=bold}${color4}${alignc} Arch Linux - SpectrWM
+${font Hack Nerd Font Mono:size=8:weight=Bold}${color4}${alignc} Arch Linux - SpectrWM
 ${color4}${alignc} GNU/Linux rolling
 ${color4}${alignc} Lekka dystrybucja Linuksa.
 
 ${color3}${alignc} $sysname $kernel $machine
 
-${font Hack Nerd Font Mono:size=8:weight=bold}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
+${font Hack Nerd Font Mono:size=8:weight=Bold}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
 ${color4}Zainstalowane pakiety:               ${color1}${execi 20 pacman -Q | wc -l}
 ${color4}Ostatnia aktualizacja:               ${color1}${execi 20 grep "starting full system upgrade" /var/log/pacman.log | tail -n1| cut --bytes=2-17}
 

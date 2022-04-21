@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
- static char *font = "Hack Nerd Font Mono:bold:pixelsize=11.5:antialias=true:hinting=true";
+ static char *font = "JetBrains Mono:extrabold:pixelsize=11.5:antialias=true:hinting=true";
  static char *font2[] = { "Noto Emoji:size=9:antialias=true:autohint=true" };
  static int borderpx = 10;
 
@@ -117,31 +117,31 @@ float alpha = 0.85;
  */
 static const char *colorname[] = {
 	/* 8 normal colors */
-    	"#282A2E",      // black
-    	"#A54242",      // red
-    	"#8C9440",      // green
-    	"#FC9505",      // yellow
-    	"#5F819D",      // blue
-    	"#85678F",      // magenta
-    	"#5E8D87",      // cyan
-    	"#C5C8C6",      // white
+    	"#292929",      // black
+    	"#854340",      // red
+    	"#97a293",      // green
+    	"#c29f6f",      // yellow
+    	"#5e606c",      // blue
+    	"#7a6054",      // magenta
+    	"#78746c",      // cyan
+    	"#bababa",      // white
 
 	/* 8 bright colors */
-    	"#373B41",      // black
-    	"#CC6666",      // red
-    	"#B5BD68",      // green
-    	"#F0C674",      // yellow
-    	"#81A2BE",      // blue
-    	"#B294BB",      // magenta
-    	"#8ABEB7",      // cyan
-    	"#ffffff",      // white
+    	"#494949",      // black
+    	"#854340",      // red
+    	"#97a293",      // green
+    	"#c29f6f",      // yellow
+    	"#5e606c",      // blue
+    	"#7a6054",      // magenta
+    	"#78746c",      // cyan
+    	"#bababa",      // white
 
 			[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-			"#FC9505", /* 256 -> foreground */
-			"#110B05", /* 257 -> background */
-			"#FC9505", /* 258 -> cursor */
+			"#c29f6f", /* 256 -> foreground */
+			"#080808", /* 257 -> background */
+			"#49a5bc", /* 258 -> cursor */
 };
 
 /*

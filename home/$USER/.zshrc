@@ -8,14 +8,14 @@
 
 
 # Colors!
-set black       = '%{#282A2E}'
-set red         = '%{#A54242}'
-set green       = '%{#8C9440}'
-set yellow      = '%{#FC9505}'
-set blue        = '%{#5F819D}'
-set megenta     = '%{#85678F}'
-set cyan        = '%{#5E8D87}'
-set white       = '%{#C5C8C6}'
+set black       = '%{#292929}'
+set red         = '%{#854340}'
+set green       = '%{#97a293}'
+set yellow      = '%{#c29f6f}'
+set blue        = '%{#5e606c}'
+set megenta     = '%{#7a6054}'
+set cyan        = '%{#78746c}'
+set white       = '%{#bababa}'
 set nocolor     = '%{#ffffff}'
 
 # man help colors and man colors replace by batman from bat-extras
@@ -299,8 +299,8 @@ alias sab='systemd-analyze blame'
 alias lx='lxappearance'
 alias q5='qt5ct'
 alias neo='neofetch'
-alias scr='screenfetch'
 alias al='alsi -l'
+alias pf='pfetch'
 alias cm='cmatrix'
 alias pogoda='curl -H "Accept-Language: pl" wttr.in/Łódź'
 alias gitu='git add . && git commit && git push'
@@ -371,5 +371,7 @@ export TIME_STYLE="+%a %d %b %Y %H%M%S"
 # 5 seconds
 TIMEFMT="'$fg[green]%J$reset_color' time: '$fg[blue]%*Es$reset_color', 'cpu: $fg[blue]%P$reset_color'"
 REPORTTIME=5
+
+pfetch
 
 cd
