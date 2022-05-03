@@ -42,8 +42,8 @@ conky.config = {
 	draw_outline = false,
 	draw_shades = false,
 
-	default_color = '#008081',
-	color1 = '#008081',
+	default_color = '#1793D1',
+	color1 = '#1793D1',
 
 
 };

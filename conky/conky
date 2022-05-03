@@ -50,23 +50,23 @@ conky.config = {
 	uppercase = false,
 
 
-	default_color = '#008081',
-	color0 = '#008081',
-	color1 = '#008081',
-	color2 = '#008081',
-	color3 = '#008081',
-	color4 = '#008081',
-	color5 = '#008081',
-	color6 = '#214946',
-	color7 = '#214946',
-	color8 = '#008081',
-	color9 = '#008081',
+	default_color = '#1793D1',
+	color0 = '#1793D1',
+	color1 = '#1793D1',
+	color2 = '#1793D1',
+	color3 = '#1793D1',
+	color4 = '#1793D1',
+	color5 = '#1793D1',
+	color6 = '#494949',
+	color7 = '#494949',
+	color8 = '#1793D1',
+	color9 = '#1793D1',
 
 
 };
 
 conky.text = [[
-${image /home/lingruby/.config/spectrwm/conky/128.png -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/128.png -p 273,5 -s 60x60}
+${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 273,5 -s 60x60}
 ${font Hack Nerd Font Mono:size=8:weight=Bold}${color4}${alignc} Arch Linux - SpectrWM
 ${color4}${alignc} GNU/Linux rolling
 ${color4}${alignc} Lekka dystrybucja Linuksa.
