@@ -1,8 +1,8 @@
 # My spectrwm
 
-polybar, conky, weather for baraction.sh, ytfzf...
+conky, polybar, weather for baraction.sh, ytfzf...
 
-![Screenshot](screenshot.348.jpg "my desktop")
+![Screenshot](screenshot.393.jpg "my conky")
 
 ![Screenshot](screenshot.345.jpg "my desktop")
 
@@ -10,6 +10,6 @@ polybar, conky, weather for baraction.sh, ytfzf...
 
 ![Screenshot](screenshot.333.jpg "my desktop")
 
-![Screenshot](screenshot.347.jpg "my desktop")
+![Screenshot](screenshot.347.jpg "ytfzf")
 
-![Screenshot](screenshot.346.jpg "my desktop")
+![Screenshot](screenshot.346.jpg "ytfzf")
