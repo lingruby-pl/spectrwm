@@ -45,35 +45,35 @@ conky.config = {
 
 	override_utf8_locale = true,
 	use_xft = true,
-	font = 'Hack Nerd Font Mono:size=8:weight=Bold',
+	font = 'RobotoMono Nerd Font:bold:size=8',
 	xftalpha = 1,
 	uppercase = false,
 
 
-	default_color = '#1793D1',
-	color0 = '#1793D1',
-	color1 = '#1793D1',
-	color2 = '#1793D1',
-	color3 = '#1793D1',
-	color4 = '#1793D1',
-	color5 = '#1793D1',
+	default_color = '#a0a0a0',
+	color0 = '#a0a0a0',
+	color1 = '#a0a0a0',
+	color2 = '#a0a0a0',
+	color3 = '#a0a0a0',
+	color4 = '#a0a0a0',
+	color5 = '#a0a0a0',
 	color6 = '#494949',
 	color7 = '#494949',
-	color8 = '#1793D1',
-	color9 = '#1793D1',
+	color8 = '#a0a0a0',
+	color9 = '#a0a0a0',
 
 
 };
 
 conky.text = [[
 ${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 273,5 -s 60x60}
-${font Hack Nerd Font Mono:size=8:weight=Bold}${color4}${alignc} Arch Linux - SpectrWM
+${font RobotoMono Nerd Font:bold:size=8}${color4}${alignc} Arch Linux - SpectrWM
 ${color4}${alignc} GNU/Linux rolling
 ${color4}${alignc} Lekka dystrybucja Linuksa.
 
 ${color3}${alignc} $sysname $kernel $machine
 
-${font Hack Nerd Font Mono:size=8:weight=Bold}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
+${font RobotoMono Nerd Font:bold:size=8}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
 ${color4}Zainstalowane pakiety:               ${color1}${execi 20 pacman -Q | wc -l}
 ${color4}Ostatnia aktualizacja:               ${color1}${execi 20 grep "starting full system upgrade" /var/log/pacman.log | tail -n1| cut --bytes=2-17}
 
@@ -104,7 +104,7 @@ ${color4}Linux: ${color1} (${fs_type})    ${alignc}${color1}${fs_size /} > ${col
 ${color4}Dysk Zapis-> ${alignc}${color1}${diskio_read}/s ${alignr}${color1}${diskio_write}/s ${color4}<-Dysk Odczyt
 
 ${color4}Net Kabel: ${color6}${hr}
-${alignc}${color4}IP:  ${color1}${texeci 20 dig +short ip92.ip-51-83-138.eu @1.1.1.1}
+${alignc}${color4}IP:  ${color1}${texeci 20 dig +short ip92.ip-51-83-138.eu @54.38.142.226}
 ${color4}Pobieranie:  ${color1}${downspeed enp1s0f1}  ${alignr} ${alignr} ${color1} ${upspeed enp1s0f1}  ${color4}:Wysyłanie
 ${color4}Pobrane: ${color1}${totaldown enp1s0f1} ${alignr}${color1}${totalup enp1s0f1} ${color4}:Wysłane
 

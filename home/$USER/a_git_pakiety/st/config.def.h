@@ -5,8 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
- static char *font = "JetBrains Mono:extrabold:pixelsize=11.5:antialias=true:hinting=true";
- static char *font2[] = { "Noto Emoji:size=9:antialias=true:autohint=true" };
+ static char *font = "Hack Nerd Font:bold:size=9:antialias=true:hinting=true";
+ static char *font2[] = { "Noto Color Emoji:size=9:antialias=true:autohint=true" };
+ static char *font3[] = { "JoyPixels:scale=13:antialias=true:autohint=true" };
  static int borderpx = 10;
 
 /*
@@ -111,37 +112,37 @@ float alpha = 0.85;
 
 /* Terminal colors (16 used in escape sequence) */
 /* default: #060304 / hard contrast: #1d2021 / soft contrast: #32302f */
-/*#729fcf
+/*#729fcf #1793D1 #5294E2
  * 			"#010101", 	"#CC6666",	"#83A471",	"#B99353",	"#447999",	"#B98EB2",	"#7C9CAE",	"#a0a0a0",
  * 			"#3C3836",	"#CC6666",	"#83A471",	"#B99353",	"#447999",	"#B98EB2",	"#7C9CAE",	"#d8d8d8",
  */
 static const char *colorname[] = {
 	/* 8 normal colors */
-    	"#292929",      // black
-    	"#854340",      // red
-    	"#97a293",      // green
-    	"#c29f6f",      // yellow
-    	"#5e606c",      // blue
-    	"#7a6054",      // magenta
-    	"#78746c",      // cyan
-    	"#bababa",      // white
+    	"#282A2E",      // black
+    	"#A54242",      // red
+    	"#83A471",      // green
+    	"#B99353",      // yellow
+    	"#447999",      // blue
+    	"#B98EB2",      // magenta
+    	"#7C9CAE",      // cyan
+    	"#a0a0a0",      // white
 
 	/* 8 bright colors */
-    	"#494949",      // black
-    	"#854340",      // red
-    	"#97a293",      // green
-    	"#c29f6f",      // yellow
-    	"#5e606c",      // blue
-    	"#7a6054",      // magenta
-    	"#78746c",      // cyan
+    	"#373B41",      // black
+    	"#A54242",      // red
+    	"#83A471",      // green
+    	"#B99353",      // yellow
+    	"#447999",      // blue
+    	"#B98EB2",      // magenta
+    	"#7C9CAE",      // cyan
     	"#bababa",      // white
 
 			[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-			"#c29f6f", /* 256 -> foreground */
-			"#080808", /* 257 -> background */
-			"#49a5bc", /* 258 -> cursor */
+			"#CCCCCC", /* 256 -> foreground */
+			"#050505", /* 257 -> background */
+			"#5294E2", /* 258 -> cursor */
 };
 
 /*

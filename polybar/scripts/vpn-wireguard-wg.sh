@@ -36,7 +36,7 @@ case "$2" in
         # vpn_ip=$(ip a show $name primary | grep "inet" | awk -v OFS="\n" '{ print $2 }')
         # echo $vpn_ip
     elif [ "$(connection_status)" = "3" ]; then
-        echo "#3 Config not found!"
+        echo "Config not found!"
     else
         echo "VPN OFF"
         #echo "#2 down"
