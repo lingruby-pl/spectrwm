@@ -45,8 +45,8 @@ conky.config = {
 
 	override_utf8_locale = true,
 	use_xft = true,
-	font = 'RobotoMono Nerd Font:bold:size=8',
-	xftalpha = 1,
+	font = 'Hack Nerd Font:Bold:size=8',
+	xftalpha = 0.5,
 	uppercase = false,
 
 
@@ -57,8 +57,8 @@ conky.config = {
 	color3 = '#a0a0a0',
 	color4 = '#a0a0a0',
 	color5 = '#a0a0a0',
-	color6 = '#494949',
-	color7 = '#494949',
+	color6 = '#696969',
+	color7 = '#696969',
 	color8 = '#a0a0a0',
 	color9 = '#a0a0a0',
 
@@ -67,31 +67,31 @@ conky.config = {
 
 conky.text = [[
 ${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 273,5 -s 60x60}
-${font RobotoMono Nerd Font:bold:size=8}${color4}${alignc} Arch Linux - SpectrWM
+${font Hack Nerd Font:Bold:size=8}${color4}${alignc} Arch Linux - SpectrWM
 ${color4}${alignc} GNU/Linux rolling
 ${color4}${alignc} Lekka dystrybucja Linuksa.
 
 ${color3}${alignc} $sysname $kernel $machine
 
-${font RobotoMono Nerd Font:bold:size=8}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
+${font Hack Nerd Font:Bold:size=8}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
 ${color4}Zainstalowane pakiety:               ${color1}${execi 20 pacman -Q | wc -l}
 ${color4}Ostatnia aktualizacja:               ${color1}${execi 20 grep "starting full system upgrade" /var/log/pacman.log | tail -n1| cut --bytes=2-17}
 
 ${color4}Procesor i Pamięć: ${color6}${hr}
-${color1}  Użycie procesora  ${color3}${alignc} ${cpubar 4,77} ${alignr} ${color1}$cpu% z ${freq_g cpu} GHz
-${color1}Core1:  ${color3}${cpubar cpu0 4,55}  ${color1}${cpu cpu0}% ${alignr}${color1}${cpu cpu1}%  ${color3}${cpubar cpu1 4,55}${color1}  :Core2
-${color1}Core3:  ${color3}${cpubar cpu2 4,55}  ${color1}${cpu cpu2}% ${alignr}${color1}${cpu cpu3}%  ${color3}${cpubar cpu3 4,55}${color1}  :Core4
+${color1}Użycie procesora  ${color3}${alignc} ${cpubar 4,88} ${alignr} ${color1}($cpu %) z ${freq_g cpu} GHz
+${color1}Core1:  ${color3}${cpubar cpu0 4,55}  ${color1}(${cpu cpu0} %) ${alignr}${color1}(${cpu cpu1} %)  ${color3}${cpubar cpu1 4,55}${color1}  :Core2
+${color1}Core3:  ${color3}${cpubar cpu2 4,55}  ${color1}(${cpu cpu2} %) ${alignr}${color1}(${cpu cpu3} %)  ${color3}${cpubar cpu3 4,55}${color1}  :Core4
 
-${color4}Pamięć RAM: ${color1}${mem} z ${memmax} ($memperc%)${alignr}${color1}Wolna: ${memfree}
+${color4}Pamięć RAM: ${color1}${mem} z ${memmax}  ($memperc %)${alignr}${color1}Wolna: ${memfree}
 ${color1}Bufor: ${buffers} ${alignr}${color1}Pamięć podręczna: ${cached}
 ${color3}${membar 4}
-${color4}Pamięć SWAP:  ${color1}${swap} z ${swapmax} ($swapperc%)
+${color4}Pamięć SWAP:  ${color1}${swap} z ${swapmax}  ($swapperc %)
 ${color3}${swapbar 4}
-${color4}Wykorzystanie Procesora i Pamięci ${alignr} CPU%     MEM%
-${color1}${top name 1}${alignr}${top cpu 1}   ${top mem 1}
-${color7}${top name 2}${alignr}${top cpu 2}   ${top mem 2}
-${color7}${top name 3}${alignr}${top cpu 3}   ${top mem 3}
-${color7}${top name 4}${alignr}${top cpu 4}   ${top mem 4}
+${color4}Wykorzystanie Procesora i Pamięci${alignr}CPU %      MEM %
+${color1}${top name 1}${alignr}${top cpu 1} %   ${top mem 1} %
+${color7}${top name 2}${alignr}${top cpu 2} %   ${top mem 2} %
+${color7}${top name 3}${alignr}${top cpu 3} %   ${top mem 3} %
+${color7}${top name 4}${alignr}${top cpu 4} %   ${top mem 4} %
 
 ${color4}Temperatura: ${color6}${hr}
 ${color1}${alignc}${color4} CPU: ${color1}${hwmon 2 temp 1}°C${color4} Dysk SSD: ${color1}${hddtemp /dev/sda}°C${color4} Dysk SSHD: ${color1}${hddtemp /dev/sdb}°C
@@ -100,16 +100,16 @@ ${color1}${alignr} ${if_match ${battery_percent BAT1}<15}${color ff0000}${batter
 ${color3}${battery_bar 4,333 BAT1}
 
 ${color4}Dysk: ${color6}${hr}
-${color4}Linux: ${color1} (${fs_type})    ${alignc}${color1}${fs_size /} > ${color1}${fs_used /}${color2} ${alignr}${fs_bar 3,66} ${color4}(${fs_used_perc /}%)
-${color4}Dysk Zapis-> ${alignc}${color1}${diskio_read}/s ${alignr}${color1}${diskio_write}/s ${color4}<-Dysk Odczyt
+${color4}Linux: ${color1} (${fs_type})    ${alignc}${color1}${fs_size /} > ${color1}${fs_used /}${color2} ${alignr}${fs_bar 3,66} ${color4}(${fs_used_perc /} %)
+${color4}Dysk Zapis-> ${alignc}${color1}${diskio_read}/s${alignr}${color1}${diskio_write}/s ${color4} <-Dysk Odczyt
 
 ${color4}Net Kabel: ${color6}${hr}
-${alignc}${color4}IP:  ${color1}${texeci 20 dig +short ip92.ip-51-83-138.eu @54.38.142.226}
+${alignc}${color4}IP:  ${color1}${texeci 20 dig +short ip92.ip-51-83-138.eu @54.38.142.226} ${execpi 4 echo "\${color} ping: \${color #289CD5}$(ping -W 1 -c 1 51.83.138.92 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
 ${color4}Pobieranie:  ${color1}${downspeed enp1s0f1}  ${alignr} ${alignr} ${color1} ${upspeed enp1s0f1}  ${color4}:Wysyłanie
 ${color4}Pobrane: ${color1}${totaldown enp1s0f1} ${alignr}${color1}${totalup enp1s0f1} ${color4}:Wysłane
 
 ${color4}WireGuad VPN: ${color6}${hr}
-${alignc}${color4}IP:  ${color1}${addr wg0}
+${alignc}${color4}IP:  ${color1}${addr wg0} ${execpi 4 echo "\${color} ping: \${color #289CD5}$(ping -W 1 -c 1 10.0.2.1 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
 ${color4}Pobieranie:  ${color1}${downspeed wg0}  ${alignr} ${alignr} ${color1} ${upspeed wg0}  ${color4}:Wysyłanie
 ${color4}Pobrane: ${color1}${totaldown wg0} ${alignr}${color1}${totalup wg0} ${color4}:Wysłane
 

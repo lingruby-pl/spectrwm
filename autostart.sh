@@ -20,7 +20,7 @@ export TIME_STYLE='+%a %d %b %Y %H%M%S'
 # Some ways to set your bar
 # sh /home/lingruby/.config/spectrwm/polybar/launch.sh &
 # /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-# sh /home/lingruby/.config/spectrwm/conky/conky_start.sh &
+sh /home/lingruby/.config/spectrwm/conky/conky_start.sh &
 # run numlockx on &
 # run volumeicon &
 # run nm-applet &
@@ -32,7 +32,7 @@ wine "C:\\Program Files (x86)\\Zegarynka\\Zegarynka.exe" &
 # run lightscreen &
 lxsu sh /usr/local/bin/ifconfig.sh &
 # run psi &
-run qtox &
+# run qtox &
 # run owncloud &
 # run mailspring -b %U &
 # run blueman-applet &

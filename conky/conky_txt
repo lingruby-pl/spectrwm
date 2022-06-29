@@ -35,7 +35,7 @@ conky.config = {
 	alignment = 'top_left',
 
 	use_xft = true,
-	xftalpha = 1,
+	xftalpha = 0.5,
 	override_utf8_locale = true,
 
 	draw_borders = false,
@@ -45,21 +45,21 @@ conky.config = {
 	default_color = '#a0a0a0',
 	color0 = '#a0a0a0',
 	color1 = '#a0a0a0',
-	font = 'RobotoMono Nerd Font:bold:size=8',
+	font = 'Hack Nerd Font:Bold:size=8',
 
 };
 
 conky.text = [[
 ${image /home/lingruby/.config/spectrwm/conky/0422_.PNG -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/0422_.PNG -p 273,5 -s 60x60}
-${font RobotoMono Nerd Font:bold:size=8}${color0}${alignc} Arch Linux - SpectrWM
+${font Hack Nerd Font:Bold:size=8}${color0}${alignc} Arch Linux - SpectrWM
 ${color0}${alignc} GNU/Linux rolling
 ${color0}${alignc} Lekka dystrybucja Linuksa.
 
 ${color1}${alignc} $sysname $kernel $machine
 
-${font RobotoMono Nerd Font:bold:size=8}${color0}${alignc}K L A W I S Z E   S K R Ó T Ó W${color}${font}
+${font Hack Nerd Font:Bold:size=8}${color0}${alignc}K L A W I S Z E   S K R Ó T Ó W${color}${font}
 
-${font Hack Nerd Font:size=8:weight=Bold}${color0}    MOD+Alt+s    ${color}	-	term root
+${font Hack Nerd Font:Bold:size=8}${color0}    MOD+Alt+s    ${color}	-	term root
 ${color0}    MOD+Shift+z  ${color}	-	term user
 ${color0}    MOD+z        ${color}	-	vivaldi-snapshot
 ${color0}    MOD+d        ${color}	-	rofi
@@ -94,7 +94,7 @@ ${color0}    Ctrl+Alt+o   ${color}	-	picom-toggle.sh
 ${color0}    Ctrl+Alt+m   ${color}	-	mpv
 ${color0}    Ctrl+Alt+f   ${color}	-	killall mpv -9
 ${color0}    Ctrl+Alt+i   ${color}	-	nitrogen
-${color0}    Ctrl+Alt+v   ${color}	-	code-oss
+${color0}    Ctrl+Alt+v   ${color}	-	geany
 
 ${color0}    MOD+y        ${color}	-	reload polybar
 ${color0}    MOD+w        ${color}	-	reload spectrwm

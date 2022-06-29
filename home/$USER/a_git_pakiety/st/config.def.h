@@ -5,10 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
- static char *font = "Hack Nerd Font:bold:size=9:antialias=true:hinting=true";
- static char *font2[] = { "Noto Color Emoji:size=9:antialias=true:autohint=true" };
+ static char *font = "Hack Nerd Font:Bold:size=9:antialias=true:hinting=true";
+ static char *font2[] = { "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
  static char *font3[] = { "JoyPixels:scale=13:antialias=true:autohint=true" };
- static int borderpx = 10;
+ static int borderpx = 4;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -18,7 +18,7 @@
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/zsh";
+static char *shell = "/bin/sh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -108,60 +108,65 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.85;
+float alpha = 0.8;
+float alphaOffset = 0.0;
+float alphaUnfocus;
 
 /* Terminal colors (16 used in escape sequence) */
 /* default: #060304 / hard contrast: #1d2021 / soft contrast: #32302f */
-/*#729fcf #1793D1 #5294E2
+/* 			"#729fcf" #1793D1 #5294E2 #88C0D0 #EBCB8B #D8DEE9 #f0c674 #f5f5f5e6
  * 			"#010101", 	"#CC6666",	"#83A471",	"#B99353",	"#447999",	"#B98EB2",	"#7C9CAE",	"#a0a0a0",
  * 			"#3C3836",	"#CC6666",	"#83A471",	"#B99353",	"#447999",	"#B98EB2",	"#7C9CAE",	"#d8d8d8",
  */
+
 static const char *colorname[] = {
 	/* 8 normal colors */
-    	"#282A2E",      // black
-    	"#A54242",      // red
-    	"#83A471",      // green
-    	"#B99353",      // yellow
-    	"#447999",      // blue
-    	"#B98EB2",      // magenta
-    	"#7C9CAE",      // cyan
-    	"#a0a0a0",      // white
+	"#0d0d0d",      // black
+	"#db0000",      // red
+	"#00b000",      // green
+	"#a9b000",      // yellow
+	"#1793D1",      // blue
+	"#a900cb",      // magenta
+	"#00b0cb",      // cyan
+	"#D8D8D8",      // white
 
 	/* 8 bright colors */
-    	"#373B41",      // black
-    	"#A54242",      // red
-    	"#83A471",      // green
-    	"#B99353",      // yellow
-    	"#447999",      // blue
-    	"#B98EB2",      // magenta
-    	"#7C9CAE",      // cyan
-    	"#bababa",      // white
+	"#4d4d4d",      // black
+	"#db0000",      // red
+	"#00b000",      // green
+	"#a9b000",      // yellow
+	"#1793D1",      // blue
+	"#a900cb",      // magenta
+	"#00b0cb",      // cyan
+	"#D8D8D8",      // white
 
 			[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-			"#CCCCCC", /* 256 -> foreground */
-			"#050505", /* 257 -> background */
-			"#5294E2", /* 258 -> cursor */
+			"#a0a0a0", /* 256 -> cursor */
+			"#0d0d0d", /* 257 -> rev cursor*/
+			"#0d0d0d", /* 258 -> bg background */
+			"#a0a0a0", /* 259 -> fg foreground */
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 256;
-unsigned int defaultbg = 257;
-unsigned int defaultcs = 258;
-unsigned int defaultrcs = 257;
+ unsigned int defaultfg = 259;
+ unsigned int defaultbg = 258;
+ unsigned int defaultcs = 256;
+ unsigned int defaultrcs = 257;
+ unsigned int background = 258;
 
 /*
  * Default shape of cursor
  * 2: Block ("█")
  * 4: Underline ("_")
  * 6: Bar ("|")
- * 7: Snowman ("*")
+ * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 4;
+static unsigned int cursorshape = 2;
 
 /*
  * Default columns and rows numbers

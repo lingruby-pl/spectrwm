@@ -35,7 +35,7 @@ conky.config = {
 	alignment = 'top_middle',
 
 	use_xft = true,
-	xftalpha = 1,
+	xftalpha = 0.5,
 	override_utf8_locale = true,
 
 	draw_borders = false,
@@ -49,7 +49,7 @@ conky.config = {
 };
 
 conky.text = [[
-${color}${alignc}${font RobotoMono Nerd Font:bold:size=18}${time %a %d %b %Y - %H%M%S}
-${color}${alignc}${font RobotoMono Nerd Font:bold:size=14}Czas pracy:  $uptime
-${color}${alignc}${font RobotoMono Nerd Font:bold:size=10}${texeci 600 weather Łódź 1 | sed -n '2,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
+${color}${alignc}${font Hack Nerd Font:Bold:size=18}${time %a %d %b %Y - %H%M%S}
+${color}${alignc}${font Hack Nerd Font:Bold:size=14}Czas pracy:  $uptime
+${color}${alignc}${font Hack Nerd Font:Bold:size=10}${texeci 600 weather Łódź 1 | sed -n '2,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
 ]];
