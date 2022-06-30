@@ -1,18 +1,38 @@
+/* remove window title from Client-Side Decorations */
+.solid-csd headerbar .title {
+    font-size: 0;
+}
+
+/* hide extra window decorations/double border */
+window decoration {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+* {
+  text-shadow: none;
+}
+
 termite {
   padding: 2px;
 }
+
 vte-termite {
   padding: 2px;
 }
+
 .window-frame, .window-frame:backdrop {
   box-shadow: 0 0 0 black;
   border-style: none;
   margin: 0;
   border-radius: 0;
 }
+
 VteTerminal, vte-terminal {
   padding: 2px;
 }
+
 .titlebar {
   border-radius: 0;
 }

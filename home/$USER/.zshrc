@@ -8,14 +8,14 @@
 
 
 # Colors!
-set black       = '%{#292929}'
-set red         = '%{#854340}'
-set green       = '%{#97a293}'
-set yellow      = '%{#c29f6f}'
-set blue        = '%{#5e606c}'
-set megenta     = '%{#7a6054}'
-set cyan        = '%{#78746c}'
-set white       = '%{#bababa}'
+set black       = '%{#0d0d0d}'
+set red         = '%{#db0000}'
+set green       = '%{#00b000}'
+set yellow      = '%{#a9b000}'
+set blue        = '%{#1793D1}'
+set megenta     = '%{#a900cb}'
+set cyan        = '%{#00b0cb}'
+set white       = '%{#D8D8D8}'
 set nocolor     = '%{#ffffff}'
 
 # man help colors and man colors replace by batman from bat-extras
@@ -27,7 +27,11 @@ export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 # protect special characters
-export LC_CTYPE="pl_PL.UTF-8"
+export LC_ALL="pl_PL.UTF-8"
+export LANG="pl_PL.UTF-8"
+export TERM=st
+export TIME_STYLE="+%a %d %b %Y %H%M%S"
+export FZF_BASE=/usr/share/fzf
 
 # Setopts
 # allow prompt substitution
@@ -238,12 +242,12 @@ if [[ $(id -u) = 0 ]]; then
 	PUSER1="%B%F{red}%n%b%f"
 	PUSER2="%B%F{blue}%~%b%f"
 	PUSER3="%B%F{green}( %B%F{blue}%h%b %B%F{red}%?%b%f%B%F{green} )%b%f  %B%F{blue}%D{%a %d %b %Y} ─ %D{%H%M%S}%b%f"
-	PUSER4="%B%F{green}>%b%f "
+	PUSER4="%B%F{blue}=->%b%f "
 else
 	PUSER1="%B%F{yellow}%n%b%f"
 	PUSER2="%B%F{blue}%~%b%f"
 	PUSER3="%B%F{green}( %B%F{blue}%h%b %B%F{red}%?%b%f%B%F{green} )%b%f  %B%F{blue}%D{%a %d %b %Y} ─ %D{%H%M%S}%b%f"
-	PUSER4="%B%F{green}>%b%f "
+	PUSER4="%B%F{blue}=->%b%f "
 fi
 
 NEWLINE=$'\n'
@@ -301,6 +305,7 @@ alias q5='qt5ct'
 alias neo='neofetch'
 alias al='alsi -l'
 alias pf='pfetch'
+alias tf='tfetch'
 alias cm='cmatrix'
 alias pogoda='curl -H "Accept-Language: pl" wttr.in/Łódź'
 alias gitu='git add . && git commit && git push'
@@ -310,11 +315,12 @@ alias cls='printf "\033c && \033c"'
 alias ls='exa --time-style default'
 alias ll='exa --time-style default -bghHliS'
 alias lla='exa --time-style default -bghHliSa'
+alias cat="bat"
 alias man='batman'
-alias tarball='updpkgsums && makepkg -sirc && mkaurball -f'
+alias tarball='updpkgsums && makepkg -sirc --sign && mkaurball -f'
 alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias ping='ping -c 10'
-
+alias mpkg='updpkgsums && makepkg -sirc --sign'
 
 ########## syntax highlighting ###########
 if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
@@ -364,14 +370,11 @@ if [[ -f /usr/share/skim/completion.zsh ]]; then
 fi
 ##########################################
 
-export TERM=st
-export TIME_STYLE="+%a %d %b %Y %H%M%S"
-
 # report about cpu-/system-/user-time of command if running longer than
 # 5 seconds
 TIMEFMT="'$fg[green]%J$reset_color' time: '$fg[blue]%*Es$reset_color', 'cpu: $fg[blue]%P$reset_color'"
 REPORTTIME=5
 
-pfetch
+#pfetch
 
 cd

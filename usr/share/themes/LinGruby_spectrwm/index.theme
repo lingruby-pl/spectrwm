@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=LinGruby_spectrwm
+Comment=Mod by LinGruby
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+Name=LinGruby_spectrwm
+GtkTheme=LinGruby_spectrwm
+IconTheme=LinGruby_spectrwm
+MetacityTheme=LinGruby_spectrwm
