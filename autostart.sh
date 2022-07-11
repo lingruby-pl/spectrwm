@@ -26,13 +26,14 @@ sh /home/lingruby/.config/spectrwm/conky/conky_start.sh &
 # run nm-applet &
 # run octopi-notifier &
 # run redshift-qt &
-# run megasync &
+run megasync &
 # run keepassxc &
 wine "C:\\Program Files (x86)\\Zegarynka\\Zegarynka.exe" &
 # run lightscreen &
 lxsu sh /usr/local/bin/ifconfig.sh &
 # run psi &
 # run qtox &
+run nextcloud &
 # run owncloud &
 # run mailspring -b %U &
 # run blueman-applet &

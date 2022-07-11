@@ -94,17 +94,17 @@ ${color7}${top name 3}${alignr}${top cpu 3} %   ${top mem 3} %
 ${color7}${top name 4}${alignr}${top cpu 4} %   ${top mem 4} %
 
 ${color4}Temperatura: ${color6}${hr}
-${color1}${alignc}${color4} CPU: ${color1}${hwmon 2 temp 1}°C${color4} Dysk SSD: ${color1}${hddtemp /dev/sda}°C${color4} Dysk SSHD: ${color1}${hddtemp /dev/sdb}°C
+${color1}${alignc}${color4} CPU: ${color1}${hwmon 2 temp 1}°C ${color4} Dysk SSD: ${color1}${hddtemp /dev/sda}°C ${color4} Dysk SSD: ${color1}${hddtemp /dev/sdb}°C
 ${color4}Bateria: ${color6}${hr}
 ${color1}${alignr} ${if_match ${battery_percent BAT1}<15}${color ff0000}${battery_percent BAT1}% ${battery_time BAT1}${else}${color1} ${battery_percent BAT1}%  ${battery_time BAT1}${endif}
 ${color3}${battery_bar 4,333 BAT1}
 
 ${color4}Dysk: ${color6}${hr}
 ${color4}Linux: ${color1} (${fs_type})    ${alignc}${color1}${fs_size /} > ${color1}${fs_used /}${color2} ${alignr}${fs_bar 3,66} ${color4}(${fs_used_perc /} %)
-${color4}Dysk Zapis-> ${alignc}${color1}${diskio_read}/s${alignr}${color1}${diskio_write}/s ${color4} <-Dysk Odczyt
+${color4}Zapis =-> ${alignc}${color1}${diskio_read}/s${alignr}${color1}${diskio_write}/s ${color4} <-= Odczyt
 
 ${color4}Net Kabel: ${color6}${hr}
-${alignc}${color4}IP:  ${color1}${texeci 20 dig +short ip92.ip-51-83-138.eu @54.38.142.226} ${execpi 4 echo "\${color} ping: \${color #289CD5}$(ping -W 1 -c 1 51.83.138.92 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
+${alignc}${color4}IP:  ${color1}${texeci 20 dig +short ip92.ip-51-83-138.eu @1.1.1.1} ${execpi 4 echo "\${color} ping: \${color #289CD5}$(ping -W 1 -c 1 51.83.138.92 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
 ${color4}Pobieranie:  ${color1}${downspeed enp1s0f1}  ${alignr} ${alignr} ${color1} ${upspeed enp1s0f1}  ${color4}:Wysyłanie
 ${color4}Pobrane: ${color1}${totaldown enp1s0f1} ${alignr}${color1}${totalup enp1s0f1} ${color4}:Wysłane
 
