@@ -10,7 +10,7 @@ function run {
 # export GTK2_RC_FILES="/home/lingruby/.gtkrc-2.0"
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 export TIME_STYLE='+%a %d %b %Y %H%M%S'
-
+systemctl --user restart dunst.service
 # Find out your monitor name with xrandr or arandr (save and you get this line)
 # picom -b --config /home/lingruby/.config/spectrwm/picom.conf &
 
@@ -30,10 +30,11 @@ run megasync &
 # run keepassxc &
 wine "C:\\Program Files (x86)\\Zegarynka\\Zegarynka.exe" &
 # run lightscreen &
-lxsu sh /usr/local/bin/ifconfig.sh &
+# lxsu sh /usr/local/bin/ifconfig.sh &
 # run psi &
 # run qtox &
 run nextcloud &
+run mailspring -b --no-sandbox %U &
 # run owncloud &
 # run mailspring -b %U &
 # run blueman-applet &

@@ -6,14 +6,17 @@
 #
 # Copyright (c) 2021 by Christian Rebischke <chris@shibumi.dev>
 
+# load $HOME/.zshrc.pre to overwrite defaults
+[[ -r ${HOME}/.zshrc.pre ]] && source ${HOME}/.zshrc.pre
+
 
 # Colors!
 set black       = '%{#0d0d0d}'
-set red         = '%{#db0000}'
-set green       = '%{#00b000}'
-set yellow      = '%{#a9b000}'
+set red         = '%{#DA0000}'
+set green       = '%{#00cd00}'
+set yellow      = '%{#cdcd00}'
 set blue        = '%{#1793D1}'
-set megenta     = '%{#a900cb}'
+set megenta     = '%{#cd00cd}'
 set cyan        = '%{#00b0cb}'
 set white       = '%{#D8D8D8}'
 set nocolor     = '%{#ffffff}'
@@ -26,9 +29,10 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;33m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
+
 # protect special characters
+export LANG="pl_PL"
 export LC_ALL="pl_PL.UTF-8"
-export LANG="pl_PL.UTF-8"
 export TERM=st
 export TIME_STYLE="+%a %d %b %Y %H%M%S"
 export FZF_BASE=/usr/share/fzf
@@ -228,6 +232,53 @@ setopt autocd		# Automatically cd into typed directory.
 stty stop undef		# Disable ctrl-s to freeze terminal.
 setopt interactive_comments
 
+if [[ ! -f ~/.zshcolor ]]; then
+	declare -a colors
+	colors=('cyan' 'green' 'yellow' 'magenta' 'red' 'blue')
+	host_hash=$(hostnamectl --static | md5sum | tr -d '[a-fA-F]' | cut -d ' ' -f 1 | head -c 5)
+	prompt_color=$colors[$((host_hash % ${#colors[@]} + 1))]
+	echo -n $prompt_color > ~/.zshcolor
+else
+	prompt_color=$(cat ~/.zshcolor)
+fi
+
+prompt_dir_writeable() {
+    if [ -w $PWD ]; then
+        echo "blue"
+    else
+        echo "red"
+    fi
+}
+
+prompt_git_dirty() {
+    if ! command -v git &> /dev/null; then
+	    exit
+    fi
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        if [ -z "$(command git status --porcelain --ignore-submodules -unormal)" ]; then
+            echo "green"
+        else
+            echo "yellow"
+        fi
+    else
+        echo "blue"
+    fi
+}
+
+prompt_get_namespace() {
+	if ! command -v kubens &> /dev/null; then
+		exit
+	fi
+	echo "$(kubens -c)"
+}
+
+prompt_get_context() {
+	if ! command -v kubectx &> /dev/null; then
+		exit
+	fi
+	echo "$(kubectx -c)"
+}
+
 git_prompt() {
 	BRANCH=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/*\(.*\)/\1/')
 	if [ ! -z "${BRANCH}"  ]; then
@@ -277,11 +328,12 @@ bindkey '\e[1;3C' forward-half-word
 #=====================================#
 
 alias paksyyu='pak -Syyu'
+alias paksyyuu='pak -Syyuu'
 alias paksyu='pak -SU'
 alias paksyup='pak -SyuP'
 alias paks='pak -S'
 alias paksa='pak -SA'
-alias pakvcs='pak --vcs'
+alias pakvcs='pak --vcs $(pak -Slq custom | grep "\-git")'
 alias pakna='pak -NA'
 alias paknp='pak -NP'
 alias pakr='pak -R'
@@ -292,16 +344,19 @@ alias pakQi='pak -Qi'
 alias pakpy='pak -SyP'
 alias pakp='pak -SP'
 alias paksc='pak -Sc'
+alias pakscc='pak -Scc'
 alias pakc='pak -C'
 alias pacup='pacman -Syu'
 alias pacum='pacman -Scc --noconfirm'
-alias repoup='repo-add /home/custompkgs/custom.db.tar.gz /home/custompkgs/*.pkg.tar'
+alias repoup='repo-add /dane/pkgs/custom.db.tar.gz /dane/pkgs/*.pkg.tar'
 alias grubup='grub-mkconfig -o /boot/grub/grub.cfg'
 alias mk='mkinitcpio -P'
 alias sa='systemd-analyze'
 alias sab='systemd-analyze blame'
+alias sacc='systemd-analyze critical-chain'
 alias lx='lxappearance'
 alias q5='qt5ct'
+alias q6='qt6ct'
 alias neo='neofetch'
 alias al='alsi -l'
 alias pf='pfetch'
@@ -369,6 +424,9 @@ if [[ -f /usr/share/skim/completion.zsh ]]; then
   source /usr/share/skim/completion.zsh
 fi
 ##########################################
+
+# load $HOME/.zshrc.local to overwrite this zshrc
+[[ -r ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
 
 # report about cpu-/system-/user-time of command if running longer than
 # 5 seconds

@@ -109,8 +109,8 @@ unsigned int tabspaces = 8;
 
 /* bg opacity */
 float alpha = 0.8;
-float alphaOffset = 0.0;
-float alphaUnfocus;
+float alphaOffset = 0.8;
+float alphaUnfocus = 0.8;
 
 /* Terminal colors (16 used in escape sequence) */
 /* default: #060304 / hard contrast: #1d2021 / soft contrast: #32302f */
@@ -122,28 +122,28 @@ float alphaUnfocus;
 static const char *colorname[] = {
 	/* 8 normal colors */
 	"#0d0d0d",      // black
-	"#db0000",      // red
-	"#00b000",      // green
-	"#a9b000",      // yellow
+	"#DA0000",      // red
+	"#00cd00",      // green
+	"#cdcd00",      // yellow
 	"#1793D1",      // blue
-	"#a900cb",      // magenta
+	"#cd00cd",      // magenta
 	"#00b0cb",      // cyan
 	"#D8D8D8",      // white
 
 	/* 8 bright colors */
 	"#4d4d4d",      // black
-	"#db0000",      // red
-	"#00b000",      // green
-	"#a9b000",      // yellow
+	"#DA0000",      // red
+	"#00cd00",      // green
+	"#cdcd00",      // yellow
 	"#1793D1",      // blue
-	"#a900cb",      // magenta
+	"#cd00cd",      // magenta
 	"#00b0cb",      // cyan
 	"#D8D8D8",      // white
 
 			[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-			"#a0a0a0", /* 256 -> cursor */
+			"#289CD5", /* 256 -> cursor */
 			"#0d0d0d", /* 257 -> rev cursor*/
 			"#0d0d0d", /* 258 -> bg background */
 			"#a0a0a0", /* 259 -> fg foreground */
@@ -172,8 +172,8 @@ static unsigned int cursorshape = 2;
  * Default columns and rows numbers
  */
 
-static unsigned int cols = 125;
-static unsigned int rows = 42;
+static unsigned int cols = 155;
+static unsigned int rows = 44;
 
 /*
  * Default colour and shape of the mouse cursor

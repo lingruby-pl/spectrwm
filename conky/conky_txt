@@ -17,7 +17,8 @@ conky.config = {
 
 	double_buffer = true,
 	no_buffers = true,
-	text_buffer_size = 2048,
+	text_buffer_size = 2056,
+	short_units = true,
 
 	gap_x = 30,
 	gap_y = 35,
@@ -27,37 +28,37 @@ conky.config = {
 	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel
 	own_window_transparent = true,
 	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
-	own_window_argb_value = 0,
 	own_window_argb_visual = true,
-	--own_window_colour = '#00000000',
+	own_window_argb_value = 255,
+	--own_window_colour = '#0d0d0d',
 	border_inner_margin = 0,
 	border_outer_margin = 0,
 	alignment = 'top_left',
 
 	use_xft = true,
-	xftalpha = 0.5,
+	xftalpha = 1,
 	override_utf8_locale = true,
 
 	draw_borders = false,
 	draw_outline = false,
 	draw_shades = false,
 
-	default_color = '#a0a0a0',
-	color0 = '#a0a0a0',
-	color1 = '#a0a0a0',
+	default_color = '#cccccc',
+	color0 = '#cccccc',
+	color1 = '#cccccc',
 	font = 'Hack Nerd Font:Bold:size=8',
 
 };
 
 conky.text = [[
 ${image /home/lingruby/.config/spectrwm/conky/0422_.PNG -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/0422_.PNG -p 273,5 -s 60x60}
-${font Hack Nerd Font:Bold:size=8}${color0}${alignc} Arch Linux - SpectrWM
-${color0}${alignc} GNU/Linux rolling
-${color0}${alignc} Lekka dystrybucja Linuksa.
+${font Hack Nerd Font:Bold:size=8}${color4}${alignc} CachyOS - Arch Linux Based
+${color0}${alignc} GNU/Linux ${execi 10000 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}
+${color1}${alignc}${execi 1200 whoami}@${nodename}
 
-${color1}${alignc} $sysname $kernel $machine
+${color0}${alignc} Szybka i konfigurowalna dystrybucja Linuksa.
 
-${font Hack Nerd Font:Bold:size=8}${color0}${alignc}K L A W I S Z E   S K R Ó T Ó W${color}${font}
+${color0}${font Hack Nerd Font:Bold:size=8}${alignc} K L A W I S Z E    S K R Ó T Ó W
 
 ${font Hack Nerd Font:Bold:size=8}${color0}    MOD+Alt+s    ${color}	-	term root
 ${color0}    MOD+Shift+z  ${color}	-	term user
@@ -70,7 +71,7 @@ ${color0}    MOD+Shift+h  ${color}	-	master_shrink
 ${color0}    MOD+Shift+q  ${color}	-	wind_kill
 
 ${color0}    MOD+r        ${color}	-	github-desktop
-${color0}    MOD+t        ${color}	-	atom
+${color0}    MOD+t        ${color}	-	pulsar
 ${color0}    MOD+x        ${color}	-	ts3client
 ${color0}    MOD+c        ${color}	-	xastir
 ${color0}    MOD+b        ${color}	-	krusader

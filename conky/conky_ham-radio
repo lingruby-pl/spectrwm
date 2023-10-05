@@ -7,14 +7,13 @@ telephone: 00216 97 95 72 72
 Conky Arch GNU/Linux rolling
 mod: LinGruby
 --========================================================================
---${color}${alignc}${font Hack Nerd Font:Bold:size=10} ${texeci 600 weather Łódź 1 | sed -n '2,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
 
 ]]
 
 conky.config = {
 
 	background = false,
-	update_interval = 1,
+	update_interval = 10,
 	total_run_times = 0,
 
 	double_buffer = true,
@@ -23,9 +22,9 @@ conky.config = {
 	short_units = true,
 
 	gap_x = 1,
-	gap_y = 35,
-	minimum_width = 463, minimum_height = 5,
-	maximum_width = 463,
+	gap_y = 75,
+	minimum_width = 460, minimum_height = 150,
+	maximum_width = 460,
 	own_window = true,
 	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel
 	own_window_transparent = true,
@@ -35,7 +34,7 @@ conky.config = {
 	--own_window_colour = '#0d0d0d',
 	border_inner_margin = 0,
 	border_outer_margin = 0,
-	alignment = 'top_middle',
+	alignment = 'bottom_middle',
 
 	use_xft = true,
 	xftalpha = 1,
@@ -52,8 +51,6 @@ conky.config = {
 };
 
 conky.text = [[
-${color}${alignc}${font Hack Nerd Font:Bold:size=18}${time %a %d %b %Y - %H%M%S}
-${color}${alignc}${font Hack Nerd Font:Bold:size=14} Czas pracy:  $uptime
-${color}${alignc}${font Hack Nerd Font:Bold:size=12} $sysname $kernel $machine
-${color}${alignc}${font Hack Nerd Font:Bold:size=10} ${texeci 600 weather Łódź 1 | sed -n '2,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
+${alignc}${execi 300 wget http://www.hamqsl.com/solar101vhf.php -O /tmp/solar.gif}
+${alignc}${image /tmp/solar.gif -n}
 ]];

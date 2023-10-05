@@ -21,7 +21,8 @@ conky.config = {
 
 	double_buffer = true,
 	no_buffers = true,
-	text_buffer_size = 2048,
+	text_buffer_size = 2056,
+	short_units = true,
 
 	gap_x = 30,
 	gap_y = 35,
@@ -31,9 +32,9 @@ conky.config = {
 	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel
 	own_window_transparent = true,
 	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
-	own_window_argb_value = 0,
 	own_window_argb_visual = true,
-	--own_window_colour = '#00000000',
+	own_window_argb_value = 255,
+	--own_window_colour = '#0d0d0d',
 	border_inner_margin = 0,
 	border_outer_margin = 0,
 	alignment = 'top_right',
@@ -46,32 +47,32 @@ conky.config = {
 	override_utf8_locale = true,
 	use_xft = true,
 	font = 'Hack Nerd Font:Bold:size=8',
-	xftalpha = 0.5,
+	xftalpha = 1,
 	uppercase = false,
 
 
-	default_color = '#a0a0a0',
-	color0 = '#a0a0a0',
-	color1 = '#a0a0a0',
-	color2 = '#a0a0a0',
-	color3 = '#a0a0a0',
-	color4 = '#a0a0a0',
-	color5 = '#a0a0a0',
+	default_color = '#cccccc',
+	color0 = '#cccccc',
+	color1 = '#cccccc',
+	color2 = '#cccccc',
+	color3 = '#cccccc',
+	color4 = '#cccccc',
+	color5 = '#cccccc',
 	color6 = '#696969',
 	color7 = '#696969',
-	color8 = '#a0a0a0',
-	color9 = '#a0a0a0',
+	color8 = '#cccccc',
+	color9 = '#cccccc',
 
 
 };
 
 conky.text = [[
 ${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 273,5 -s 60x60}
-${font Hack Nerd Font:Bold:size=8}${color4}${alignc} Arch Linux - SpectrWM
-${color4}${alignc} GNU/Linux rolling
-${color4}${alignc} Lekka dystrybucja Linuksa.
+${font Hack Nerd Font:Bold:size=8}${color4}${alignc} CachyOS - Arch Linux Based
+${color0}${alignc} GNU/Linux ${execi 10000 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}
+${color1}${alignc}${execi 1200 whoami}@${nodename}
 
-${color3}${alignc} $sysname $kernel $machine
+${color0}${alignc} Szybka i konfigurowalna dystrybucja Linuksa.
 
 ${font Hack Nerd Font:Bold:size=8}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
 ${color4}Zainstalowane pakiety:               ${color1}${execi 20 pacman -Q | wc -l}
@@ -94,7 +95,7 @@ ${color7}${top name 3}${alignr}${top cpu 3} %   ${top mem 3} %
 ${color7}${top name 4}${alignr}${top cpu 4} %   ${top mem 4} %
 
 ${color4}Temperatura: ${color6}${hr}
-${color1}${alignc}${color4} CPU: ${color1}${hwmon 2 temp 1}°C ${color4} Dysk SSD: ${color1}${hddtemp /dev/sda}°C ${color4} Dysk SSD: ${color1}${hddtemp /dev/sdb}°C
+${color1}${alignc}${color4} CPU: ${color1}${hwmon 2 temp 1}°C ${color4} Dysk SSD 1: ${color1}${hddtemp /dev/sda}°C ${color4} Dysk SSD 2: ${color1}${hddtemp /dev/sdb}°C
 ${color4}Bateria: ${color6}${hr}
 ${color1}${alignr} ${if_match ${battery_percent BAT1}<15}${color ff0000}${battery_percent BAT1}% ${battery_time BAT1}${else}${color1} ${battery_percent BAT1}%  ${battery_time BAT1}${endif}
 ${color3}${battery_bar 4,333 BAT1}
@@ -104,12 +105,12 @@ ${color4}Linux: ${color1} (${fs_type})    ${alignc}${color1}${fs_size /} > ${col
 ${color4}Zapis =-> ${alignc}${color1}${diskio_read}/s${alignr}${color1}${diskio_write}/s ${color4} <-= Odczyt
 
 ${color4}Net Kabel: ${color6}${hr}
-${alignc}${color4}IP:  ${color1}${texeci 20 dig +short ip92.ip-51-83-138.eu @1.1.1.1} ${execpi 4 echo "\${color} ping: \${color #289CD5}$(ping -W 1 -c 1 51.83.138.92 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
+${alignc}${color4}IP:  ${color1}${texeci 20 dig +short vps-ee58364b.vps.ovh.net @1.1.1.1}
 ${color4}Pobieranie:  ${color1}${downspeed enp1s0f1}  ${alignr} ${alignr} ${color1} ${upspeed enp1s0f1}  ${color4}:Wysyłanie
 ${color4}Pobrane: ${color1}${totaldown enp1s0f1} ${alignr}${color1}${totalup enp1s0f1} ${color4}:Wysłane
 
 ${color4}WireGuad VPN: ${color6}${hr}
-${alignc}${color4}IP:  ${color1}${addr wg0} ${execpi 4 echo "\${color} ping: \${color #289CD5}$(ping -W 1 -c 1 10.0.2.1 -q | grep rtt | egrep [0-9]+\.[0-9]+ -o | head -n 2 | tail -n 1)\${font}\${color} ms"}
+${alignc}${color4}IP:  ${color1}${addr wg0}
 ${color4}Pobieranie:  ${color1}${downspeed wg0}  ${alignr} ${alignr} ${color1} ${upspeed wg0}  ${color4}:Wysyłanie
 ${color4}Pobrane: ${color1}${totaldown wg0} ${alignr}${color1}${totalup wg0} ${color4}:Wysłane
 

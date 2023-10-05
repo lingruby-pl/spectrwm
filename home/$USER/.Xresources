@@ -47,7 +47,7 @@ URxvt*fading:              0
 URxvt*perl-ext-common:     default,matcher,clipboard
 URxvt*url-launcher:        vivaldi-snapshot
 URxvt*matcher.button:      1
-URxvt*colorUL:             #5F819D
+URxvt*colorUL:             #729fcf
 URxvt.underlineURLs:       true
 URxvt.scrollBar:           false
 URxvt*scrollBar_right:     false
@@ -67,18 +67,18 @@ URxvt*skipBuiltinGlyphs:   true
 ! ------------------------------------------------------------------------------
 
 ! special
-URxvt*foreground:          #c29f6f
+URxvt*foreground:          #CCCCCC
 URxvt*background:          [80]#080808
-URxvt*cursorColor:         #49a5bc
-URxvt*colorBD:             #447999
+URxvt*cursorColor:         #1793D1
+URxvt*colorBD:             #729fcf
 
 ! black
 URxvt*color0:       #292929
 URxvt*color8:       #494949
 
 ! red
-URxvt*color1:       #854340
-URxvt*color9:       #854340
+URxvt*color1:       #902625
+URxvt*color9:       #902625
 
 ! green
 URxvt*color2:       #97a293
@@ -128,41 +128,41 @@ XTerm*loginShell: true
 ! ------------------------------------------------------------------------------
 
 ! special
-XTerm*background:   #080808
-XTerm*foreground:   #c29f6f
-XTerm*cursorColor:  #49a5bc
+XTerm*background:   #0d0d0d
+XTerm*foreground:   #a0a0a0
+XTerm*cursorColor:  #a0a0a0
 
 ! black
-XTerm*color0:       #292929
-XTerm*color8:       #494949
+XTerm*color0:       #0d0d0d
+XTerm*color8:       #78746c
 
 ! red
-XTerm*color1:       #854340
-XTerm*color9:       #854340
+XTerm*color1:       #db0000
+XTerm*color9:       #db0000
 
 ! green
-XTerm*color2:       #97a293
-XTerm*color10:      #97a293
+XTerm*color2:       #00b000
+XTerm*color10:      #00b000
 
 ! yellow
-XTerm*color3:       #c29f6f
-XTerm*color11:      #c29f6f
+XTerm*color3:       #a9b000
+XTerm*color11:      #a9b000
 
 ! blue
-XTerm*color4:       #5e606c
-XTerm*color12:      #5e606c
+XTerm*color4:       #1793D1
+XTerm*color12:      #1793D1
 
 ! magenta
-XTerm*color5:       #7a6054
-XTerm*color13:      #7a6054
+XTerm*color5:       #a900cb
+XTerm*color13:      #a900cb
 
 ! cyan
-XTerm*color6:       #78746c
-XTerm*color14:      #78746c
+XTerm*color6:       #00b0cb
+XTerm*color14:      #00b0cb
 
 ! white
-XTerm*color7:       #bababa
-XTerm*color15:      #bababa
+XTerm*color7:       #D8D8D8
+XTerm*color15:      #D8D8D8
 
 ! ------------------------------------------------------------------------------
 ! st configs
@@ -184,9 +184,9 @@ st.font: JetBrains Mono:extrabold:pixelsize=11.5:antialias=true:hinting=true
 ! ------------------------------------------------------------------------------
 
 ! special
-st*background:   #080808
-st*foreground:   #c29f6f
-st*cursorColor:  #49a5bc
+st*background:   #0d0d0d
+st*foreground:   #a0a0a0
+st*cursorColor:  #a0a0a0
 
 !! st-night:
 
@@ -195,8 +195,8 @@ st*color0:       #292929
 st*color8:       #494949
 
 ! red
-st*color1:       #854340
-st*color9:       #854340
+st*color1:       #902625
+st*color9:       #902625
 
 ! green
 st*color2:       #97a293
@@ -221,6 +221,108 @@ st*color14:      #78746c
 ! white
 st*color7:       #bababa
 st*color15:      #bababa
+
+! ------------------------------------------------------------------------------
+! Custom xnedit
+! ------------------------------------------------------------------------------
+
+*highlightColor: #4a90d9
+
+*XmDialogShell.background:	#050505
+*XmDialogShell.foreground:	#CCCCCC
+
+*XmForm.background:	#050505
+*XmForm.foreground:	#CCCCCC
+
+*XmFrame.background:	#050505
+*XmFrame.foreground:	#CCCCCC
+
+*XmPanedWindow.background:	#050505
+*XmPanedWindow.foreground:	#CCCCCC
+
+*XmRowColumn.background:	#050505
+*XmRowColumn.foreground:	#CCCCCC
+
+*XmMenuShell.background:	#050505
+*XmMenuShell.foreground:	#CCCCCC
+
+*XmMessageBox.background:	#050505
+*XmMessageBox.foreground:	#CCCCCC
+
+*XmScrollBar.background:	#050505
+*XmScrollBar.foreground:	#CCCCCC
+*XmScrollBar:           false
+
+*XmScrolledWindow.background:	#050505
+*XmScrolledWindow.foreground:	#CCCCCC
+
+*XmSelectionBox.background:	#050505
+*XmSelectionBox.foreground:	#CCCCCC
+
+
+
+*XmLabel.background:	#050505
+*XmLabel.foreground:	#CCCCCC
+*XmLabelGadget.background:	#050505
+*XmLabelGadget.foreground:	#CCCCCC
+
+*XmPushButton.background:	#050505
+*XmPushButton.foreground:	#CCCCCC
+*XmPushButtonGadget.background:	#050505
+*XmPushButtonGadget.foreground:	#CCCCCC
+*XmPushButton.highlightThickness: 2
+
+*XmCascadeButton.background:	#050505
+*XmCascadeButton.foreground:	#CCCCCC
+*XmCascadeButtonGadget.background:	#050505
+*XmCascadeButtonGadget.foreground:	#CCCCCC
+*XmCascadeButtonGadget.highlightThickness: 2
+
+*XmTearOffButton.background:	#050505
+*XmTearOffButton.foreground:	#CCCCCC
+*XmTearOffButtonGadget.background:	#050505
+*XmTearOffButtonGadget.foreground:	#CCCCCC
+*XmTearOffButtonGadget.highlightThickness: 2
+
+*XmToggleButton.background:	#050505
+*XmToggleButton.foreground:	#CCCCCC
+*XmToggleButtonGadget.background:	#050505
+*XmToggleButtonGadget.foreground:	#CCCCCC
+*XmToggleButtonGadget.highlightThickness: 2
+
+*XmSeparator.background:	#050505
+*XmSeparator.foreground:	#CCCCCC
+*XmSeparatorGadget.background:	#050505
+*XmSeparatorGadget.foreground:	#CCCCCC
+
+*XmList.background:	#050505
+*XmList.foreground:	#CCCCCC
+
+*XmSash.background:	#050505
+*XmSash.foreground:	#CCCCCC
+
+*XmText.foreground:	#CCCCCC
+*XmText.background:	#050505
+
+*XmTextField.foreground:	#CCCCCC
+*XmTextField.background:	#050505
+
+
+*TextWidget.background: #050505
+
+
+*enableEtchedInMenu:	True
+*enableMenuInCascade:	True
+*enableThinThickness:	True
+*ScrollbarBackground:	#050505
+*Scrollbar:           false
+
+*foreground: #CCCCCC
+*background: #050505
+
+
+*text.background: #CCCCCC
+
 
 ! ------------------------------------------------------------------------------
 ! Custom Colors
