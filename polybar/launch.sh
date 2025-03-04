@@ -10,7 +10,7 @@ killall -q polybar
   while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
 
     if type "xrandr" > /dev/null; then
-    polybar --reload mainbar-eDP1 -c ~/.config/spectrwm/polybar/config &
+    polybar --reload mainbar-eDP -c ~/.config/spectrwm/polybar/config &
     # polybar --reload mainbar-DP1 -c ~/.config/spectrwm/polybar/config &
     fi
 

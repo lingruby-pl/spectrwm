@@ -23,9 +23,9 @@ conky.config = {
 	xinerama_head = 3,
 
 	gap_x = 962,
-	gap_y = 280,
-	minimum_width = 615, minimum_height = 150,
-	maximum_width = 615,
+	gap_y = 66,
+	minimum_width = 400, minimum_height = 200,
+	maximum_width = 400,
 	own_window = true,
 	own_window_class = 'Conky',
 	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel/utility
@@ -53,6 +53,6 @@ conky.config = {
 };
 
 conky.text = [[
-${alignc}${execi 300 wget https://www.hamqsl.com/solar101vhfpic.php -O /tmp/solar.gif}
-${alignc}${image /tmp/solar.gif -n}
+${alignc}${execi 300 wget https://www.hamqsl.com/solarmuf.php -O /tmp/solar1.gif}
+${alignc}${image /tmp/solar1.gif -n}
 ]];

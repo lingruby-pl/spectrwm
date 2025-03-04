@@ -12,7 +12,7 @@ mod: LinGruby
 conky.config = {
 
 	background = true,
-	update_interval = 1,
+	update_interval = 1.0,
 	total_run_times = 0,
 
 	cpu_avg_samples = 1,
@@ -23,21 +23,23 @@ conky.config = {
 	no_buffers = true,
 	text_buffer_size = 2056,
 	short_units = true,
+	xinerama_head = 3,
 
-	gap_x = 30,
+	gap_x = 1460,
 	gap_y = 35,
-	minimum_width = 333, minimum_height = 5,
-	maximum_width = 333,
+	minimum_width = 433, minimum_height = 5,
+	maximum_width = 433,
 	own_window = true,
-	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel
+	own_window_class = 'Conky',
+	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel/utility
 	own_window_transparent = true,
-	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+	own_window_hints =  'undecorated,below,above,sticky,skip_taskbar,skip_pager',
 	own_window_argb_visual = true,
 	own_window_argb_value = 255,
 	--own_window_colour = '#0d0d0d',
 	border_inner_margin = 0,
 	border_outer_margin = 0,
-	alignment = 'top_right',
+	alignment = 'top_left',
 
 	draw_shades = false,
 	draw_outline = false,
@@ -46,70 +48,72 @@ conky.config = {
 
 	override_utf8_locale = true,
 	use_xft = true,
-	font = 'Hack Nerd Font:Bold:size=8',
+	font = 'Hack Nerd Font:Bold:size=11',
 	xftalpha = 1,
 	uppercase = false,
 
 
-	default_color = '#cccccc',
-	color0 = '#cccccc',
-	color1 = '#cccccc',
-	color2 = '#cccccc',
-	color3 = '#cccccc',
-	color4 = '#cccccc',
-	color5 = '#cccccc',
-	color6 = '#696969',
-	color7 = '#696969',
-	color8 = '#cccccc',
-	color9 = '#cccccc',
+	default_color = '#f8fcd0',
+	color0 = '#f8fcd0',
+	color1 = '#f8fcd0',
+	color2 = '#f8fcd0',
+	color3 = '#f8fcd0',
+	color4 = '#f8fcd0',
+	color5 = '#D3D9E3',
+	color6 = '#f8fcd0',
+	color7 = '#f8fcd0',
+	color8 = '#f8fcd0',
+	color9 = '#f8fcd0',
 
 
 };
 
 conky.text = [[
-${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/0422.PNG -p 273,5 -s 60x60}
-${font Hack Nerd Font:Bold:size=8}${color4}${alignc} CachyOS - Arch Linux Based
+${image /home/lingruby/.config/spectrwm/conky/Draganizer1_1.png -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/Draganizer1_1.png -p 373,5 -s 60x60}
+${font Hack Nerd Font:Bold:size=11}${color1}${alignc} CachyOS - Arch Linux Based
 ${color0}${alignc} GNU/Linux ${execi 10000 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}
 ${color1}${alignc}${execi 1200 whoami}@${nodename}
 
 ${color0}${alignc} Szybka i konfigurowalna dystrybucja Linuksa.
 
-${font Hack Nerd Font:Bold:size=8}${color4}Dostępne aktualizacje:               ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
-${color4}Zainstalowane pakiety:               ${color1}${execi 20 pacman -Q | wc -l}
-${color4}Ostatnia aktualizacja:               ${color1}${execi 20 grep "starting full system upgrade" /var/log/pacman.log | tail -n1| cut --bytes=2-17}
+${font Hack Nerd Font:Bold:size=11}${color4}Dostępne aktualizacje:          ${color1}${execi 20 cat /tmp/pak-checkupdates | wc -l}
+${color4}Zainstalowane pakiety:          ${color1}${execi 20 pacman -Q | wc -l}
+${color4}Ostatnia aktualizacja:          ${color1}${execi 20 grep "starting full system upgrade" /var/log/pacman.log | tail -n1| cut --bytes=2-17}
 
 ${color4}Procesor i Pamięć: ${color6}${hr}
 ${color1}Użycie procesora  ${color3}${alignc} ${cpubar 4,88} ${alignr} ${color1}($cpu %) z ${freq_g cpu} GHz
 ${color1}Core1:  ${color3}${cpubar cpu0 4,55}  ${color1}(${cpu cpu0} %) ${alignr}${color1}(${cpu cpu1} %)  ${color3}${cpubar cpu1 4,55}${color1}  :Core2
 ${color1}Core3:  ${color3}${cpubar cpu2 4,55}  ${color1}(${cpu cpu2} %) ${alignr}${color1}(${cpu cpu3} %)  ${color3}${cpubar cpu3 4,55}${color1}  :Core4
+${color1}Core5:  ${color3}${cpubar cpu4 4,55}  ${color1}(${cpu cpu4} %) ${alignr}${color1}(${cpu cpu5} %)  ${color3}${cpubar cpu5 4,55}${color1}  :Core6
+${color1}Core7:  ${color3}${cpubar cpu6 4,55}  ${color1}(${cpu cpu6} %) ${alignr}${color1}(${cpu cpu7} %)  ${color3}${cpubar cpu7 4,55}${color1}  :Core8
 
 ${color4}Pamięć RAM: ${color1}${mem} z ${memmax}  ($memperc %)${alignr}${color1}Wolna: ${memfree}
 ${color1}Bufor: ${buffers} ${alignr}${color1}Pamięć podręczna: ${cached}
 ${color3}${membar 4}
-${color4}Pamięć SWAP:  ${color1}${swap} z ${swapmax}  ($swapperc %)
-${color3}${swapbar 4}
-${color4}Wykorzystanie Procesora i Pamięci${alignr}CPU %      MEM %
+${color4}Wykorzystanie Procesora i Pamięci
+${alignr}CPU %      MEM %
 ${color1}${top name 1}${alignr}${top cpu 1} %   ${top mem 1} %
 ${color7}${top name 2}${alignr}${top cpu 2} %   ${top mem 2} %
 ${color7}${top name 3}${alignr}${top cpu 3} %   ${top mem 3} %
 ${color7}${top name 4}${alignr}${top cpu 4} %   ${top mem 4} %
+${color7}${top name 5}${alignr}${top cpu 5} %   ${top mem 5} %
 
 ${color4}Temperatura: ${color6}${hr}
-${color1}${alignc}${color4} CPU: ${color1}${hwmon 2 temp 1}°C ${color4} Dysk SSD 1: ${color1}${hddtemp /dev/sda}°C ${color4} Dysk SSD 2: ${color1}${hddtemp /dev/sdb}°C
+${color1}${alignc}${color4} CPU: ${color1}${hwmon 1 temp 1}°C ${color4} Dysk NVME: ${color1}${hwmon nvme temp 1}°C ${color4}
 ${color4}Bateria: ${color6}${hr}
-${color1}${alignr} ${if_match ${battery_percent BAT1}<15}${color ff0000}${battery_percent BAT1}% ${battery_time BAT1}${else}${color1} ${battery_percent BAT1}%  ${battery_time BAT1}${endif}
-${color3}${battery_bar 4,333 BAT1}
+${color1}${alignr} ${if_match ${battery_percent BAT0}<15}${color ff0000}${battery_percent BAT0}% ${battery_time BAT0}${else}${color1} ${battery_percent BAT0}%  ${battery_time BAT0}${endif}
+${color3}${battery_bar 4 BAT0}
 
 ${color4}Dysk: ${color6}${hr}
 ${color4}Linux: ${color1} (${fs_type})    ${alignc}${color1}${fs_size /} > ${color1}${fs_used /}${color2} ${alignr}${fs_bar 3,66} ${color4}(${fs_used_perc /} %)
 ${color4}Zapis =-> ${alignc}${color1}${diskio_read}/s${alignr}${color1}${diskio_write}/s ${color4} <-= Odczyt
 
 ${color4}Net Kabel: ${color6}${hr}
-${alignc}${color4}IP:  ${color1}${texeci 20 dig +short vps-ee58364b.vps.ovh.net @1.1.1.1}
-${color4}Pobieranie:  ${color1}${downspeed enp1s0f1}  ${alignr} ${alignr} ${color1} ${upspeed enp1s0f1}  ${color4}:Wysyłanie
-${color4}Pobrane: ${color1}${totaldown enp1s0f1} ${alignr}${color1}${totalup enp1s0f1} ${color4}:Wysłane
+${alignc}${color4}IP:  ${color1}${texeci 20 dig +short vps-ee58364b.vps.ovh.net @127.0.0.53}
+${color4}Pobieranie:  ${color1}${downspeed eth0}  ${alignr} ${alignr} ${color1} ${upspeed eth0}  ${color4}:Wysyłanie
+${color4}Pobrane: ${color1}${totaldown eth0} ${alignr}${color1}${totalup eth0} ${color4}:Wysłane
 
-${color4}WireGuad VPN: ${color6}${hr}
+${color4}WireGuard VPN: ${color6}${hr}
 ${alignc}${color4}IP:  ${color1}${addr wg0}
 ${color4}Pobieranie:  ${color1}${downspeed wg0}  ${alignr} ${alignr} ${color1} ${upspeed wg0}  ${color4}:Wysyłanie
 ${color4}Pobrane: ${color1}${totaldown wg0} ${alignr}${color1}${totalup wg0} ${color4}:Wysłane

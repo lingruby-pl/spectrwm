@@ -12,22 +12,24 @@ mod: LinGruby
 conky.config = {
 
 	background = true,
-	update_interval = 1,
+	update_interval = 1.0,
 	total_run_times = 0,
 
 	double_buffer = true,
 	no_buffers = true,
 	text_buffer_size = 2056,
 	short_units = true,
+	xinerama_head = 3,
 
 	gap_x = 30,
 	gap_y = 35,
-	minimum_width = 333, minimum_height = 5,
-	maximum_width = 333,
+	minimum_width = 433, minimum_height = 5,
+	maximum_width = 433,
 	own_window = true,
-	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel
+	own_window_class = 'Conky',
+	own_window_type = 'override',-- #options are: normal/override/dock/desktop/panel/utility
 	own_window_transparent = true,
-	own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
+	own_window_hints =  'undecorated,below,above,sticky,skip_taskbar,skip_pager',
 	own_window_argb_visual = true,
 	own_window_argb_value = 255,
 	--own_window_colour = '#0d0d0d',
@@ -43,24 +45,26 @@ conky.config = {
 	draw_outline = false,
 	draw_shades = false,
 
-	default_color = '#cccccc',
-	color0 = '#cccccc',
-	color1 = '#cccccc',
-	font = 'Hack Nerd Font:Bold:size=8',
+	default_color = '#f8fcd0',
+	color0 = '#f8fcd0',
+	color1 = '#f8fcd0',
+	font = 'Hack Nerd Font:Bold:size=11',
 
 };
 
 conky.text = [[
-${image /home/lingruby/.config/spectrwm/conky/0422_.PNG -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/0422_.PNG -p 273,5 -s 60x60}
-${font Hack Nerd Font:Bold:size=8}${color4}${alignc} CachyOS - Arch Linux Based
+${image /home/lingruby/.config/spectrwm/conky/Draganizer1_1_.png -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/Draganizer1_1_.png -p 373,5 -s 60x60}
+${font Hack Nerd Font:Bold:size=11}${color1}${alignc} CachyOS - Arch Linux Based
 ${color0}${alignc} GNU/Linux ${execi 10000 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}
 ${color1}${alignc}${execi 1200 whoami}@${nodename}
 
 ${color0}${alignc} Szybka i konfigurowalna dystrybucja Linuksa.
 
-${color0}${font Hack Nerd Font:Bold:size=8}${alignc} K L A W I S Z E    S K R Ó T Ó W
 
-${font Hack Nerd Font:Bold:size=8}${color0}    MOD+Alt+s    ${color}	-	term root
+${color0}${font Hack Nerd Font:Bold:size=11}${alignc} K L A W I S Z E    S K R Ó T Ó W
+
+
+${font Hack Nerd Font:Bold:size=11}${color0}    MOD+Alt+s    ${color}	-	term root
 ${color0}    MOD+Shift+z  ${color}	-	term user
 ${color0}    MOD+z        ${color}	-	vivaldi-snapshot
 ${color0}    MOD+d        ${color}	-	rofi
@@ -80,7 +84,7 @@ ${color0}    MOD+g        ${color}	-	gotop
 ${color0}    MOD+s        ${color}	-	weechat
 ${color0}    MOD+f        ${color}	-	fullscreen
 ${color0}    MOD+n        ${color}	-	ifconfig.sh
-${color0}    MOD+Shift+x  ${color}	-	discord
+${color0}    MOD+Shift+x  ${color}	-	vesktop
 ${color0}    MOD+Shift+c  ${color}	-	kodi
 ${color0}    MOD+Shift+d  ${color}	-	dunst
 ${color0}    MOD+Alt+g    ${color}	-	gimp

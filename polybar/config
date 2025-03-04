@@ -25,9 +25,6 @@ margin-bottom = 0
 
 [settings]
 ;https://github.com/jaagr/polybar/wiki/Configuration#application-settings
-throttle-output = 5
-throttle-output-for = 10
-throttle-input-for = 30
 screenchange-reload = true
 compositing-background = over
 compositing-foreground = over
@@ -36,64 +33,36 @@ compositing-underline = over
 compositing-border = over
 
 ; Define fallback values used by all module formats
-format-foreground = #CCCCCC
-format-background = #0d0d0d
-format-underline =
-format-overline =
-format-spacing =
-format-padding =
-format-margin =
-format-offset =
+format-foreground = #f8fcd0
+format-background = #000000
+
 ;format-transparent = #00000000 #182127 #CCCCCC
 pseudo-transparency = false
 
 [colors]
 ; Nord theme ============
-background = #0d0d0d
-foreground = #CCCCCC
-alert = #EA142E
+background = #000000
+foreground = #f8fcd0
+alert = #CC0000
 volume-min = #a3be8c
 volume-med = #ebcb8b
 volume-max = #bf616a
 ; =======================
 
-; Gotham theme ==========
-; background = #0a0f14
-; foreground = #99d1ce
-; alert = #d26937
-; volume-min = #2aa889
-; volume-med = #edb443
-; volume-max = #c23127
-; =======================
-
-; INTRCPTR theme ============
-;background = ${xrdb:color0:#222}
-;background = #aa000000
-;background-alt = #444
-;foreground = ${xrdb:color7:#222}
-;foreground = #fff
-;foreground-alt = #555
-;primary = #ffb52a
-;secondary = #e60053
-;alert = #bd2c40
-
-
-
-
 ################################################################################
 ################################################################################
-############                    MAINBAR-eDP1                        ############
+############                    MAINBAR-eDP-1                       ############
 ################################################################################
 ################################################################################
 
-[bar/mainbar-eDP1]
+[bar/mainbar-eDP]
 ; = ${env:MONITOR:fallback-value}
-monitor = eDP1
+monitor = eDP
 monitor-strict = false
-tray-position = ${env:TRAY_POSITION:right}
+tray-position = right
 ;dpi = 100
 width = 100%
-height = 14
+height = 22
 ;offset-x = 1%
 ;offset-y = 1%
 radius-top = 0.0
@@ -125,11 +94,11 @@ module-margin-left = 1
 module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Hack Nerd Font:style=Bold:size=8:antialias=true:autohint=true:hinting=true;2"
+font-0 = "Hack Nerd Font:style=Bold:size=12:antialias=true:autohint=true:hinting=true;2"
 font-1 = "NotoColorEmoji:scale=13:antialias=true:autohint=true;2"
 font-2 = "JoyPixels:scale=13:antialias=true:autohint=true;2"
 
-modules-left = arch checkupdates auracle cpu2 memory2 wired-network vpn-wireguard-wg networkspeeddown networkspeedup weather pub-ip
+modules-left = checkupdates auracle cpu2 memory2 wired-network vpn-wireguard-wg networkspeeddown networkspeedup weather pub-ip
 modules-center =
 modules-right =
 
@@ -190,7 +159,7 @@ module-margin-left = 1
 module-margin-right = 1
 
 ;https://github.com/jaagr/polybar/wiki/Fonts
-font-0 = "Hack Nerd Font:style=Bold:size=8:antialias=true:autohint=true:hinting=true;2"
+font-0 = "Hack Nerd Font:style=Bold:size=12:antialias=true:autohint=true:hinting=true;2"
 font-1 = "NotoColorEmoji:scale=13:antialias=true:autohint=true;2"
 font-2 = "JoyPixels:scale=13:antialias=true:autohint=true;2"
 
@@ -239,8 +208,8 @@ format-prefix-font = 2
 label = %output:2%
 label-maxlen = 6
 
-;click-left = notify-send -t 5000 "Dostępne z repozytoriów:" "$(cat /tmp/checkupdates)"
-click-left = dunstify -u normal -t 5000 -r 102938  "Dostępne z repo:" "$(cat /tmp/pak-checkupdates)"
+click-left = notify-send -t 5000 "Dostępne z repo:" "$(cat /tmp/pak-checkupdates)"
+;click-left = dunstify -u normal -t 5000 -r 102938  "Dostępne z repo:" "$(cat /tmp/pak-checkupdates)"
 
 ################################################################################
 
@@ -263,8 +232,8 @@ format-prefix-foreground = ${colors.foreground}
 label = %output:2%
 label-maxlen = 6
 
-;click-left = notify-send -t 5000 "Dostępne z AUR:" "$(cat /tmp/aurupdates)"
-click-left = dunstify -u normal -t 5000 -r 102939 "Dostępne z AUR:" "$(cat /tmp/pak-aurupdates)"
+click-left = notify-send -t 5000 "Dostępne z AUR:" "$(cat /tmp/pak-aurupdates)"
+;click-left = dunstify -u normal -t 5000 -r 102939 "Dostępne z AUR:" "$(cat /tmp/pak-aurupdates)"
 
 ################################################################################
 
@@ -724,7 +693,7 @@ type = internal/network
 ;interface = wlp3s0
 ;interface = enp14s0
 ;interface = enp0s31f6
-interface = enp1s0f1
+interface = eth0
 label-connected = %upspeed:8%
 ;udspeed-minwidth = 5
 format-connected = <label-connected>
@@ -743,7 +712,7 @@ type = internal/network
 ;interface = wlp3s0
 ;interface = enp14s0
 ;interface = enp0s31f6
-interface = enp1s0f1
+interface = eth0
 label-connected = %downspeed:9%
 ;udspeed-minwidth = 5
 format-connected = <label-connected>
@@ -789,7 +758,7 @@ format-prefix-foreground = ${colors.foreground}
 
 [module/release]
 type = custom/script
-exec = (lsb_release -d | awk {'print $2'} ;echo " "; lsb_release -r | awk {'print $2'}) | tr -d '\n'
+;exec = (lsb_release -d | awk {'print $2'} ;echo " "; lsb_release -r | awk {'print $2'}) | tr -d '\n'
 interval = 6000
 
 format-foreground = ${colors.foreground}
@@ -904,7 +873,7 @@ format = <label>
 label = %output%
 interval = 600
 exec = weather Łódź 4
-click-left = xterm -title 'Pogoda' -geometry 125x42 +sb -hold -e weather Łódź 1 &
+click-left = xterm -title 'Pogoda' -geometry 125x45 +sb -hold -e weather EPLL 1 &
 format-foreground = ${colors.foreground}
 
 #################################################################################
@@ -912,7 +881,7 @@ format-foreground = ${colors.foreground}
 [module/wired-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = enp1s0f1
+interface = eth0
 ;interface = enp14s0
 interval = 3.0
 
@@ -944,7 +913,8 @@ label-disconnected-foreground = ${colors.foreground}
 [module/wireless-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = wlp3s0
+interface = wlan0
+;interface = wlp3s0
 interval = 3.0
 label-connected = %essid%
 
