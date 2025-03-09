@@ -21,19 +21,27 @@
 
     ### Geometry ###
 
+    # The width of the window, excluding the frame.
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
     width = 350
 
-    # The maximum height of a single notification, excluding the frame.
-    height = 300
+    # The height of a single notification, excluding the frame.
+    # dynamic height from 0 to 300
+    height = (0, 300)
+    # constant height of 300
+    # height = 300
+    # NOTE: Dunst from version 1.11 and older don't support dynamic height
+    #       and the given value is treated as the maximum height
 
     # Position the notification in the top right corner
     origin = top-right
 
     # Offset from the origin
-    offset = 25x39
+    # NOTE: Dunst from version 1.11 and older use this alternative notation
+    # offset = 10x50
+    offset = (29, 49)
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -60,6 +68,19 @@
     # Set the maximum width for the progress bar
     progress_bar_max_width = 300
 
+    # Corner radius for the progress bar. 0 disables rounded corners.
+    progress_bar_corner_radius = 0
+
+    # Define which corners to round when drawing the progress bar. If progress_bar_corner_radius
+    # is set to 0 this option will be ignored.
+    progress_bar_corners = all
+
+    # Corner radius for the icon image.
+    icon_corner_radius = 0
+
+    # Define which corners to round when drawing the icon image. If icon_corner_radius
+    # is set to 0 this option will be ignored.
+    icon_corners = all
 
     # Show how many messages are currently hidden (because of
     # notification_limit).
@@ -73,6 +94,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
+    # If gap_size is greater than 0, this setting will be ignored.
     separator_height = 2
 
     # Padding between text and separator.
@@ -89,7 +111,13 @@
     frame_width = 2
 
     # Defines color of the frame around the notification window.
-    frame_color = "#880015"
+    frame_color = "#D02038"
+
+    # Size of gap to display between notifications - requires a compositor.
+    # If value is greater than 0, separator_height will be ignored and a border
+    # of size frame_width will be drawn around each notification instead.
+    # Click events on gaps do not currently propagate to applications below.
+    gap_size = 0
 
     # Define a color for the separator.
     # possible values are:
@@ -99,7 +127,12 @@
     #  * anything else will be interpreted as a X color.
     separator_color = frame
 
-    # Sort messages by urgency.
+    # Sort type.
+    # possible values are:
+    #  * id: sort by id
+    #  * urgency_ascending: sort by urgency (low then normal then critical)
+    #  * urgency_descending: sort by urgency (critical then normal then low)
+    #  * update: sort by update (most recent always at the top)
     sort = yes
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
@@ -111,7 +144,7 @@
 
     ### Text ###
 
-    font = Hack Nerd Font Bold 9
+    font = Hack Nerd Font Bold 10
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
@@ -184,13 +217,22 @@
 
     ### Icons ###
 
-    # Align icons left/right/off
+    # Recursive icon lookup. You can set a single theme, instead of having to
+    # define all lookup paths.
+    enable_recursive_icon_lookup = true
+
+    # Set icon theme (only used for recursive icon lookup)
+    icon_theme = Adwaita
+    # You can also set multiple icon themes, with the leftmost one being used first.
+    # icon_theme = "Adwaita, breeze"
+
+    # Align icons left/right/top/off
     icon_position = left
 
     # Scale small icons up to this size, set to 0 to disable. Helpful
     # for e.g. small files or high-dpi screens. In case of conflict,
     # max_icon_size takes precedence over this.
-    min_icon_size = 0
+    min_icon_size = 16
 
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 32
@@ -230,6 +272,13 @@
     # The radius will be automatically lowered if it exceeds half of the
     # notification height to avoid clipping text and/or icons.
     corner_radius = 0
+
+    # Define which corners to round when drawing the window. If the corner radius
+    # is set to 0 this option will be ignored.
+    #
+    # Comma-separated list of the corners. The accepted corner values are bottom-right,
+    # bottom-left, top-right, top-left, top, bottom, left, right or all.
+    corners = all
 
     # Ignore the dbus closeNotification message.
     # Useful to enforce the timeout set by dunst configuration. Without this
@@ -292,26 +341,26 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#0d0d0d"
-    foreground = "#CCCCCC"
+    background = "#181818"
+    foreground = "#F5F5F5"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
-    new_icon = /path/to/icon
+    new_icon = /usr/share/icons/LinGruby_spectrwm/16x16/status/:/usr/share/icons/LinGruby_spectrwm/16x16/devices/
 
 [urgency_normal]
-    background = "#0d0d0d"
-    foreground = "#CCCCCC"
+    background = "#181818"
+    foreground = "#F5F5F5"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
-    new_icon = /path/to/icon
+    new_icon = /usr/share/icons/LinGruby_spectrwm/16x16/status/:/usr/share/icons/LinGruby_spectrwm/16x16/devices/
 
 [urgency_critical]
-    background = "#0d0d0d"
-    foreground = "#CCCCCC"
-    frame_color = "#67060C"
+    background = "#181818"
+    foreground = "#F5F5F5"
+    frame_color = "#D02038"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
-    new_icon = /path/to/icon
+    new_icon = /usr/share/icons/LinGruby_spectrwm/16x16/status/:/usr/share/icons/LinGruby_spectrwm/16x16/devices/
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

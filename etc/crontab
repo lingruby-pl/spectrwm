@@ -24,9 +24,11 @@ MAILTO=root
 #
 #
 # m h dom mon dow user	command
-# */6 * * * * root /usr/local/bin/ram-drop_caches.sh
+*/6 * * * * root repo-add /dane/pkgs/custom.db.tar.zst /dane/pkgs/*.pkg.tar
+*/10 * * * * root /usr/local/bin/ntp.sh
+*/15 * * * * lingruby /home/lingruby/Skrypt_start/weather.sh
+59 5 * * * root /usr/local/bin/cachyos-rate-mirrors
+# */35 * * * * lingruby /usr/local/bin/conky_start.sh
+# */59 * * * * root /usr/local/bin/ram-drop_caches.sh
+# */33 * * * * root /usr/bin/freshclam
 # */10 * * * * root /usr/local/bin/pacman.sh
-*/10 * * * * lingruby /home/$USER/Skrypt_start/weather.sh
-*/14 * * * * root /usr/local/bin/ntp.sh
-*/33 * * * * root /usr/bin/freshclam
-

@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
- static char *font = "Hack Nerd Font:Bold:size=9:antialias=true:hinting=true";
- static char *font2[] = { "NotoColorEmoji:pixelsize=10:antialias=true:autohint=true" };
+ static char *font = "Roboto Mono:Bold:size=12:antialias=true:hinting=true";
+ static char *font2[] = { "NotoColorEmoji:pixelsize=13:antialias=true:autohint=true" };
  static char *font3[] = { "JoyPixels:scale=13:antialias=true:autohint=true" };
  static int borderpx = 4;
 
@@ -121,32 +121,32 @@ float alphaUnfocus = 0.8;
 
 static const char *colorname[] = {
 	/* 8 normal colors */
-	"#0d0d0d",      // black
-	"#DA0000",      // red
+	"#000000",      // black
+	"#D02038",      // red
 	"#00cd00",      // green
-	"#cdcd00",      // yellow
-	"#1793D1",      // blue
+	"#fabd2f",      // yellow
+	"#0080FF",      // blue
 	"#cd00cd",      // magenta
-	"#00b0cb",      // cyan
-	"#D8D8D8",      // white
+	"#00FFFF",      // cyan
+	"#F5F5F5",      // white
 
 	/* 8 bright colors */
-	"#4d4d4d",      // black
-	"#DA0000",      // red
+	"#484e51",      // black
+	"#D02038",      // red
 	"#00cd00",      // green
-	"#cdcd00",      // yellow
-	"#1793D1",      // blue
+	"#fabd2f",      // yellow
+	"#0080FF",      // blue
 	"#cd00cd",      // magenta
-	"#00b0cb",      // cyan
-	"#D8D8D8",      // white
+	"#00FFFF",      // cyan
+	"#F5F5F5",      // white
 
 			[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-			"#289CD5", /* 256 -> cursor */
-			"#0d0d0d", /* 257 -> rev cursor*/
-			"#0d0d0d", /* 258 -> bg background */
-			"#a0a0a0", /* 259 -> fg foreground */
+			"#0080FF", /* 256 -> cursor */
+			"#010101", /* 257 -> rev cursor*/
+			"#010101", /* 258 -> bg background */
+			"#F5F5F5", /* 259 -> fg foreground */
 };
 
 /*

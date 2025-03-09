@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <metacity_theme>
 <info>
-	<name>oomox-LinGruby_spectrwm</name>
+	<name>LinGruby_spectrwm</name>
 	<author>Satyajit Sahoo</author>
 	<copyright>GPL-3.0+</copyright>
 	<date>11 December 2013</date>
@@ -9,16 +9,16 @@
 </info>
 
 <!-- ::: CONSTANTS ::: -->
-<constant name="C_titlebar_focused" value="#111111" />
-<constant name="C_titlebar_unfocused" value="#202020" />
-<constant name="C_border_focused" value="#67060c" />
-<constant name="C_border_unfocused" value="#444444" />
-<constant name="C_title_focused" value="#a0a0a0" />
-<constant name="C_title_unfocused" value="blend/#a0a0a0/#202020/0.4" />
-<constant name="C_icons_focused" value="#a0a0a0" />
+<constant name="C_titlebar_focused" value="#181818" />
+<constant name="C_titlebar_unfocused" value="#303334" />
+<constant name="C_border_focused" value="#d02038" />
+<constant name="C_border_unfocused" value="#484e51" />
+<constant name="C_title_focused" value="#f5f5f5" />
+<constant name="C_title_unfocused" value="blend/#f5f5f5/#303334/0.4" />
+<constant name="C_icons_focused" value="#f5f5f5" />
 <constant name="C_icons_focused_prelight" value="gtk:bg[SELECTED])" />
 <constant name="C_icons_focused_pressed" value="shade/gtk:bg[SELECTED]/0.8" />
-<constant name="C_icons_unfocused" value="blend/#a0a0a0/#202020/0.4" />
+<constant name="C_icons_unfocused" value="blend/#f5f5f5/#303334/0.4" />
 <constant name="C_icons_unfocused_prelight" value="gtk:bg[SELECTED])" />
 <constant name="C_icons_unfocused_pressed" value="shade/gtk:bg[SELECTED]/0.8" />
 

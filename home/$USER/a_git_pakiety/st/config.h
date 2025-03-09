@@ -1,1 +1,1 @@
-config.def.h
+/home/lingruby/a_git_pakiety/st/config.def.h

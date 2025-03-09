@@ -5,7 +5,7 @@
 ## WEATHER
 weather() {
 	wthr="$(awk '{print}' ~/.config/weather.txt)"
-	echo " $wthr"
+	echo "$wthr"
 }
 
 
@@ -13,7 +13,7 @@ weather() {
 
       SLEEP_SEC=2
       #loops forever outputting a line every SLEEP_SEC secs
-      while :; do     
-    echo "$(weather) "
+      while :; do
+    echo "$(weather)"
 		sleep $SLEEP_SEC
 		done

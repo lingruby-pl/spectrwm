@@ -11,15 +11,16 @@
 
 
 # Colors!
-set black       = '%{#0d0d0d}'
-set red         = '%{#DA0000}'
-set green       = '%{#00cd00}'
-set yellow      = '%{#cdcd00}'
-set blue        = '%{#1793D1}'
+set black       = '%{#010101}'
+set red         = '%{#D02038}'
+set green       = '%{#008800}'
+set yellow      = '%{#fabd2f}'
+set blue        = '%{#0080F8}'
+set purple      = '%{#cd00cd}'
 set megenta     = '%{#cd00cd}'
-set cyan        = '%{#00b0cb}'
-set white       = '%{#D8D8D8}'
-set nocolor     = '%{#ffffff}'
+set cyan        = '%{#00FFFF}'
+set white       = '%{#F5F5F5}'
+set nocolor     = '%{#F5F5F5}'
 
 # man help colors and man colors replace by batman from bat-extras
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -97,8 +98,8 @@ autoload -Uz vcs_info
 autoload -Uz compinit
 
 # History Settings
-HISTSIZE=90000000
-SAVEHIST=90000000
+HISTSIZE=99999999
+SAVEHIST=99999999
 HISTFILE=~/.zsh_history
 HISTTIMEFORMAT="%F %T "
 
@@ -211,26 +212,7 @@ function jump_after_first_word () {
 }
 zle -N jump_after_first_word
 
-#=====================================#
-# EDITOR is nano                      #
-#=====================================#
-
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='nano'
-else
-  export EDITOR='nano'
-fi
-
-#=====================================#
-# Custom prompt                       #
-#=====================================#
-
-# prompt settings
-setopt prompt_subst
-autoload -U colors && colors	# Load colors
-setopt autocd		# Automatically cd into typed directory.
-stty stop undef		# Disable ctrl-s to freeze terminal.
-setopt interactive_comments
+# Custom Prompt
 
 if [[ ! -f ~/.zshcolor ]]; then
 	declare -a colors
@@ -348,9 +330,11 @@ alias pakscc='pak -Scc'
 alias pakc='pak -C'
 alias pacup='pacman -Syu'
 alias pacum='pacman -Scc --noconfirm'
-alias repoup='repo-add /dane/pkgs/custom.db.tar.gz /dane/pkgs/*.pkg.tar'
+alias repoup='repo-add /dane/pkgs/custom.db.tar.zst /dane/pkgs/*.pkg.tar'
 alias grubup='grub-mkconfig -o /boot/grub/grub.cfg'
+alias grubinstall='grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Arch_Linux'
 alias mk='mkinitcpio -P'
+alias dracut='dracut-rebuild'
 alias sa='systemd-analyze'
 alias sab='systemd-analyze blame'
 alias sacc='systemd-analyze critical-chain'
@@ -377,60 +361,35 @@ alias unlock='sudo rm /var/lib/pacman/db.lck'
 alias ping='ping -c 10'
 alias mpkg='updpkgsums && makepkg -sirc --sign'
 
-########## syntax highlighting ###########
-if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fi
-##########################################
+# load fast-syntax-highlighting
+[ -f /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ] && source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-######## fast-syntax-highlighting ########
-if [[ -f /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]]; then
-	source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-fi
-##########################################
+# load zsh-history-substring-search
+[ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ] && source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-###### zsh-history-substring-search ######
-if [[ -f /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh ]]; then
-	source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-fi
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-##########################################
+# load commands autosuggestion
+[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ] && source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-######## commands autosuggestion #########
-if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
-	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
-##########################################
+# load zsh-you-should-use
+[ -f /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh ] && source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
 
-######## load zsh-you-should-use #########
-if [[ -f /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh ]]; then
-	source /usr/share/zsh/plugins/zsh-you-should-use/you-should-use.plugin.zsh
-fi
-##########################################
+# load zsh-autopair
+[ -f /usr/share/zsh/plugins/zsh-autopair/autopair.zsh ] && source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 
-############### load zsh-z ###############
-if [[ -f /usr/share/zsh/plugins/zsh-z/zsh-z.plugin.zsh ]]; then
-	source /usr/share/zsh/plugins/zsh-z/zsh-z.plugin.zsh
-fi
-##########################################
+# load skim completion and keybindings
+[ -f /usr/share/skim/key-bindings.zsh ] && source /usr/share/skim/key-bindings.zsh
+[ -f /usr/share/skim/completion.zsh ] && source /usr/share/skim/completion.zsh
 
-## load skim completion and keybindings ##
-if [[ -f /usr/share/skim/key-bindings.zsh ]]; then
-  source /usr/share/skim/key-bindings.zsh
-fi
-
-if [[ -f /usr/share/skim/completion.zsh ]]; then
-  source /usr/share/skim/completion.zsh
-fi
-##########################################
+# Bindkeys for zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 # load $HOME/.zshrc.local to overwrite this zshrc
 [[ -r ${HOME}/.zshrc.local ]] && source ${HOME}/.zshrc.local
 
 # report about cpu-/system-/user-time of command if running longer than
 # 5 seconds
-TIMEFMT="'$fg[green]%J$reset_color' time: '$fg[blue]%*Es$reset_color', 'cpu: $fg[blue]%P$reset_color'"
+TIMEFMT="'$fg[green]%J$reset_color' time: $fg[blue]%*Es$reset_color, cpu: $fg[blue]%P$reset_color"
 REPORTTIME=5
 
 #pfetch
