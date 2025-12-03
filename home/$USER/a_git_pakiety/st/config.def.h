@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
- static char *font = "Roboto Mono:Bold:size=12:antialias=true:hinting=true";
+ static char *font = "HackNerdFont:Bold:size=12:antialias=true:hinting=true";
  static char *font2[] = { "NotoColorEmoji:pixelsize=13:antialias=true:autohint=true" };
  static char *font3[] = { "JoyPixels:scale=13:antialias=true:autohint=true" };
  static int borderpx = 4;
@@ -125,28 +125,28 @@ static const char *colorname[] = {
 	"#D02038",      // red
 	"#00cd00",      // green
 	"#fabd2f",      // yellow
-	"#0080FF",      // blue
+	"#308CC6",      // blue
 	"#cd00cd",      // magenta
 	"#00FFFF",      // cyan
-	"#F5F5F5",      // white
+	"#FFFFFF",      // white
 
 	/* 8 bright colors */
 	"#484e51",      // black
 	"#D02038",      // red
 	"#00cd00",      // green
 	"#fabd2f",      // yellow
-	"#0080FF",      // blue
+	"#308CC6",      // blue
 	"#cd00cd",      // magenta
 	"#00FFFF",      // cyan
-	"#F5F5F5",      // white
+	"#FFFFFF",      // white
 
 			[255] = 0,
 
 	/* more colors can be added after 255 to use with DefaultXX */
-			"#0080FF", /* 256 -> cursor */
+			"#308CC6", /* 256 -> cursor */
 			"#010101", /* 257 -> rev cursor*/
 			"#010101", /* 258 -> bg background */
-			"#F5F5F5", /* 259 -> fg foreground */
+			"#FFFFFF", /* 259 -> fg foreground */
 };
 
 /*

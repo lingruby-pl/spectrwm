@@ -15,12 +15,12 @@ Xft.rgba: rgb
 ! URxvt Fonts
 ! ------------------------------------------------------------------------------
 
-URxvt*font:                xft:JetBrains Mono:bold:size=9.5:antialias=true:hinting=true, \
+URxvt*font:                xft:Hack Nerd Font:bold:size=9.5:antialias=true:hinting=true, \
                            xft:Noto Emoji:pixelsize=6:minspace=False:antialias=false, \
                            xft:Symbola:pixelsize=6:minspace=False:antialias=False
-URxvt*boldFont:            xft:JetBrains Mono:bold:size=9.5:antialias=true:hinting=true
-URxvt*italicFont:          xft:JetBrains Mono:italic:size=9.5:antialias=true:hinting=true
-URxvt*boldItalicFont:      xft:JetBrains Mono:bold:italic:size=9.5:antialias=true:hinting=true
+URxvt*boldFont:            xft:Hack Nerd Font:bold:size=9.5:antialias=true:hinting=true
+URxvt*italicFont:          xft:Hack Nerd Font:italic:size=9.5:antialias=true:hinting=true
+URxvt*boldItalicFont:      xft:Hack Nerd Font:bold:italic:size=9.5:antialias=true:hinting=true
 
 ! ------------------------------------------------------------------------------
 ! URxvt configs
@@ -109,7 +109,7 @@ URxvt*color15:      #bababa
 ! ------------------------------------------------------------------------------
 
 ! Rofi
-rofi.font: JetBrains Mono 9.5
+rofi.font: Hack Nerd Font 9.5
 
 ! ------------------------------------------------------------------------------
 ! XTerm:UXterm configs
@@ -117,7 +117,7 @@ rofi.font: JetBrains Mono 9.5
 
 !! XTerm:UXterm
 XTerm*renderFont: true
-XTerm*faceName: xft:JetBrains Mono
+XTerm*faceName: xft:Hack Nerd Font
 XTerm*faceSize: 9.5
 XTerm*utf8: 2
 XTerm*locale: true
@@ -128,51 +128,51 @@ XTerm*loginShell: true
 ! ------------------------------------------------------------------------------
 
 ! special
-XTerm*background:   #0d0d0d
-XTerm*foreground:   #a0a0a0
-XTerm*cursorColor:  #a0a0a0
+XTerm*background:   #1B1E20
+XTerm*foreground:   #D3D9E3
+XTerm*cursorColor:  #0088CC
 
 ! black
-XTerm*color0:       #0d0d0d
-XTerm*color8:       #78746c
+XTerm*color0:       #1B1E20
+XTerm*color8:       #484E51
 
 ! red
-XTerm*color1:       #db0000
-XTerm*color9:       #db0000
+XTerm*color1:       #CC0000
+XTerm*color9:       #CC0000
 
 ! green
-XTerm*color2:       #00b000
-XTerm*color10:      #00b000
+XTerm*color2:       #008800
+XTerm*color10:      #008800
 
 ! yellow
-XTerm*color3:       #a9b000
-XTerm*color11:      #a9b000
+XTerm*color3:       #999900
+XTerm*color11:      #999900
 
 ! blue
-XTerm*color4:       #1793D1
-XTerm*color12:      #1793D1
+XTerm*color4:       #0088CC
+XTerm*color12:      #0088CC
 
 ! magenta
 XTerm*color5:       #a900cb
 XTerm*color13:      #a900cb
 
 ! cyan
-XTerm*color6:       #00b0cb
-XTerm*color14:      #00b0cb
+XTerm*color6:       #00CCCC
+XTerm*color14:      #00CCCC
 
 ! white
-XTerm*color7:       #D8D8D8
-XTerm*color15:      #D8D8D8
+XTerm*color7:       #D3D9E3
+XTerm*color15:      #D3D9E3
 
 ! ------------------------------------------------------------------------------
 ! st configs
 ! ------------------------------------------------------------------------------
 
 !! Transparency (0-1):
-st.alpha: 0.85
+st.alpha: 0.8
 
 !! Set a default font and font size as below:
-st.font: JetBrains Mono:extrabold:pixelsize=11.5:antialias=true:hinting=true
+st.font: Hack Nerd Font:extrabold:pixelsize=11.5:antialias=true:hinting=true
 
 ! st.termname: st-256color
 ! st.borderpx: 2
@@ -184,43 +184,43 @@ st.font: JetBrains Mono:extrabold:pixelsize=11.5:antialias=true:hinting=true
 ! ------------------------------------------------------------------------------
 
 ! special
-st*background:   #0d0d0d
-st*foreground:   #a0a0a0
-st*cursorColor:  #a0a0a0
+st*background:   #010101
+st*foreground:   #f8fcd0
+st*cursorColor:  #0080F8
 
 !! st-night:
 
 ! black
-st*color0:       #292929
-st*color8:       #494949
+st*color0:       #000000
+st*color8:       #484E51
 
 ! red
-st*color1:       #902625
-st*color9:       #902625
+st*color1:       #e73c35
+st*color9:       #e73c35
 
 ! green
-st*color2:       #97a293
-st*color10:      #97a293
+st*color2:       #00cd00
+st*color10:      #00cd00
 
 ! yellow
-st*color3:       #c29f6f
-st*color11:      #c29f6f
+st*color3:       #f0c674
+st*color11:      #f0c674
 
 ! blue
-st*color4:       #5e606c
-st*color12:      #5e606c
+st*color4:       #0080F8
+st*color12:      #0080F8
 
 ! magenta
-st*color5:       #7a6054
-st*color13:      #7a6054
+st*color5:       #cd00cd
+st*color13:      #cd00cd
 
 ! cyan
-st*color6:       #78746c
-st*color14:      #78746c
+st*color6:       #00FFFF
+st*color14:      #00FFFF
 
 ! white
-st*color7:       #bababa
-st*color15:      #bababa
+st*color7:       #f8fcd0
+st*color15:      #f8fcd0
 
 ! ------------------------------------------------------------------------------
 ! Custom xnedit

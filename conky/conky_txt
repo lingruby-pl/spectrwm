@@ -6,7 +6,7 @@ telephone: 00216 97 95 72 72
 ========================================================================
 Conky Arch GNU/Linux rolling
 mod: LinGruby
---========================================================================
+========================================================================
 ]]
 
 conky.config = {
@@ -45,15 +45,15 @@ conky.config = {
 	draw_outline = false,
 	draw_shades = false,
 
-	default_color = '#F5F5F5',
-	color0 = '#F5F5F5',
-	color1 = '#F5F5F5',
+	default_color = '#FFFFFF',
+	color0 = '#FFFFFF',
+	color1 = '#FFFFFF',
 	font = 'Hack Nerd Font:Bold:size=11',
 
 };
 
 conky.text = [[
-${image /home/lingruby/.config/spectrwm/conky/Draganizer1_1_.png -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/Draganizer1_1_.png -p 373,5 -s 60x60}
+${image /home/lingruby/.config/spectrwm/conky/IMG_1067.jpg -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/IMG_1067.jpg -p 373,5 -s 60x60}
 ${font Hack Nerd Font:Bold:size=11}${color1}${alignc} CachyOS - Arch Linux Based
 ${color0}${alignc} GNU/Linux ${execi 10000 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}
 ${color1}${alignc}${execi 1200 whoami}@${nodename}
@@ -80,12 +80,12 @@ ${color0}    MOD+x        ${color}	-	ts3client
 ${color0}    MOD+c        ${color}	-	xastir
 ${color0}    MOD+b        ${color}	-	krusader
 ${color0}    MOD+h        ${color}	-	htop
-${color0}    MOD+g        ${color}	-	gotop
+${color0}    MOD+g        ${color}	-	dqop
 ${color0}    MOD+s        ${color}	-	weechat
 ${color0}    MOD+f        ${color}	-	fullscreen
 ${color0}    MOD+n        ${color}	-	ifconfig.sh
 ${color0}    MOD+Shift+x  ${color}	-	vesktop
-${color0}    MOD+Shift+c  ${color}	-	kodi
+${color0}    MOD+Shift+c  ${color}	-	zapzap
 ${color0}    MOD+Shift+d  ${color}	-	dunst
 ${color0}    MOD+Alt+g    ${color}	-	gimp
 ${color0}    MOD+Alt+n    ${color}	-	meld

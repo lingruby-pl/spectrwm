@@ -11,16 +11,16 @@
 
 
 # Colors!
-set black       = '%{#010101}'
+set black       = '%{#000000}'
 set red         = '%{#D02038}'
 set green       = '%{#008800}'
 set yellow      = '%{#fabd2f}'
-set blue        = '%{#0080F8}'
+set blue        = '%{#308CC6}'
 set purple      = '%{#cd00cd}'
 set megenta     = '%{#cd00cd}'
 set cyan        = '%{#00FFFF}'
-set white       = '%{#F5F5F5}'
-set nocolor     = '%{#F5F5F5}'
+set white       = '%{#FFFFFF}'
+set nocolor     = '%{#FFFFFF}'
 
 # man help colors and man colors replace by batman from bat-extras
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -392,6 +392,6 @@ bindkey '^[[B' history-substring-search-down
 TIMEFMT="'$fg[green]%J$reset_color' time: $fg[blue]%*Es$reset_color, cpu: $fg[blue]%P$reset_color"
 REPORTTIME=5
 
-#pfetch
+fastfetch
 
 cd

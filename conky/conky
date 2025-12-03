@@ -6,7 +6,7 @@ telephone: 00216 97 95 72 72
 ========================================================================
 Conky Arch GNU/Linux rolling
 mod: LinGruby
---========================================================================
+========================================================================
 ]]
 
 conky.config = {
@@ -53,23 +53,23 @@ conky.config = {
 	uppercase = false,
 
 
-	default_color = '#F5F5F5',
-	color0 = '#F5F5F5',
-	color1 = 'F5F5F5',
-	color2 = '#F5F5F5',
-	color3 = '#F5F5F5',
-	color4 = '#F5F5F5',
+	default_color = '#FFFFFF',
+	color0 = '#FFFFFF',
+	color1 = '#FFFFFF',
+	color2 = '#FFFFFF',
+	color3 = '#FFFFFF',
+	color4 = '#FFFFFF',
 	color5 = '#D3D9E3',
-	color6 = '#F5F5F5',
-	color7 = '#F5F5F5',
-	color8 = '#F5F5F5',
-	color9 = '#F5F5F5',
+	color6 = '#FFFFFF',
+	color7 = '#FFFFFF',
+	color8 = '#FFFFFF',
+	color9 = '#FFFFFF',
 
 
 };
 
 conky.text = [[
-${image /home/lingruby/.config/spectrwm/conky/Draganizer1_1.png -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/Draganizer1_1.png -p 373,5 -s 60x60}
+${image /home/lingruby/.config/spectrwm/conky/IMG_1067_.jpg -p 0,5 -s 60x60}${image /home/lingruby/.config/spectrwm/conky/IMG_1067_.jpg -p 373,5 -s 60x60}
 ${font Hack Nerd Font:Bold:size=11}${color1}${alignc} CachyOS - Arch Linux Based
 ${color0}${alignc} GNU/Linux ${execi 10000 awk -F'=' '/DISTRIB_RELEASE=/ {printf $2" "} /CODENAME/ {print $2}' /etc/lsb-release}
 ${color1}${alignc}${execi 1200 whoami}@${nodename}

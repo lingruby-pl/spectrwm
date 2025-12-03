@@ -11,6 +11,7 @@ function run {
 # export QT_QPA_PLATFORMTHEME="qt5ct"
 export TIME_STYLE='+%a %d %b %Y %H%M%S'
 systemctl --user restart dunst.service
+systemctl --user restart rustdesk.service
 # Find out your monitor name with xrandr or arandr (save and you get this line)
 # picom -b --config /home/lingruby/.config/spectrwm/picom.conf &
 
@@ -35,6 +36,7 @@ wine "C:\\Program Files (x86)\\Zegarynka\\Zegarynka.exe" &
 # run qtox &
 run nextcloud &
 run mailspring -b --password-store="gnome-libsecret" &
+# run kmail &
 # run deltachat &
 # run owncloud &
 # run mailspring -b %U &

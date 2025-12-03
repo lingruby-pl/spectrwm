@@ -6,7 +6,7 @@ telephone: 00216 97 95 72 72
 ========================================================================
 Conky Arch GNU/Linux rolling
 mod: LinGruby
---========================================================================
+========================================================================
 --${color}${alignc}${font Hack Nerd Font:Bold:size=10} ${texeci 600 weather Łódź 1 | sed -n '2,7{s/\d27\[[0-9;]*m//g;s/^..//;s/ *$//;p}'}
 
 ]]
@@ -47,8 +47,8 @@ conky.config = {
 	draw_outline = false,
 	draw_shades = false,
 
-	default_color = '#F5F5F5',
-	color1 = '#F5F5F5',
+	default_color = '#FFFFFF',
+	color1 = '#FFFFFF',
 
 
 };
